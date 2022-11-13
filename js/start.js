@@ -29,6 +29,10 @@ let btn = document.querySelector('#btn_start'),
     dalee = document.querySelector('#dalee'),
     dateWord = document.querySelector('.dateWord');
 
+
+
+    
+
 // class wordsParam {
 //     constructor(mainWord, descWord, pic) {
 //         this.mainWord = mainWord;
@@ -37,7 +41,7 @@ let btn = document.querySelector('#btn_start'),
 //     }
 // }
 
-
+console.dir(body.style.justifyContent);
 
 let WordsArr = [{
         name: 'Гнусный',
@@ -197,6 +201,7 @@ function words() {
 }
 
 function logger() {
+    
     if (arrWords.length == 0) {
         location.reload();
     } else {
@@ -239,6 +244,13 @@ function logger() {
                 dateWord.innerHTML += `<p>${arrWords[i].dateWord}</p>`;
             }
             arrWords.splice(i, 1);
+            console.dir(showWords);
+            if (showWords.clientHeight < 500) {
+                console.log('aga');
+                body.style.justifyContent = 'center';
+            } else {
+                body.style.justifyContent = 'flex-start';
+            }
             setTimeout(() => {
                 main.classList.remove('animate__animated', 'animate__bounceIn', 'animate__fast');
                 next.classList.remove('animate__animated', 'animate__bounceIn', 'animate__fast');
@@ -266,6 +278,14 @@ function logger() {
                     dateWord.innerHTML += `<p>${arrWords[i].dateWord}</p>`;
                 }
                 arrWords.splice(i, 1);
+
+                if (showWords.clientHeight < 500) {
+                    console.log('aga');
+                    body.style.justifyContent = 'center';
+                } else {
+                    body.style.justifyContent = 'flex-start';
+                }
+
                 setTimeout(() => {
                     main.classList.remove('animate__animated', 'animate__bounceIn', 'animate__fast');
                     next.classList.remove('animate__animated', 'animate__bounceIn', 'animate__fast');
