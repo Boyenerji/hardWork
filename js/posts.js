@@ -1,7 +1,5 @@
 
 
-
-
 export const arrWords = [{
     pic: '../pictures/termo.jpg',
     name: 'Термобарические снаряды',

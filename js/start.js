@@ -1,15 +1,13 @@
 "use strict";
 
 
-import {arrWords} from './posts.js'
+import { arrWords } from './posts.js'
 
 
 let timerId,
-    pos = 0,
     randText = randomInteger(1, 2),
     idAnim,
-    randomWords,
-    clown;
+    randomWords;
 
 let btn = document.querySelector('#btn_start'),
     body = document.querySelector('body'),
@@ -38,21 +36,6 @@ let btn = document.querySelector('#btn_start'),
 //         this.pic = pic;
 //     }
 // }
-
-console.dir(inputText.autofocus);
-
-// let right = {
-//     Клоун: {
-//         rigth1: `<button class="btn" value='Клиун'>Клиун</button>`,
-//         right2: `<button class="btn" value='Клиун2'>Клиун2</button>`
-//     }
-// };
-
-// if (right.Клоун == )
-
-// // main.innerHTML = right.test1.rigth1;
-// console.dir(right);
-
 
 
 
@@ -292,37 +275,6 @@ function logger() {
 
     }
 }
-
-
-// function KrugozorFunc() {
-//     if (krugozor_words.length == 0) {
-//         location.reload();
-//     } else {
-//         dateWord.innerHTML = '';
-//         if (dateWord.style.display == 'block') {
-//             dateWord.style.display = 'none';
-//         }
-//         main.classList.add('animate__animated', 'animate__bounceIn', 'animate__fast');
-//         if ((krugozor_words.length - 1) != 0) {
-//             alert_info.innerHTML = krugozor_words.length - 1;
-//         } else {
-//             alert_info.innerHTML = 'Последняя';
-//         }
-//         let i = randomInteger(0, krugozor_words.length - 1);
-//         mainWord.innerHTML = krugozor_words[i].name;
-//         descWord.innerHTML = krugozor_words[i].desc;
-
-//         if (krugozor_words[i].dateWord.length > 0) {
-//             dateWord.style.display = 'block';
-//             dateWord.innerHTML = `${krugozor_words[i].dateWord}`;
-//         }
-//         krugozor_words.splice(i, 1);
-//         setTimeout(() => {
-//             main.classList.remove('animate__animated', 'animate__bounceIn', 'animate__fast');
-//         }, 800);
-//     }
-// }
-
 
 
 btn.addEventListener('click', () => {
