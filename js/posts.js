@@ -3,7 +3,7 @@
 
 
 export const arrWords = [{
-    pic: '/pictures/termo.jpg',
+    pic: '../pictures/termo.jpg',
     name: 'Термобарические снаряды',
     desc: 'Снаряды, при взрыве образующие облако аэрозоля горючего вещества.',
     dateWord: ''
@@ -15,7 +15,7 @@ export const arrWords = [{
     dateWord: ''
 },
 {
-    pic: '/pictures/pic2.jpg',
+    pic: '../pictures/pic2.jpg',
     name: 'СПЗ (Система постановки завес)',
     desc: 'Аэрозольные гранаты для блокирования ПТУР с инфракрасными ГСН.',
     dateWord: ''
