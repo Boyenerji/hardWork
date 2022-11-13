@@ -401,7 +401,8 @@ function logger() {
         // idImg.src = '../pictures/no_photo.png';
         idImg.style.display = 'none';
 
-        // console.log(arrWords[i].pic);
+        console.log(arrWords[i].pic);
+
 
 
         if (arrWords[i].pic == '') {
