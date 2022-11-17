@@ -231,21 +231,30 @@ btn.addEventListener('click', () => {
 // });
 
 // console.log(descWord.classList);
+
+
 // showWords.addEventListener('touchend', (e) => {
 //     e.preventDefault();
-
-//     if (select.value == 'Слова') {
-//         words();
-//     } else {
-//         logger();
-//     }  
+//     if (descWord.className.indexOf('blur-sm') !== -1) {
+//         console.log('Есть пробитие');
+//     }
+    
 // });
+
+
 
 
 descWord.addEventListener('click', (e) => {
     e.preventDefault();
-    descWord.style.cursor = 'auto';
-    descWord.classList.remove('blur-sm');
+    // console.dir(descWord.className);
+    if (descWord.className.indexOf('blur-sm') !== -1) {
+        descWord.style.cursor = 'auto';
+        descWord.classList.remove('blur-sm');
+    } else {
+        protect();
+    }
+    // descWord.style.cursor = 'auto';
+    // descWord.classList.remove('blur-sm');
 });
 
 mainWord.addEventListener('click', (e) => {
