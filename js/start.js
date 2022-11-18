@@ -24,7 +24,7 @@ let btn = document.querySelector('#btn_start'),
     descWord = document.querySelector('.descWord'),
     idImg = document.querySelector('#idImg'),
     mainTwo = document.querySelector('.mainTwo'),
-    next = document.querySelector('.next'),
+    // next = document.querySelector('.next'),
     inputText = document.querySelector('#inputText'),
     error = document.querySelector('#error'),
     dalee = document.querySelector('#dalee'),
@@ -66,7 +66,7 @@ function words() {
             descWord.style.cursor = 'pointer';
         }
         main.classList.add('animate__animated', 'animate__bounceIn', 'animate__fast');
-        next.classList.add('animate__animated', 'animate__bounceIn', 'animate__fast');
+        // next.classList.add('animate__animated', 'animate__bounceIn', 'animate__fast');
         if ((WordsArr.length - 1) != 0) {
             alert_info.innerHTML = WordsArr.length - 1;
         } else {
@@ -84,7 +84,7 @@ function words() {
         WordsArr.splice(i, 1);
         setTimeout(() => {
             main.classList.remove('animate__animated', 'animate__bounceIn', 'animate__fast');
-            next.classList.remove('animate__animated', 'animate__bounceIn', 'animate__fast');
+            // next.classList.remove('animate__animated', 'animate__bounceIn', 'animate__fast');
         }, 800);
 
     }
@@ -101,7 +101,7 @@ function logger() {
             dateWord.style.display = 'none';
         }
         main.classList.add('animate__animated', 'animate__bounceIn', 'animate__fast');
-        next.classList.add('animate__animated', 'animate__bounceIn', 'animate__fast');
+        // next.classList.add('animate__animated', 'animate__bounceIn', 'animate__fast');
         if ((arrWords.length - 1) != 0) {
             alert_info.innerHTML = arrWords.length - 1;
         } else {
@@ -143,7 +143,7 @@ function logger() {
             }
             setTimeout(() => {
                 main.classList.remove('animate__animated', 'animate__bounceIn', 'animate__fast');
-                next.classList.remove('animate__animated', 'animate__bounceIn', 'animate__fast');
+                // next.classList.remove('animate__animated', 'animate__bounceIn', 'animate__fast');
             }, 800);
         } else {
             idImg.src = `${arrWords[i].pic}`;
@@ -177,7 +177,7 @@ function logger() {
 
                 setTimeout(() => {
                     main.classList.remove('animate__animated', 'animate__bounceIn', 'animate__fast');
-                    next.classList.remove('animate__animated', 'animate__bounceIn', 'animate__fast');
+                    // next.classList.remove('animate__animated', 'animate__bounceIn', 'animate__fast');
                 }, 800);
             };
         }
@@ -187,7 +187,7 @@ function logger() {
 
 
 btn.addEventListener('click', () => {
-    next.style.display = 'flex';
+    // next.style.display = 'flex';
     if (select.value == 'Слова') {
         body.style.justifyContent = 'space-evenly';
         // btn_next.classList.add('animate__animated', 'animate__bounceIn', 'animate__fast');
@@ -286,10 +286,10 @@ inputText.addEventListener('keypress', function (e) {
 
 
 
-next.addEventListener('click', (e) => {
-    e.preventDefault();
-    protect();
-});
+// next.addEventListener('click', (e) => {
+//     e.preventDefault();
+//     protect();
+// });
 
 
 function protect() {
