@@ -70,7 +70,7 @@ function words() {
         if ((WordsArr.length - 1) != 0) {
             alert_info.innerHTML = WordsArr.length - 1;
         } else {
-            dalee.innerText = 'Конец.'
+            // dalee.innerText = 'Конец.'
             alert_info.remove();
         }
         let i = randomInteger(0, WordsArr.length - 1);
@@ -96,6 +96,7 @@ function logger() {
         location.reload();
     } else {
         descWord.classList.add('blur-sm');
+        descWord.style.cursor = 'pointer';
         dateWord.classList.add('blur-sm');
         if (dateWord.style.display == 'flex') {
             dateWord.style.display = 'none';
@@ -248,9 +249,10 @@ descWord.addEventListener('click', (e) => {
     e.preventDefault();
     // console.dir(descWord.className);
     if (descWord.className.indexOf('blur-sm') !== -1) {
-        descWord.style.cursor = 'auto';
+        // descWord.style.cursor = 'auto';
         descWord.classList.remove('blur-sm');
     } else {
+        descWord.style.cursor = 'auto';
         protect();
     }
     // descWord.style.cursor = 'auto';
@@ -333,6 +335,7 @@ DarkTheme();
 function DarkTheme() {
     let date = new Date();
     if (date.getHours() > 17 || date.getHours() < 6) {
+        alert_info.style.color = 'rgb(209, 213, 219)';
         body.classList.add('dark:bg-slate-800');
         hello_h1.style.color = '#fff';
         main.classList.add('dark:bg-slate-700');
