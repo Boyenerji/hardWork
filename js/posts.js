@@ -145,6 +145,28 @@ export const arrWords = [{
     </ul>
     `,
     dateWord: ''
+},
+{
+    pic: '../pictures/ezhik.jpg',
+    name: 'Ехидна.',
+    desc: 
+    `
+        Животное типа ёжика.
+    `,
+    dateWord: ''
+},
+{
+    pic: '',
+    name: 'Патроны',
+    desc: 
+    `
+    <ul class="list-disc list-inside">
+        <li><span class="underline decoration-indigo-500">Советский патрон: 5,45×39мм</span></li>
+        <li><span class="underline decoration-indigo-500">НАТО патрон: 5,56×45мм</span></li>
+    </ul>
+    `,
+    dateWord: ''
 }
+
 
 ];
