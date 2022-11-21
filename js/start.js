@@ -79,6 +79,7 @@ function words() {
         descWord.innerHTML = WordsArr[i].desc;
         if (randomWords == 1) {
             inputText.style.display = 'block';
+            body.style.justifyContent = 'flex-start';
             inputText.focus();
         }
         WordsArr.splice(i, 1);
@@ -312,6 +313,7 @@ function protect() {
             console.log(inputTextLet.trim());
 
             if (mainWordLet.trim() == inputTextLet.trim()) {
+                body.style.justifyContent = 'space-evenly';
                 words();
             } else {
                 error.style.display = 'block';
