@@ -30,7 +30,10 @@ let btn = document.querySelector('#btn_start'),
     dalee = document.querySelector('#dalee'),
     dateWord = document.querySelector('.dateWord');
 
+let lop = 'бумага мокрое хзпиздец';
 
+
+console.log(lop.split(' '));
 
 
 function words() {
@@ -77,9 +80,16 @@ function words() {
         console.log(i);
         mainWord.innerHTML = WordsArr[i].name;
         descWord.innerHTML = WordsArr[i].desc;
+
+        // Работать
+        // let lol = WordsArr[i].desc.split(' ');
+        // console.log(lol[0] = '########');
+        // // console.log(WordsArr[i].desc.split(' '));
+
+
         if (randomWords == 1) {
             inputText.style.display = 'block';
-            body.style.justifyContent = 'flex-start';
+            // body.style.justifyContent = 'flex-start';
             inputText.focus();
         }
         WordsArr.splice(i, 1);
@@ -191,7 +201,7 @@ function logger() {
 btn.addEventListener('click', () => {
     // next.style.display = 'flex';
     if (select.value == 'Слова') {
-        body.style.justifyContent = 'space-evenly';
+        // body.style.justifyContent = 'space-evenly';
         // btn_next.classList.add('animate__animated', 'animate__bounceIn', 'animate__fast');
         // mainWord.classList.add('decoration-sky-500');
         // mainWord.classList.add('text-green-500');
