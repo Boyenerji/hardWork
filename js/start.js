@@ -28,13 +28,18 @@ let btn = document.querySelector('#btn_start'),
     inputText = document.querySelector('#inputText'),
     error = document.querySelector('#error'),
     dalee = document.querySelector('#dalee'),
+    btn_test = document.querySelector('#btn_test'),
     dateWord = document.querySelector('.dateWord');
 
 let lop = 'бумага мокрое хзпиздец';
 
 
-console.log(lop.split(' '));
+// console.log(lop.split(' '));
 
+// console.log(main.getBoundingClientRect());
+
+
+// console.log(btn_test);
 
 function words() {
     if (WordsArr.length == 0) {
@@ -287,10 +292,11 @@ dateWord.addEventListener('click', (e) => {
 });
 
 
-// document.addEventListener('keypress', function (e) {
-//     if (e.key === 'Enter') {
-//         protect();
-//     }
+
+// btn_test.addEventListener('click', (e) => {
+//     e.preventDefault();
+//     console.dir(main);
+//     console.log(main.getBoundingClientRect());
 // });
 
 
@@ -321,13 +327,10 @@ function protect() {
             let mainWordLet = mainWord.innerHTML.toLowerCase();
             let inputTextLet = inputText.value.toLowerCase();
 
-
-
             console.log(mainWordLet.trim());
             console.log(inputTextLet.trim());
 
             if (mainWordLet.trim() == inputTextLet.trim()) {
-                body.style.justifyContent = 'space-evenly';
                 words();
             } else {
                 error.style.display = 'block';
@@ -351,10 +354,11 @@ DarkTheme();
 function DarkTheme() {
     let date = new Date();
     if (date.getHours() > 17 || date.getHours() < 6) {
+        console.log('yes');
         alert_info.style.color = 'rgb(209, 213, 219)';
-        body.classList.add('dark:bg-slate-800');
+        body.classList.add('dark:bg-slate-900');
         hello_h1.style.color = '#fff';
-        main.classList.add('dark:bg-slate-700');
+        main.classList.add('dark:bg-slate-800');
         descWord.style.color = 'rgb(209 213 219)';
         select.style.backgroundColor = '#6c757d';
         select.style.color = '#fff';
