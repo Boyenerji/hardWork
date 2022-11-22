@@ -219,11 +219,15 @@ btn.addEventListener('click', () => {
         descWord.classList.add('leading-relaxed');
         descWord.style.padding = '10px';
         picWord.remove();
+        body.style.justifyContent = 'flex-start';
         words();
     } else {
+        body.style.justifyContent = 'flex-start';
         logger();
     }
 
+
+    // body.style.justifyContent = 'flex-start';
     btn.remove();
     select.remove();
     hello_h1.remove();
