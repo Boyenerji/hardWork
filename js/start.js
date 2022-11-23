@@ -8,7 +8,8 @@ import { WordsArr } from './words.js';
 let timerId,
     randText = randomInteger(1, 2),
     idAnim,
-    randomWords;
+    randomWords,
+    isShifr = false;
 
 let btn = document.querySelector('#btn_start'),
     body = document.querySelector('body'),
@@ -31,10 +32,14 @@ let btn = document.querySelector('#btn_start'),
     btn_test = document.querySelector('#btn_test'),
     dateWord = document.querySelector('.dateWord');
 
-let lop = 'бумага мокрое хзпиздец';
 
 
+
+// let lop = 'бумага мокрое хзпиздец';
 // console.log(lop.split(' '));
+
+
+
 
 // console.log(main.getBoundingClientRect());
 
@@ -139,6 +144,7 @@ function logger() {
         if (arrWords[i].pic == '') {
             mainWord.innerHTML = arrWords[i].name;
             descWord.innerHTML = arrWords[i].desc;
+            
 
             if (arrWords[i].dateWord.length > 0) {
                 dateWord.innerHTML = '';
@@ -172,7 +178,26 @@ function logger() {
                 console.log(arrWords[i].name);
                 console.log(arrWords[i].desc);
                 mainWord.innerHTML = arrWords[i].name;
-                descWord.innerHTML = '<p class="font-normal">' + arrWords[i].desc + '</p>';
+
+
+                if (arrWords[i].desc.indexOf('li') !== -1) {
+                    descWord.innerHTML = '<p class="font-normal">' + arrWords[i].desc + '</p>';
+                } else {
+
+                    // isShifr = true;
+                    let descWordShifr = arrWords[i].desc.split(' ');
+                    let random4isloShifr = randomInteger(0, descWordShifr.length - 2);
+
+                    let ShifrSlova = descWordShifr[random4isloShifr] + ' ' + descWordShifr[random4isloShifr + 1];
+                    console.log(ShifrSlova);
+                    descWordShifr.splice(random4isloShifr, 2, '######', '######');
+                    // alert(descWordShifr);
+                    // descWordShifr[randomInteger(0, descWordShifr.length)];
+                    console.log(descWordShifr);
+                    descWord.innerHTML = '<p class="font-normal">' + descWordShifr.join(' ') + '</p>';
+
+                }
+
 
                 if (arrWords[i].dateWord.length > 0) {
                     dateWord.innerHTML = '';
@@ -267,6 +292,14 @@ btn.addEventListener('click', () => {
 
 descWord.addEventListener('click', (e) => {
     e.preventDefault();
+
+
+    // if (select.value == 'Слова') {
+    //     console.log('Слова');
+    // } else {
+    //     console.log('Не слова');
+    // }
+
     // console.dir(descWord.className);
     if (descWord.className.indexOf('blur-sm') !== -1) {
         // descWord.style.cursor = 'auto';
