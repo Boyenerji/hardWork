@@ -9,7 +9,8 @@ let timerId,
     randText = randomInteger(1, 2),
     idAnim,
     randomWords,
-    isShifr = false;
+    isShifr = false,
+    arrNull = '';
 
 let btn = document.querySelector('#btn_start'),
     body = document.querySelector('body'),
@@ -116,7 +117,7 @@ function logger() {
     if (arrWords.length == 0) {
         location.reload();
     } else {
-        descWord.classList.add('blur-sm');
+        // descWord.classList.add('blur-sm');
         descWord.style.cursor = 'pointer';
         dateWord.classList.add('blur-sm');
         if (dateWord.style.display == 'flex') {
@@ -183,16 +184,19 @@ function logger() {
                 if (arrWords[i].desc.indexOf('li') !== -1) {
                     descWord.innerHTML = '<p class="font-normal">' + arrWords[i].desc + '</p>';
                 } else {
-
-                    // isShifr = true;
+                    arrNull = arrWords[i].desc;
+                    isShifr = true;
                     let descWordShifr = arrWords[i].desc.split(' ');
                     let random4isloShifr = randomInteger(0, descWordShifr.length - 2);
+                    let random4isloShifr2 = randomInteger(0, descWordShifr.length - 2);
 
-                    let ShifrSlova = descWordShifr[random4isloShifr] + ' ' + descWordShifr[random4isloShifr + 1];
+                    let ShifrSlova = descWordShifr[random4isloShifr] + ' ' + descWordShifr[random4isloShifr2];
                     console.log(ShifrSlova);
-                    descWordShifr.splice(random4isloShifr, 2, '######', '######');
-                    // alert(descWordShifr);
-                    // descWordShifr[randomInteger(0, descWordShifr.length)];
+                    descWordShifr.splice(random4isloShifr, 1, '######');
+                    descWordShifr.splice(random4isloShifr2, 1, '######');
+
+
+                    
                     console.log(descWordShifr);
                     descWord.innerHTML = '<p class="font-normal">' + descWordShifr.join(' ') + '</p>';
 
@@ -293,23 +297,21 @@ btn.addEventListener('click', () => {
 descWord.addEventListener('click', (e) => {
     e.preventDefault();
 
-
-    // if (select.value == 'Слова') {
-    //     console.log('Слова');
-    // } else {
-    //     console.log('Не слова');
-    // }
-
-    // console.dir(descWord.className);
-    if (descWord.className.indexOf('blur-sm') !== -1) {
-        // descWord.style.cursor = 'auto';
-        descWord.classList.remove('blur-sm');
+    if (select.value == 'Слова') {
+        if (descWord.className.indexOf('blur-sm') !== -1) {
+            descWord.classList.remove('blur-sm'); 
+        } else {
+            protect();
+        }
     } else {
-        descWord.style.cursor = 'auto';
-        protect();
+        console.log('Не слова');
+        if (isShifr == true) {
+            isShifr = false;
+            descWord.innerHTML = '<p class="font-normal">' + arrNull + '</p>';
+        } else {
+            protect();
+        }
     }
-    // descWord.style.cursor = 'auto';
-    // descWord.classList.remove('blur-sm');
 });
 
 mainWord.addEventListener('click', (e) => {
