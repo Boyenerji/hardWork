@@ -10,6 +10,8 @@ let timerId,
     idAnim,
     randomWords,
     isShifr = false,
+    testArr = [],
+    testArr2 = [],
     arrNull = '';
 
 let btn = document.querySelector('#btn_start'),
@@ -36,11 +38,13 @@ let btn = document.querySelector('#btn_start'),
 
 
 
-// let lop = 'бумага мокрое хзпиздец';
-// console.log(lop.split(' '));
+// let lop = 'бумага мокрое хзпиздец " " лолик "" dsadasd " "';
 
+// // console.log(lop.split(/(\w+)\s+(\w+)/));
 
+// lop.split(" ").join("");
 
+// console.log(lop);
 
 // console.log(main.getBoundingClientRect());
 
@@ -183,22 +187,62 @@ function logger() {
 
                 if (arrWords[i].desc.indexOf('li') !== -1) {
                     descWord.innerHTML = '<p class="font-normal">' + arrWords[i].desc + '</p>';
-                } else {
-                    arrNull = arrWords[i].desc;
-                    isShifr = true;
-                    let descWordShifr = arrWords[i].desc.split(' ');
-                    let random4isloShifr = randomInteger(0, descWordShifr.length - 2);
-                    let random4isloShifr2 = randomInteger(0, descWordShifr.length - 2);
+                    // let testPizd = arrWords[i].desc.split(' ');
+                    // testPizd.forEach(function(item, i) {
+                    //     console.log(item);
+                    //     console.log(i);
+                    // });
+                    // console.log(testPizd);
+                    // console.dir(testPizd);
+                    // /^[А-ЯЁ][а-яё]*$/
+                    // let testPizd = arrWords[i].desc.match(/^[а-яё\s-]+$/i);
+                    // console.dir(testPizd);
+                    // let testPizd = arrWords[i].desc.split(/^[а-яё\s-]+$/i);
+                    // testPizd.forEach(element => {
+                    //     console.log(element);
+                    // });
 
-                    let ShifrSlova = descWordShifr[random4isloShifr] + ' ' + descWordShifr[random4isloShifr2];
-                    console.log(ShifrSlova);
-                    descWordShifr.splice(random4isloShifr, 1, '######');
-                    descWordShifr.splice(random4isloShifr2, 1, '######');
+                } else {
+
+                    testArr = [];
+                    testArr2 = [];
+
+                    arrNull = arrWords[i].desc.split(' ');
+                    arrNull.forEach(element => {
+                        if (element.length > 1) {
+                            testArr.push(element);
+                            testArr2.push(element);
+                            console.log(element);
+                        }
+                    });
+
+
+                    console.log(testArr);
+
+                    // console.log(arrNull);
+                    isShifr = true;
+                    // console.log(arrWords[i].desc);
+                    // arrWords[i].desc.split(' ');
+                    // console.log(arrWords[i].desc.filter(Boolean));
+
+                    // console.log(arrWords[i].desc.split(' '));
+                    // let descWordShifr = arrWords[i].desc.split(' ');
+                    // let descWordShifr = arrWords[i].desc.split(/(\w+)\s+(\w+)/);
+                    // console.log(descWordShifr);
+
+
+                    let random4isloShifr = randomInteger(0, testArr.length - 1);
+                    let random4isloShifr2 = randomInteger(0, testArr.length - 1);
+
+                    // let ShifrSlova = descWordShifr[random4isloShifr] + ' ' + descWordShifr[random4isloShifr2];
+                    // console.log(ShifrSlova);
+                    testArr.splice(random4isloShifr, 1, '######');
+                    testArr.splice(random4isloShifr2, 1, '######');
 
 
                     
-                    console.log(descWordShifr);
-                    descWord.innerHTML = '<p class="font-normal">' + descWordShifr.join(' ') + '</p>';
+                    console.log('testArr' + testArr);
+                    descWord.innerHTML = '<p class="font-normal">' + testArr.join(' ') + '</p>';
 
                 }
 
@@ -307,7 +351,7 @@ descWord.addEventListener('click', (e) => {
         console.log('Не слова');
         if (isShifr == true) {
             isShifr = false;
-            descWord.innerHTML = '<p class="font-normal">' + arrNull + '</p>';
+            descWord.innerHTML = '<p class="font-normal">' + testArr2.join(' ') + '</p>';
         } else {
             protect();
         }
