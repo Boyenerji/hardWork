@@ -38,6 +38,53 @@ let btn = document.querySelector('#btn_start'),
 
 
 
+
+// let bro = 'string';
+
+
+// if (bro.indexOf('<br>') === -1) {
+//     console.log('Не такого');
+// };
+
+
+
+// let names = 'Гарри Трамп Фрэд Барни Хелен Ригби  Билл Абель Крис Ханд ';
+
+// console.log(names);
+
+// var re = /\s*\s*/;
+// var nameList = names.split(re);
+
+// console.log(nameList);
+
+
+// let bro = `<ol>
+//             <li>Северная Америка.</li>
+//             <li>Южная Америка</li>
+//             <li>Антарктида.</li>
+//             <li>Африка.</li>
+//             <li>Евразия.</li>
+//             <li>Австралия</li>
+// </ol>`;
+
+// bro = bro.replace(/<ol>/gi, '');
+// bro = bro.replace(/<\/ol>/gi, '');
+// bro = bro.replace(/<\/ol>/gi, '');
+// bro = bro.replace(/<\/ol>/gi, '');
+// console.log(bro);
+
+// bro.split(/<ol>/);
+
+// console.log(bro);
+
+// bro.forEach(element => {
+//     console.log(element);
+// });
+
+
+
+
+
 // let lop = 'бумага мокрое хзпиздец " " лолик "" dsadasd " "';
 
 // // console.log(lop.split(/(\w+)\s+(\w+)/));
@@ -207,9 +254,10 @@ function logger() {
                     testArr = [];
                     testArr2 = [];
 
+                    arrWords[i].desc.trim();
                     arrNull = arrWords[i].desc.split(' ');
                     arrNull.forEach(element => {
-                        if (element.length > 1) {
+                        if (element.length > 0 && element.indexOf('/n') === -1) {
                             testArr.push(element);
                             testArr2.push(element);
                             console.log(element);
@@ -243,6 +291,7 @@ function logger() {
                     
                     console.log('testArr' + testArr);
                     descWord.innerHTML = '<p class="font-normal">' + testArr.join(' ') + '</p>';
+                    // descWord.innerHTML = testArr.join(' ');
 
                 }
 

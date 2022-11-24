@@ -78,14 +78,14 @@ export const arrWords = [{
     pic: '../pictures/materics.jpg',
     name: '6 материков на земле.',
     desc: `
-        <ol class="list-decimal">
-            <li>Северная Америка.</li>
-            <li>Южная Америка</li>
-            <li>Антарктида.</li>
-            <li>Африка.</li>
-            <li>Евразия.</li>
-            <li>Австралия</li>
-        </ol>
+        
+        <p>Северная Америка.</p>
+        <p>Южная Америка</p>
+        <p>Антарктида.</p>
+        <p>Африка.</p>
+        <p>Евразия.</p>
+        <p>Австралия</p>
+
         `,
     dateWord: ''
 },
@@ -160,10 +160,8 @@ export const arrWords = [{
     name: 'Патроны',
     desc: 
     `
-    <ul class="list-disc list-inside">
-        <li><span class="underline decoration-indigo-500">Советский патрон: 5,45×39мм</span></li>
-        <li><span class="underline decoration-indigo-500">НАТО патрон: 5,56×45мм</span></li>
-    </ul>
+        <p>Советский патрон: 5,45×39мм</p>
+        <p>НАТО патрон: 5,56×45мм</p>
     `,
     dateWord: ''
 },
@@ -186,13 +184,12 @@ export const arrWords = [{
     pic: '../pictures/petr.jpg',
     name: 'Петр 1.',
     desc: 
-    `
-    <ul class="list-disc list-inside">
-        <li><span class="underline decoration-indigo-500">Пётр I правил страной на протяжении 43 лет</span></li>
-        <li><span class="underline decoration-indigo-500">Пётр I впервые завёз в Россию популярные цветы, как тюльпаны</span></li>
-        <li><span class="underline decoration-indigo-500">Причиной смерти Петра I стала пневмония, развившаяся из обыкновенной простуды</span></li>
-        <li><span class="underline decoration-indigo-500">Пётр I учредил медаль "За пьянство" которую вешал на выпивающих бояр. Весила 7кг и надевалась в полицейском участке</span></li>
-    </ul>
+    `   
+        Пётр I правил страной на протяжении 43 лет.
+        Пётр I впервые завёз в Россию популярные цветы, как тюльпаны.
+        Причиной смерти Петра I стала пневмония, развившаяся из обыкновенной простуды.
+        Пётр I учредил медаль "За пьянство" которую вешал на выпивающих бояр. Весила 7кг и надевалась в полицейском участке.
+       
     `,
     dateWord: ''
 }

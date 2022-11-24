@@ -109,6 +109,10 @@ select:hover {
     word-break: break-word;
 }
 
+.descWord p {
+    margin: 10px;
+}
+
 
 .alert {
     margin-bottom: 0;
