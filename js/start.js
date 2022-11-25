@@ -37,9 +37,13 @@ let btn = document.querySelector('#btn_start'),
 
 
 
-    let a = ['\n', 'Животное', 'типа', 'ёжика\n']
-    a = a.filter(el => el.includes(/[a-я]/))
-    console.log(a)
+    // let a = ['\n', 'Животное', 'типа', 'ёжика\n'];
+    // a.forEach(function(item, i) {
+    //     console.log(item);
+    //     console.log(i);
+    // });
+    // a = a.filter(el => el.includes(/[a-я]/))
+    // console.log(a)
     
 
 // let bro = 'string';
