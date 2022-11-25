@@ -233,74 +233,59 @@ function logger() {
             descWord.innerHTML = 'wait...';
             idImg.onload = () => {
                 idImg.style.display = 'block';
-                console.log(i);
-                console.log(arrWords[i].name);
-                console.log(arrWords[i].desc);
+                // console.log(i);
+                // console.log(arrWords[i].name);
+                // console.log(arrWords[i].desc);
                 mainWord.innerHTML = arrWords[i].name;
 
 
-                if (arrWords[i].desc.indexOf('li') !== -1) {
-                    descWord.innerHTML = '<p class="font-normal">' + arrWords[i].desc + '</p>';
-                    // let testPizd = arrWords[i].desc.split(' ');
-                    // testPizd.forEach(function(item, i) {
-                    //     console.log(item);
-                    //     console.log(i);
-                    // });
-                    // console.log(testPizd);
-                    // console.dir(testPizd);
-                    // /^[А-ЯЁ][а-яё]*$/
-                    // let testPizd = arrWords[i].desc.match(/^[а-яё\s-]+$/i);
-                    // console.dir(testPizd);
-                    // let testPizd = arrWords[i].desc.split(/^[а-яё\s-]+$/i);
-                    // testPizd.forEach(element => {
-                    //     console.log(element);
-                    // });
+                testArr = [];
+                testArr2 = [];
 
-                } else {
+                arrWords[i].desc.trim();
+                arrNull = arrWords[i].desc.split(' ');
 
-                    testArr = [];
-                    testArr2 = [];
-
-                    arrWords[i].desc.trim();
-                    arrNull = arrWords[i].desc.split(' ');
-                    arrNull.forEach(element => {
-                        if (element.length > 0 && element.indexOf('/n') === -1) {
-                            testArr.push(element);
-                            testArr2.push(element);
-                            console.log(element);
-                        }
-                    });
+                arrNull.forEach(element => {
+                    if (element.length > 0 && element[0].match(/[?!,.;—()%а-яА-ЯёЁ0-9]/ig)) {
+                        console.log(element);
+                        testArr.push(element);
+                        testArr2.push(element);
+                    }
+                });
 
 
-                    console.log(testArr);
+                console.log(testArr);
+                isShifr = true;
+                // console.log(arrWords[i].desc);
+                // arrWords[i].desc.split(' ');
+                // console.log(arrWords[i].desc.filter(Boolean));
+                // console.log(arrWords[i].desc.split(' '));
+                // let descWordShifr = arrWords[i].desc.split(' ');
+                // let descWordShifr = arrWords[i].desc.split(/(\w+)\s+(\w+)/);
+                // console.log(descWordShifr);
+                let random4isloShifr = randomInteger(0, testArr.length - 1),
+                    random4isloShifr2 = randomInteger(0, testArr.length - 1);
 
-                    // console.log(arrNull);
-                    isShifr = true;
-                    // console.log(arrWords[i].desc);
-                    // arrWords[i].desc.split(' ');
-                    // console.log(arrWords[i].desc.filter(Boolean));
-
-                    // console.log(arrWords[i].desc.split(' '));
-                    // let descWordShifr = arrWords[i].desc.split(' ');
-                    // let descWordShifr = arrWords[i].desc.split(/(\w+)\s+(\w+)/);
-                    // console.log(descWordShifr);
-
-
-                    let random4isloShifr = randomInteger(0, testArr.length - 1);
-                    let random4isloShifr2 = randomInteger(0, testArr.length - 1);
-
-                    // let ShifrSlova = descWordShifr[random4isloShifr] + ' ' + descWordShifr[random4isloShifr2];
-                    // console.log(ShifrSlova);
-                    testArr.splice(random4isloShifr, 1, '######');
-                    testArr.splice(random4isloShifr2, 1, '######');
-
-
-                    
-                    console.log('testArr' + testArr);
-                    descWord.innerHTML = '<p class="font-normal">' + testArr.join(' ') + '</p>';
-                    // descWord.innerHTML = testArr.join(' ');
-
+                if (random4isloShifr == random4isloShifr2) {
+                    while (random4isloShifr == random4isloShifr2) {
+                        random4isloShifr2 = randomInteger(0, testArr.length - 1);
+                    }
                 }
+
+                console.log(random4isloShifr);
+                console.log(random4isloShifr2);
+
+                // let ShifrSlova = descWordShifr[random4isloShifr] + ' ' + descWordShifr[random4isloShifr2];
+                // console.log(ShifrSlova);
+                testArr.splice(random4isloShifr, 1, '######');
+                testArr.splice(random4isloShifr2, 1, '######');
+
+
+                console.log('testArr = ' + testArr.join(' '));
+                descWord.innerHTML = '<p class="font-normal">' + testArr.join(' ') + '</p>';
+                // descWord.innerHTML = testArr.join(' ');
+
+                
 
 
                 if (arrWords[i].dateWord.length > 0) {
