@@ -198,55 +198,24 @@ function logger() {
 
         console.log(arrWords[i].pic);
 
-
-
-        if (arrWords[i].pic == '') {
+        idImg.src = `${arrWords[i].pic}`;
+        mainWord.innerHTML = 'wait...'
+        descWord.innerHTML = 'wait...';
+        idImg.onload = () => {
+            idImg.style.display = 'block';
             mainWord.innerHTML = arrWords[i].name;
-            descWord.innerHTML = arrWords[i].desc;
-            
-
-            if (arrWords[i].dateWord.length > 0) {
-                dateWord.innerHTML = '';
-                dateWord.style.display = 'flex';
-                dateWord.innerHTML +=
-                    `<svg width="22" height="22" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 2a10 10 0 1 0 0 20 10 10 0 1 0 0-20z"></path>
-                        <path d="M12 6v6l4 2"></path>
-                    </svg>`;
-                dateWord.innerHTML += `<p>${arrWords[i].dateWord}</p>`;
-            }
-            arrWords.splice(i, 1);
-            console.dir(showWords);
-            if (showWords.clientHeight < 500) {
-                console.log('aga');
-                body.style.justifyContent = 'center';
-            } else {
-                body.style.justifyContent = 'flex-start';
-            }
-            setTimeout(() => {
-                main.classList.remove('animate__animated', 'animate__bounceIn', 'animate__fast');
-                // next.classList.remove('animate__animated', 'animate__bounceIn', 'animate__fast');
-            }, 800);
-        } else {
-            idImg.src = `${arrWords[i].pic}`;
-            mainWord.innerHTML = 'wait...'
-            descWord.innerHTML = 'wait...';
-            idImg.onload = () => {
-                idImg.style.display = 'block';
-                // console.log(i);
-                // console.log(arrWords[i].name);
-                // console.log(arrWords[i].desc);
-                mainWord.innerHTML = arrWords[i].name;
 
 
-                testArr = [];
-                testArr2 = [];
+            testArr = [];
+            testArr2 = [];
 
                 arrWords[i].desc.trim();
                 arrNull = arrWords[i].desc.split(' ');
 
+                // console.log(arrNull.length);
+
                 arrNull.forEach(element => {
-                    if (element.length > 0 && element[0].match(/[?!,.;—()%а-яА-ЯёЁ0-9]/ig)) {
+                    if (element.length > 0 && element[0].match(/[?!,<>.'";—()%а-яА-ЯёЁ0-9]/ig)) {
                         console.log(element);
                         testArr.push(element);
                         testArr2.push(element);
@@ -256,21 +225,40 @@ function logger() {
 
                 console.log(testArr);
                 isShifr = true;
-                // console.log(arrWords[i].desc);
-                // arrWords[i].desc.split(' ');
-                // console.log(arrWords[i].desc.filter(Boolean));
-                // console.log(arrWords[i].desc.split(' '));
-                // let descWordShifr = arrWords[i].desc.split(' ');
-                // let descWordShifr = arrWords[i].desc.split(/(\w+)\s+(\w+)/);
-                // console.log(descWordShifr);
+                
+
+
                 let random4isloShifr = randomInteger(0, testArr.length - 1),
                     random4isloShifr2 = randomInteger(0, testArr.length - 1);
+
+
+
+                if (testArr[random4isloShifr].length <= 2) {
+                    console.log('Равно одной букве = ' + testArr[random4isloShifr]);
+                    while (testArr[random4isloShifr].length <= 2) {
+                        random4isloShifr = randomInteger(0, testArr.length - 1);
+                        console.log(random4isloShifr);
+                    }
+                }
+    
+                if (testArr[random4isloShifr2].length <= 2) {
+                    console.log('random4isloShifr2 = ' + random4isloShifr2);
+                    console.log('Равно одной букве2 = ' + testArr[random4isloShifr2]);
+                    while (testArr[random4isloShifr2].length <= 2) {
+                        random4isloShifr2 = randomInteger(0, testArr.length - 1);
+                        console.log(random4isloShifr2);
+                    }
+                }
 
                 if (random4isloShifr == random4isloShifr2) {
                     while (random4isloShifr == random4isloShifr2) {
                         random4isloShifr2 = randomInteger(0, testArr.length - 1);
                     }
                 }
+
+
+                
+
 
                 console.log(random4isloShifr);
                 console.log(random4isloShifr2);
@@ -311,7 +299,6 @@ function logger() {
                     // next.classList.remove('animate__animated', 'animate__bounceIn', 'animate__fast');
                 }, 800);
             };
-        }
 
     }
 }
