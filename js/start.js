@@ -231,7 +231,9 @@ function logger() {
                 let random4isloShifr = randomInteger(0, testArr.length - 1),
                     random4isloShifr2 = randomInteger(0, testArr.length - 1);
 
-
+                // if (arrNull.length > 20) {
+                //     let random4isloShifr3 = randomInteger(0, testArr.length - 1);
+                // }
 
                 if (testArr[random4isloShifr].length <= 2) {
                     console.log('Равно одной букве = ' + testArr[random4isloShifr]);
@@ -257,16 +259,18 @@ function logger() {
                 }
 
 
-                
-
 
                 console.log(random4isloShifr);
                 console.log(random4isloShifr2);
 
                 // let ShifrSlova = descWordShifr[random4isloShifr] + ' ' + descWordShifr[random4isloShifr2];
                 // console.log(ShifrSlova);
-                testArr.splice(random4isloShifr, 1, '######');
-                testArr.splice(random4isloShifr2, 1, '######');
+
+
+                
+
+                testArr.splice(random4isloShifr, 1, `<span class="blur-sm">${testArr[random4isloShifr]}</span>`);
+                testArr.splice(random4isloShifr2, 1, `<span class="blur-sm">${testArr[random4isloShifr2]}</span>`);
 
 
                 console.log('testArr = ' + testArr.join(' '));

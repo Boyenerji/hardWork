@@ -179,7 +179,10 @@ p {
     margin-right: 5px;
 }
 
-
+#blurID {
+    /* text-shadow: #fff 0 0 60px; */
+    filter: blur(1.5rem);
+}
 
 @media screen and (max-width: 800px) {
     .main {
