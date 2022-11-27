@@ -215,7 +215,7 @@ function logger() {
                 // console.log(arrNull.length);
 
                 arrNull.forEach(element => {
-                    if (element.length > 0 && element[0].match(/[?!,<>.'";—()%а-яА-ЯёЁ0-9]/ig)) {
+                    if (element.length > 0 && element[0].match(/[?!,.'";—()%а-яА-ЯёЁ0-9]/ig)) {
                         console.log(element);
                         testArr.push(element);
                         testArr2.push(element);
@@ -274,7 +274,7 @@ function logger() {
 
 
                 console.log('testArr = ' + testArr.join(' '));
-                descWord.innerHTML = '<p class="font-normal">' + testArr.join(' ') + '</p>';
+                descWord.innerHTML = '<p class="leading-loose">' + testArr.join(' ') + '</p>';
                 // descWord.innerHTML = testArr.join(' ');
 
                 
@@ -383,7 +383,7 @@ descWord.addEventListener('click', (e) => {
         console.log('Не слова');
         if (isShifr == true) {
             isShifr = false;
-            descWord.innerHTML = '<p class="font-normal">' + testArr2.join(' ') + '</p>';
+            descWord.innerHTML = '<p class="leading-loose">' + testArr2.join(' ') + '</p>';
         } else {
             protect();
         }
