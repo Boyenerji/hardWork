@@ -91,20 +91,6 @@ let btn = document.querySelector('#btn_start'),
 
 
 
-
-// let lop = 'бумага мокрое хзпиздец " " лолик "" dsadasd " "';
-
-// // console.log(lop.split(/(\w+)\s+(\w+)/));
-
-// lop.split(" ").join("");
-
-// console.log(lop);
-
-// console.log(main.getBoundingClientRect());
-
-
-// console.log(btn_test);
-
 function words() {
     if (WordsArr.length == 0) {
         location.reload();
@@ -338,35 +324,20 @@ btn.addEventListener('click', () => {
     }
 
 
-    // body.style.justifyContent = 'flex-start';
     btn.remove();
     select.remove();
     hello_h1.remove();
 
 
-    alert_info.style.display = 'block';
+    // alert_info.style.display = 'block';
     showWords.style.display = 'flex';
 });
 
 
-// btn_next.addEventListener('click', () => {
-//     if (select.value == 'Слова') {
-//         words();
-//     } else {
-//         logger();
-//     }
-// });
-
-// console.log(descWord.classList);
-
-
 mainTwo.addEventListener('touchend', (e) => {
     e.preventDefault();
-    
     protect();
 });
-
-
 
 
 descWord.addEventListener('click', (e) => {
@@ -409,19 +380,8 @@ dateWord.addEventListener('click', (e) => {
 //     console.log(main.getBoundingClientRect());
 // });
 
-
-
-// inputText.addEventListener('keypress', function (e) {
-//     if (e.key === 'Enter') {
-//         protect();
-//     }
-// });
-
-
 inputText.addEventListener('input', function (e) {
-    if (inputText.value.toLowerCase() == mainWord.innerHTML.toLowerCase()) {
-        words();
-    }
+    if (inputText.value.toLowerCase() == mainWord.innerHTML.toLowerCase()) words();
 });
 
 
@@ -433,32 +393,7 @@ inputText.addEventListener('input', function (e) {
 
 
 function protect() {
-    if (select.value == 'Слова') {
-        words();
-        // if (randomWords == 1) {
-        //     // console.dir(mainWord);
-        //     // console.dir(inputText);
-
-        //     // inputText.value.toLowerCase();
-        //     // mainWord.innerHTML.toLowerCase();
-
-        //     let mainWordLet = mainWord.innerHTML.toLowerCase();
-        //     let inputTextLet = inputText.value.toLowerCase();
-
-        //     console.log(mainWordLet.trim());
-        //     console.log(inputTextLet.trim());
-
-        //     if (mainWordLet.trim() == inputTextLet.trim()) {
-        //         words();
-        //     } else {
-        //         error.style.display = 'block';
-        //     }
-        // } else {
-        //     words();
-        // }
-    } else {
-        logger();
-    }
+    select.value == 'Слова' ? words() : logger();
 }
 
 
@@ -471,7 +406,7 @@ DarkTheme();
 
 function DarkTheme() {
     let date = new Date();
-    if (date.getHours() > 17 || date.getHours() < 6) {
+    if (date.getHours() > 16 || date.getHours() < 6) {
         console.log('yes');
         alert_info.style.color = 'rgb(209, 213, 219)';
         body.classList.add('dark:bg-slate-900');
