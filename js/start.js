@@ -411,9 +411,16 @@ dateWord.addEventListener('click', (e) => {
 
 
 
-inputText.addEventListener('keypress', function (e) {
-    if (e.key === 'Enter') {
-        protect();
+// inputText.addEventListener('keypress', function (e) {
+//     if (e.key === 'Enter') {
+//         protect();
+//     }
+// });
+
+
+inputText.addEventListener('input', function (e) {
+    if (inputText.value.toLowerCase() == mainWord.innerHTML.toLowerCase()) {
+        words();
     }
 });
 
@@ -427,27 +434,28 @@ inputText.addEventListener('keypress', function (e) {
 
 function protect() {
     if (select.value == 'Слова') {
-        if (randomWords == 1) {
-            // console.dir(mainWord);
-            // console.dir(inputText);
+        words();
+        // if (randomWords == 1) {
+        //     // console.dir(mainWord);
+        //     // console.dir(inputText);
 
-            // inputText.value.toLowerCase();
-            // mainWord.innerHTML.toLowerCase();
+        //     // inputText.value.toLowerCase();
+        //     // mainWord.innerHTML.toLowerCase();
 
-            let mainWordLet = mainWord.innerHTML.toLowerCase();
-            let inputTextLet = inputText.value.toLowerCase();
+        //     let mainWordLet = mainWord.innerHTML.toLowerCase();
+        //     let inputTextLet = inputText.value.toLowerCase();
 
-            console.log(mainWordLet.trim());
-            console.log(inputTextLet.trim());
+        //     console.log(mainWordLet.trim());
+        //     console.log(inputTextLet.trim());
 
-            if (mainWordLet.trim() == inputTextLet.trim()) {
-                words();
-            } else {
-                error.style.display = 'block';
-            }
-        } else {
-            words();
-        }
+        //     if (mainWordLet.trim() == inputTextLet.trim()) {
+        //         words();
+        //     } else {
+        //         error.style.display = 'block';
+        //     }
+        // } else {
+        //     words();
+        // }
     } else {
         logger();
     }
@@ -469,6 +477,7 @@ function DarkTheme() {
         body.classList.add('dark:bg-slate-900');
         hello_h1.style.color = '#fff';
         main.classList.add('dark:bg-slate-800');
+        mainTwo.classList.add('dark:bg-slate-900');
         descWord.style.color = 'rgb(209 213 219)';
         select.style.backgroundColor = '#6c757d';
         select.style.color = '#fff';

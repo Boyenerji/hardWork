@@ -186,6 +186,9 @@ p {
     margin: 10px auto;
     /* border: 2px solid red; */
     height: 300px;
+    cursor: pointer;
+    /* border-radius: 8px;
+    border: 2px solid gray; */
     /* margin-bottom: 100px; */
 }
 
