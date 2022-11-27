@@ -235,18 +235,18 @@ function logger() {
                 //     let random4isloShifr3 = randomInteger(0, testArr.length - 1);
                 // }
 
-                if (testArr[random4isloShifr].length <= 2) {
+                if (testArr[random4isloShifr].length <= 3) {
                     console.log('Равно одной букве = ' + testArr[random4isloShifr]);
-                    while (testArr[random4isloShifr].length <= 2) {
+                    while (testArr[random4isloShifr].length <= 3) {
                         random4isloShifr = randomInteger(0, testArr.length - 1);
                         console.log(random4isloShifr);
                     }
                 }
     
-                if (testArr[random4isloShifr2].length <= 2) {
+                if (testArr[random4isloShifr2].length <= 3) {
                     console.log('random4isloShifr2 = ' + random4isloShifr2);
                     console.log('Равно одной букве2 = ' + testArr[random4isloShifr2]);
-                    while (testArr[random4isloShifr2].length <= 2) {
+                    while (testArr[random4isloShifr2].length <= 3) {
                         random4isloShifr2 = randomInteger(0, testArr.length - 1);
                         console.log(random4isloShifr2);
                     }
