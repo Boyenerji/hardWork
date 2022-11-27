@@ -179,6 +179,16 @@ p {
     margin-right: 5px;
 }
 
+
+.mainTwo {
+    display: none;
+    width: 100%;
+    margin: 10px auto;
+    /* border: 2px solid red; */
+    height: 300px;
+    /* margin-bottom: 100px; */
+}
+
 #blurID {
     /* text-shadow: #fff 0 0 60px; */
     filter: blur(1.5rem);

@@ -320,6 +320,7 @@ btn.addEventListener('click', () => {
         } else {
             mainWord.classList.add('text-purple-400');
         }
+        mainTwo.style.display = 'flex';
         mainWord.classList.add('underline');
         mainWord.classList.remove('fs-3');
         mainWord.classList.add('text-3xl');
@@ -329,7 +330,7 @@ btn.addEventListener('click', () => {
         descWord.classList.add('leading-relaxed');
         descWord.style.padding = '10px';
         picWord.remove();
-        body.style.justifyContent = 'flex-start';
+        body.style.justifyContent = 'space-between';
         words();
     } else {
         body.style.justifyContent = 'flex-start';
@@ -359,13 +360,11 @@ btn.addEventListener('click', () => {
 // console.log(descWord.classList);
 
 
-// showWords.addEventListener('touchend', (e) => {
-//     e.preventDefault();
-//     if (descWord.className.indexOf('blur-sm') !== -1) {
-//         console.log('Есть пробитие');
-//     }
+mainTwo.addEventListener('touchend', (e) => {
+    e.preventDefault();
     
-// });
+    protect();
+});
 
 
 
