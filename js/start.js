@@ -201,7 +201,7 @@ function logger() {
                 // console.log(arrNull.length);
 
                 arrNull.forEach(element => {
-                    if (element.length > 0 && element[0].match(/[?!,.'";—()%а-яА-ЯёЁ0-9]/ig)) {
+                    if (element.length > 0 && element[0].match(/[?!,-.'";—()%а-яА-ЯёЁ0-9]/ig)) {
                         console.log(element);
                         testArr.push(element);
                         testArr2.push(element);
