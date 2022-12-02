@@ -12,7 +12,8 @@ let timerId,
     isShifr = false,
     testArr = [],
     testArr2 = [],
-    arrNull = '';
+    arrNull = '',
+    isMainTwo = false;
 
 let btn = document.querySelector('#btn_start'),
     body = document.querySelector('body'),
@@ -123,6 +124,9 @@ function words() {
             descWord.classList.add('blur-sm');
             descWord.style.cursor = 'pointer';
         }
+
+        isMainTwo = true;
+
         main.classList.add('animate__animated', 'animate__bounceIn', 'animate__fast');
         // next.classList.add('animate__animated', 'animate__bounceIn', 'animate__fast');
         if ((WordsArr.length - 1) != 0) {
@@ -336,7 +340,17 @@ btn.addEventListener('click', () => {
 
 mainTwo.addEventListener('touchend', (e) => {
     e.preventDefault();
-    protect();
+    if (isMainTwo == true) {
+        if (descWord.className.indexOf('blur-sm') !== -1) {
+            descWord.classList.remove('blur-sm'); 
+        }
+        if (mainWord.className.indexOf('blur-sm') !== -1) {
+            mainWord.classList.remove('blur-sm'); 
+        }
+        isMainTwo = false;
+    } else {
+        protect();
+    }
 });
 
 
@@ -381,7 +395,8 @@ dateWord.addEventListener('click', (e) => {
 // });
 
 inputText.addEventListener('input', function (e) {
-    if (inputText.value.toLowerCase() == mainWord.innerHTML.toLowerCase()) words();
+
+    if (inputText.value.toLowerCase().trim() == mainWord.innerHTML.toLowerCase().trim()) words();
 });
 
 
