@@ -168,9 +168,7 @@ function logger() {
         // descWord.classList.add('blur-sm');
         descWord.style.cursor = 'pointer';
         dateWord.classList.add('blur-sm');
-        if (dateWord.style.display == 'flex') {
-            dateWord.style.display = 'none';
-        }
+        if (dateWord.style.display == 'flex') dateWord.style.display = 'none';
         main.classList.add('animate__animated', 'animate__bounceIn', 'animate__fast');
         // next.classList.add('animate__animated', 'animate__bounceIn', 'animate__fast');
         if ((arrWords.length - 1) != 0) {
@@ -395,7 +393,6 @@ dateWord.addEventListener('click', (e) => {
 // });
 
 inputText.addEventListener('input', function (e) {
-
     if (inputText.value.toLowerCase().trim() == mainWord.innerHTML.toLowerCase().trim()) words();
 });
 
@@ -421,7 +418,7 @@ DarkTheme();
 
 function DarkTheme() {
     let date = new Date();
-    if (date.getHours() > 16 || date.getHours() < 6) {
+    if (date.getHours() > 15 || date.getHours() < 6) {
         console.log('yes');
         alert_info.style.color = 'rgb(209, 213, 219)';
         body.classList.add('dark:bg-slate-900');
