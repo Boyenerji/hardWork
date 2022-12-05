@@ -1,7 +1,7 @@
 "use strict";
 
 
-import { arrWords } from './posts.js';
+import { arrWords } from './posts.js'; // посты
 import { WordsArr } from './words.js';
 
 
@@ -92,6 +92,18 @@ let btn = document.querySelector('#btn_start'),
 
 
 
+
+const posts = [];
+while (posts.length <= 20) {
+    let a = randomInteger(0, arrWords.length - 1);
+    posts.unshift(arrWords[a]);
+    arrWords.splice([a], 1);
+}
+
+console.dir(posts);
+console.dir(arrWords);
+
+
 function words() {
     if (WordsArr.length == 0) {
         location.reload();
@@ -162,7 +174,7 @@ function words() {
 
 function logger() {
     
-    if (arrWords.length == 0) {
+    if (posts.length == 1) {
         location.reload();
     } else {
         // descWord.classList.add('blur-sm');
@@ -171,34 +183,35 @@ function logger() {
         if (dateWord.style.display == 'flex') dateWord.style.display = 'none';
         main.classList.add('animate__animated', 'animate__bounceIn', 'animate__fast');
         // next.classList.add('animate__animated', 'animate__bounceIn', 'animate__fast');
-        if ((arrWords.length - 1) != 0) {
-            alert_info.innerHTML = arrWords.length - 1;
+        if ((posts.length - 1) != 0) {
+            alert_info.innerHTML = posts.length - 1;
         } else {
             alert_info.remove();
             // alert_info.innerHTML = 'Последняя';
         }
-        let i = randomInteger(0, arrWords.length - 1);
+        let i = randomInteger(0, posts.length - 1);
+        // let i = randomInteger(0, 20);
         console.log(i);
 
 
         // idImg.src = '../pictures/no_photo.png';
-        idImg.style.display = 'none';
+        // idImg.style.display = 'none';
 
-        console.log(arrWords[i].pic);
+        console.log(posts[i].pic);
 
-        idImg.src = `${arrWords[i].pic}`;
+        idImg.src = `${posts[i].pic}`;
         mainWord.innerHTML = 'wait...'
         descWord.innerHTML = 'wait...';
         idImg.onload = () => {
             idImg.style.display = 'block';
-            mainWord.innerHTML = arrWords[i].name;
+            mainWord.innerHTML = posts[i].name;
 
 
             testArr = [];
             testArr2 = [];
 
-                arrWords[i].desc.trim();
-                arrNull = arrWords[i].desc.split(' ');
+            posts[i].desc.trim();
+                arrNull = posts[i].desc.split(' ');
 
                 // console.log(arrNull.length);
 
@@ -262,13 +275,13 @@ function logger() {
 
 
                 console.log('testArr = ' + testArr.join(' '));
-                descWord.innerHTML = '<p class="leading-loose">' + testArr.join(' ') + '</p>';
+                descWord.innerHTML = '<p class="leading-relaxed">' + testArr.join(' ') + '</p>';
                 // descWord.innerHTML = testArr.join(' ');
 
                 
 
 
-                if (arrWords[i].dateWord.length > 0) {
+                if (posts[i].dateWord.length > 0) {
                     dateWord.innerHTML = '';
                     dateWord.style.display = 'flex';
                     dateWord.innerHTML +=
@@ -276,9 +289,9 @@ function logger() {
                         <path d="M12 2a10 10 0 1 0 0 20 10 10 0 1 0 0-20z"></path>
                         <path d="M12 6v6l4 2"></path>
                     </svg>`;
-                    dateWord.innerHTML += `<p>${arrWords[i].dateWord}</p>`;
+                    dateWord.innerHTML += `<p>${posts[i].dateWord}</p>`;
                 }
-                arrWords.splice(i, 1);
+                posts.splice(i, 1);
 
                 if (showWords.clientHeight < 500) {
                     body.style.justifyContent = 'center';
@@ -365,7 +378,7 @@ descWord.addEventListener('click', (e) => {
         console.log('Не слова');
         if (isShifr == true) {
             isShifr = false;
-            descWord.innerHTML = '<p class="leading-loose">' + testArr2.join(' ') + '</p>';
+            descWord.innerHTML = '<p class="leading-relaxed">' + testArr2.join(' ') + '</p>';
         } else {
             protect();
         }
