@@ -11,7 +11,7 @@ body {
     /* background-color: #191919; */
     background-color: #fff;
     padding: 10px;
-    height: 110vh;
+    height: 120vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -19,6 +19,10 @@ body {
     /* display: flex;
     flex-direction: column;
     height: 100vh; */
+}
+
+textarea {
+    width: 100%;
 }
 
 #hello_h1 {
