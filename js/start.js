@@ -108,6 +108,7 @@ function words() {
     if (WordsArr.length == 0) {
         location.reload();
     } else {
+        window.scrollTo(0,0);
 
         if (inputText.style.display == 'block') {
             inputText.value = '';
@@ -139,7 +140,7 @@ function words() {
 
         isMainTwo = true;
 
-        main.classList.add('animate__animated', 'animate__bounceIn', 'animate__fast');
+        main.classList.add('animate__animated', 'animate__zoomIn', 'animate__fast');
         // next.classList.add('animate__animated', 'animate__bounceIn', 'animate__fast');
         if ((WordsArr.length - 1) != 0) {
             alert_info.innerHTML = WordsArr.length - 1;
@@ -165,7 +166,8 @@ function words() {
         }
         WordsArr.splice(i, 1);
         setTimeout(() => {
-            main.classList.remove('animate__animated', 'animate__bounceIn', 'animate__fast');
+            // main.classList.remove('animate__animated', 'animate__bounceIn', 'animate__fast');
+            main.classList.remove('animate__animated', 'animate__zoomIn', 'animate__fast');
             // next.classList.remove('animate__animated', 'animate__bounceIn', 'animate__fast');
         }, 800);
 
@@ -204,6 +206,7 @@ function logger() {
         descWord.innerHTML = 'wait...';
         idImg.onload = () => {
             idImg.style.display = 'block';
+            window.scrollTo(0,0);
             mainWord.innerHTML = posts[i].name;
 
 
@@ -371,7 +374,8 @@ mainTwo.addEventListener('touchend', (e) => {
         }
         isMainTwo = false;
     } else {
-        protect();
+        console.log(inputText.style.display);
+        if (inputText.style.display !== 'block') protect();
     }
 });
 
@@ -417,7 +421,9 @@ dateWord.addEventListener('click', (e) => {
 // });
 
 inputText.addEventListener('input', function (e) {
-    if (inputText.value.toLowerCase().trim() == mainWord.innerHTML.toLowerCase().trim()) words();
+    if (inputText.value.toLowerCase().trim() == mainWord.innerHTML.toLowerCase().trim()) {
+        words();
+    }
 });
 
 
@@ -429,7 +435,7 @@ inputText.addEventListener('input', function (e) {
 
 
 function protect() {
-    window.scrollTo(0,0);
+    // window.scrollTo(0,0);
     select.value == 'Слова' ? words() : logger();
 }
 
