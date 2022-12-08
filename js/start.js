@@ -438,6 +438,7 @@ inputText.addEventListener('input', function (e) {
 
 
 function protect() {
+    window.scrollTo(0,0);
     select.value == 'Слова' ? words() : logger();
 }
 
