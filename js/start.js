@@ -195,7 +195,7 @@ function logger() {
 
 
         // idImg.src = '../pictures/no_photo.png';
-        // idImg.style.display = 'none';
+        idImg.style.display = 'none';
 
         console.log(posts[i].pic);
 
@@ -224,55 +224,74 @@ function logger() {
                 });
 
 
-                console.log(testArr);
+                console.log(testArr.length);
                 isShifr = true;
                 
 
 
-                let random4isloShifr = randomInteger(0, testArr.length - 1),
-                    random4isloShifr2 = randomInteger(0, testArr.length - 1);
+                let rand1 = randomInteger(0, testArr.length - 1),
+                    rand2 = randomInteger(0, testArr.length - 1),
+                    rand3 = randomInteger(0, testArr.length - 1);
 
-                // if (arrNull.length > 20) {
-                //     let random4isloShifr3 = randomInteger(0, testArr.length - 1);
-                // }
-
-                if (testArr[random4isloShifr].length <= 3) {
-                    console.log('Равно одной букве = ' + testArr[random4isloShifr]);
-                    while (testArr[random4isloShifr].length <= 3) {
-                        random4isloShifr = randomInteger(0, testArr.length - 1);
-                        console.log(random4isloShifr);
+                
+                if (testArr[rand1].length <= 3) {
+                    console.log('Равно одной букве = ' + testArr[rand1]);
+                    while (testArr[rand1].length <= 3) {
+                        rand1 = randomInteger(0, testArr.length - 1);
+                        console.log(rand1);
                     }
                 }
     
-                if (testArr[random4isloShifr2].length <= 3) {
-                    console.log('random4isloShifr2 = ' + random4isloShifr2);
-                    console.log('Равно одной букве2 = ' + testArr[random4isloShifr2]);
-                    while (testArr[random4isloShifr2].length <= 3) {
-                        random4isloShifr2 = randomInteger(0, testArr.length - 1);
-                        console.log(random4isloShifr2);
+                if (testArr[rand2].length <= 3) {
+                    console.log('rand2 = ' + rand2);
+                    console.log('Равно одной букве2 = ' + testArr[rand2]);
+                    while (testArr[rand2].length <= 3) {
+                        rand2 = randomInteger(0, testArr.length - 1);
+                        console.log(rand2);
                     }
                 }
 
-                if (random4isloShifr == random4isloShifr2) {
-                    while (random4isloShifr == random4isloShifr2) {
-                        random4isloShifr2 = randomInteger(0, testArr.length - 1);
+                if (testArr.length > 10) {
+                    if (testArr[rand3].length <= 3) {
+                    console.log('rand3 = ' + rand3);
+                    console.log('Равно одной букве3 = ' + testArr[rand3]);
+                        while (testArr[rand3].length <= 3) {
+                            rand3 = randomInteger(0, testArr.length - 1);
+                            console.log(rand3);
+                        }
                     }
                 }
 
 
+                if (testArr.length > 10) {
+                    if (rand1 == rand2 || rand1 == rand3 || rand2 == rand3) {
+                        while (rand1 == rand2 || rand1 == rand3 || rand2 == rand3) {
+                            rand2 = randomInteger(0, testArr.length - 1);
+                            rand3 = randomInteger(0, testArr.length - 1);
+                        }
+                    }
+                } else {
+                    if (rand1 == rand2) {
+                        while (rand1 == rand2) {
+                            rand2 = randomInteger(0, testArr.length - 1);
+                        }
+                    }
+                }
 
-                console.log(random4isloShifr);
-                console.log(random4isloShifr2);
 
-                // let ShifrSlova = descWordShifr[random4isloShifr] + ' ' + descWordShifr[random4isloShifr2];
+                console.log('rand1 = ' + rand1);
+                console.log('rand2 = ' + rand2);
+                console.log('rand3 = ' + rand3);
+
+                // let ShifrSlova = descWordShifr[rand1] + ' ' + descWordShifr[rand2];
                 // console.log(ShifrSlova);
 
 
                 
 
-                testArr.splice(random4isloShifr, 1, `<span class="blur-sm">${testArr[random4isloShifr]}</span>`);
-                testArr.splice(random4isloShifr2, 1, `<span class="blur-sm">${testArr[random4isloShifr2]}</span>`);
-
+                testArr.splice(rand1, 1, `<span class="blur-sm">${testArr[rand1]}</span>`);
+                testArr.splice(rand2, 1, `<span class="blur-sm">${testArr[rand2]}</span>`);
+                if (testArr.length > 10) testArr.splice(rand3, 1, `<span class="blur-sm">${testArr[rand3]}</span>`);
 
                 console.log('testArr = ' + testArr.join(' '));
                 descWord.innerHTML = '<p class="leading-relaxed">' + testArr.join(' ') + '</p>';

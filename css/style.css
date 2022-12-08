@@ -11,7 +11,7 @@ body {
     /* background-color: #191919; */
     background-color: #fff;
     padding: 10px;
-    height: 100vh;
+    height: 110vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -201,7 +201,7 @@ p {
     .main {
         width: 100%;
         /* margin-bottom: 20px; */
-        margin-top: 20px;
+        margin-top: 30px;
     }
 
     /* .showWords {
