@@ -173,10 +173,10 @@ function words() {
 }
 
 function logger() {
-    
     if (posts.length == 1) {
         location.reload();
     } else {
+        window.scrollTo(0,0);
         // descWord.classList.add('blur-sm');
         descWord.style.cursor = 'pointer';
         dateWord.classList.add('blur-sm');
