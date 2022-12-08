@@ -298,8 +298,6 @@ function logger() {
                 // descWord.innerHTML = testArr.join(' ');
 
                 
-
-
                 if (posts[i].dateWord.length > 0) {
                     dateWord.innerHTML = '';
                     dateWord.style.display = 'flex';
@@ -312,15 +310,8 @@ function logger() {
                 }
                 posts.splice(i, 1);
 
-                if (showWords.clientHeight < 500) {
-                    body.style.justifyContent = 'center';
-                } else {
-                    body.style.justifyContent = 'flex-start';
-                }
-
                 setTimeout(() => {
                     main.classList.remove('animate__animated', 'animate__bounceIn', 'animate__fast');
-                    // next.classList.remove('animate__animated', 'animate__bounceIn', 'animate__fast');
                 }, 800);
             };
 
