@@ -365,6 +365,7 @@ btn.addEventListener('click', () => {
 
     // alert_info.style.display = 'block';
     showWords.style.display = 'flex';
+    window.scrollTo(0,0);
 });
 
 
@@ -453,10 +454,10 @@ function DarkTheme() {
     if (date.getHours() > 15 || date.getHours() < 6) {
         console.log('yes');
         alert_info.style.color = 'rgb(209, 213, 219)';
-        body.classList.add('dark:bg-slate-900');
+        body.classList.add('bg-slate-900');
         hello_h1.style.color = '#fff';
-        main.classList.add('dark:bg-slate-800');
-        mainTwo.classList.add('dark:bg-slate-900');
+        main.classList.add('bg-slate-800');
+        mainTwo.classList.add('bg-slate-900');
         descWord.style.color = 'rgb(209 213 219)';
         select.style.backgroundColor = '#6c757d';
         select.style.color = '#fff';
