@@ -426,10 +426,11 @@ inputText.addEventListener('input', function (e) {
 
     if (isLoggerInput == true) {
 
-        console.log('textArrayLogger = ' + textArrayLogger.toLowerCase().replace(/[\s.,%]/g, ''));
-        console.log('inputText = ' + inputText.value.toLowerCase().replace(/[\s.,%]/g, ''));
+        // console.log('textArrayLogger = ' + textArrayLogger.toLowerCase().replace(/[\s.,%]/g, ''));
+        // console.log('inputText = ' + inputText.value.toLowerCase().replace(/[\s.,%]/g, ''));
         if (inputText.value.toLowerCase().replace(/[\s.,%]/g, '') == textArrayLogger.toLowerCase().replace(/[\s.,%]/g, '')) {
             isLoggerInput = false;
+            window.scrollTo(0,0);
             logger();
         }
     }
