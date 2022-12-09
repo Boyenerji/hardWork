@@ -13,7 +13,9 @@ let timerId,
     testArr = [],
     testArr2 = [],
     arrNull = '',
-    isMainTwo = false;
+    isMainTwo = false,
+    isLoggerInput = false,
+    textArrayLogger = '';
 
 let btn = document.querySelector('#btn_start'),
     body = document.querySelector('body'),
@@ -115,19 +117,12 @@ function words() {
             inputText.style.display = 'none';
         }
 
-
-        if (error.style.display == 'block') {
-            error.style.display = 'none';
-        }
-
         mainWord.classList.remove('blur');
         descWord.classList.remove('blur-sm');
         randomWords = randomInteger(1, 2);
 
 
         // console.log(randomWords);
-
-
 
         if (randomWords == 1) {
             mainWord.classList.add('blur');
@@ -140,7 +135,7 @@ function words() {
 
         isMainTwo = true;
 
-        main.classList.add('animate__animated', 'animate__zoomIn', 'animate__fast');
+        main.classList.add('animate__animated', 'animate__zoomIn', 'animate__faster');
         // next.classList.add('animate__animated', 'animate__bounceIn', 'animate__fast');
         if ((WordsArr.length - 1) != 0) {
             alert_info.innerHTML = WordsArr.length - 1;
@@ -153,11 +148,6 @@ function words() {
         mainWord.innerHTML = WordsArr[i].name;
         descWord.innerHTML = WordsArr[i].desc;
 
-        // Работать
-        // let lol = WordsArr[i].desc.split(' ');
-        // console.log(lol[0] = '########');
-        // // console.log(WordsArr[i].desc.split(' '));
-
 
         if (randomWords == 1) {
             inputText.style.display = 'block';
@@ -167,9 +157,9 @@ function words() {
         WordsArr.splice(i, 1);
         setTimeout(() => {
             // main.classList.remove('animate__animated', 'animate__bounceIn', 'animate__fast');
-            main.classList.remove('animate__animated', 'animate__zoomIn', 'animate__fast');
+            main.classList.remove('animate__animated', 'animate__zoomIn', 'animate__faster');
             // next.classList.remove('animate__animated', 'animate__bounceIn', 'animate__fast');
-        }, 800);
+        }, 500);
 
     }
 }
@@ -179,11 +169,17 @@ function logger() {
         location.reload();
     } else {
         window.scrollTo(0,0);
+        if (inputText.style.display == 'block') {
+            inputText.value = '';
+            inputText.style.display = 'none';
+        }
         // descWord.classList.add('blur-sm');
         descWord.style.cursor = 'pointer';
         dateWord.classList.add('blur-sm');
         if (dateWord.style.display == 'flex') dateWord.style.display = 'none';
-        main.classList.add('animate__animated', 'animate__bounceIn', 'animate__fast');
+        // main.classList.add('animate__animated', 'animate__bounceIn', 'animate__fast');
+        main.classList.add('animate__animated', 'animate__backInDown', 'animate__faster');
+        // animate__backInDown
         // next.classList.add('animate__animated', 'animate__bounceIn', 'animate__fast');
         if ((posts.length - 1) != 0) {
             alert_info.innerHTML = posts.length - 1;
@@ -209,6 +205,8 @@ function logger() {
             window.scrollTo(0,0);
             mainWord.innerHTML = posts[i].name;
 
+            console.log(posts[i].isInput);
+
 
             testArr = [];
             testArr2 = [];
@@ -226,11 +224,11 @@ function logger() {
                     }
                 });
 
-
-                console.log(testArr.length);
+                textArrayLogger = testArr.join(' ');
+                console.log(testArr.join(' '));
+                console.log('Длина массива = ' + testArr.length);
                 isShifr = true;
                 
-
 
                 let rand1 = randomInteger(0, testArr.length - 1),
                     rand2 = randomInteger(0, testArr.length - 1),
@@ -289,18 +287,22 @@ function logger() {
                 // let ShifrSlova = descWordShifr[rand1] + ' ' + descWordShifr[rand2];
                 // console.log(ShifrSlova);
 
-
-                
-
                 testArr.splice(rand1, 1, `<span class="blur-sm">${testArr[rand1]}</span>`);
                 testArr.splice(rand2, 1, `<span class="blur-sm">${testArr[rand2]}</span>`);
                 if (testArr.length > 10) testArr.splice(rand3, 1, `<span class="blur-sm">${testArr[rand3]}</span>`);
 
                 console.log('testArr = ' + testArr.join(' '));
                 descWord.innerHTML = '<p class="leading-relaxed">' + testArr.join(' ') + '</p>';
-                // descWord.innerHTML = testArr.join(' ');
 
-                
+
+
+                if (posts[i].isInput == true) {
+                    inputText.style.display = 'block';
+                    inputText.focus();
+                    isLoggerInput = true;
+                }
+
+
                 if (posts[i].dateWord.length > 0) {
                     dateWord.innerHTML = '';
                     dateWord.style.display = 'flex';
@@ -314,8 +316,8 @@ function logger() {
                 posts.splice(i, 1);
 
                 setTimeout(() => {
-                    main.classList.remove('animate__animated', 'animate__bounceIn', 'animate__fast');
-                }, 800);
+                    main.classList.remove('animate__animated', 'animate__backInDown', 'animate__faster');
+                }, 500);
             };
 
     }
@@ -421,6 +423,18 @@ dateWord.addEventListener('click', (e) => {
 // });
 
 inputText.addEventListener('input', function (e) {
+
+    if (isLoggerInput == true) {
+
+        console.log('textArrayLogger = ' + textArrayLogger.toLowerCase().replace(/[\s.,%]/g, ''));
+        console.log('inputText = ' + inputText.value.toLowerCase().replace(/[\s.,%]/g, ''));
+        if (inputText.value.toLowerCase().replace(/[\s.,%]/g, '') == textArrayLogger.toLowerCase().replace(/[\s.,%]/g, '')) {
+            isLoggerInput = false;
+            logger();
+        }
+    }
+
+
     if (inputText.value.toLowerCase().trim() == mainWord.innerHTML.toLowerCase().trim()) {
         words();
     }
