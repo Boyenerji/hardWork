@@ -477,5 +477,6 @@ function DarkTheme() {
         select.style.color = '#fff';
         dateWord.style.color = '#fff';
         inputText.style.backgroundColor = 'rgb(51 65 85)';
+        inputText.style.color = '#fff';
     }
 }
