@@ -394,6 +394,8 @@ descWord.addEventListener('click', (e) => {
         } else {
             if (isLoggerInput == true) {
                 descWord.classList.remove('blur-sm'); 
+                isLoggerInput = false;
+                inputText.style.display = 'none';
             } else {
                 protect();
             }
