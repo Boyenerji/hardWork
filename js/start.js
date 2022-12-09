@@ -165,6 +165,7 @@ function logger() {
         location.reload();
     } else {
         window.scrollTo(0,0);
+        descWord.classList.remove('blur-sm');
         if (inputText.style.display == 'block') {
             inputText.value = '';
             inputText.style.display = 'none';
@@ -202,6 +203,10 @@ function logger() {
             mainWord.innerHTML = posts[i].name;
 
             console.log(posts[i].isInput);
+
+
+
+
 
 
             testArr = [];
@@ -283,21 +288,21 @@ function logger() {
                 // let ShifrSlova = descWordShifr[rand1] + ' ' + descWordShifr[rand2];
                 // console.log(ShifrSlova);
 
-                testArr.splice(rand1, 1, `<span class="blur-sm">${testArr[rand1]}</span>`);
-                testArr.splice(rand2, 1, `<span class="blur-sm">${testArr[rand2]}</span>`);
-                if (testArr.length > 10) testArr.splice(rand3, 1, `<span class="blur-sm">${testArr[rand3]}</span>`);
-
-                console.log('testArr = ' + testArr.join(' '));
-                descWord.innerHTML = '<p class="leading-relaxed">' + testArr.join(' ') + '</p>';
-
-
-
                 if (posts[i].isInput == true) {
                     inputText.style.display = 'block';
+                    descWord.classList.add('blur-sm');
                     isLoggerInput = true;
+                    isShifr = false;
+                    descWord.innerHTML = '<p class="leading-relaxed">' + testArr.join(' ') + '</p>';
+                } else {
+                    testArr.splice(rand1, 1, `<span class="blur-sm">${testArr[rand1]}</span>`);
+                    testArr.splice(rand2, 1, `<span class="blur-sm">${testArr[rand2]}</span>`);
+                    if (testArr.length > 10) testArr.splice(rand3, 1, `<span class="blur-sm">${testArr[rand3]}</span>`);
+
+                    console.log('testArr = ' + testArr.join(' '));
+                    descWord.innerHTML = '<p class="leading-relaxed">' + testArr.join(' ') + '</p>';
                 }
-
-
+                
                 if (posts[i].dateWord.length > 0) {
                     dateWord.innerHTML = '';
                     dateWord.style.display = 'flex';
@@ -387,7 +392,11 @@ descWord.addEventListener('click', (e) => {
             isShifr = false;
             descWord.innerHTML = '<p class="leading-relaxed">' + testArr2.join(' ') + '</p>';
         } else {
-            protect();
+            if (isLoggerInput == true) {
+                descWord.classList.remove('blur-sm'); 
+            } else {
+                protect();
+            }
         }
     }
 });
@@ -416,8 +425,8 @@ inputText.addEventListener('input', function (e) {
 
     if (isLoggerInput == true) {
 
-        // console.log('textArrayLogger = ' + textArrayLogger.toLowerCase().replace(/[\s.,%]/g, ''));
-        // console.log('inputText = ' + inputText.value.toLowerCase().replace(/[\s.,%]/g, ''));
+        console.log('textArrayLogger = ' + textArrayLogger.toLowerCase().replace(/[\s.,%]/g, ''));
+        console.log('inputText = ' + inputText.value.toLowerCase().replace(/[\s.,%]/g, ''));
         if (inputText.value.toLowerCase().replace(/[\s.,%]/g, '') == textArrayLogger.toLowerCase().replace(/[\s.,%]/g, '')) {
             isLoggerInput = false;
             window.scrollTo(0,0);
