@@ -298,7 +298,6 @@ function logger() {
 
                 if (posts[i].isInput == true) {
                     inputText.style.display = 'block';
-                    inputText.focus();
                     isLoggerInput = true;
                 }
 
