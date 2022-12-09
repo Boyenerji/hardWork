@@ -465,7 +465,7 @@ DarkTheme();
 
 function DarkTheme() {
     let date = new Date();
-    if (date.getHours() > 15 || date.getHours() < 6) {
+    if (date.getHours() > 16 || date.getHours() < 6) {
         console.log('yes');
         alert_info.style.color = 'rgb(209, 213, 219)';
         body.classList.add('bg-slate-900');
@@ -476,5 +476,6 @@ function DarkTheme() {
         select.style.backgroundColor = '#6c757d';
         select.style.color = '#fff';
         dateWord.style.color = '#fff';
+        inputText.style.backgroundColor = 'rgb(51 65 85)';
     }
 }
