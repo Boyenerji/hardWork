@@ -10,7 +10,7 @@ export const arrWords = [{
 {
     pic: '../pictures/bund.png',
     name: 'Бундесвер',
-    desc: 'Вооружённые силы Федеративной Республики Германии.',
+    desc: 'Вооруженные силы Федеративной Республики Германии.',
     dateWord: '',
     isInput: true
 },
@@ -161,7 +161,7 @@ export const arrWords = [{
         Патрон НАТО: 5,56×45мм
     `,
     dateWord: '',
-    isInput: true
+    isInput: false
 },
 {
     pic: '../pictures/petr.jpg',

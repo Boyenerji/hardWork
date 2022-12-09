@@ -19,7 +19,6 @@ let timerId,
 
 let btn = document.querySelector('#btn_start'),
     body = document.querySelector('body'),
-    btn_next = document.querySelector('#btn_next'),
     showWords = document.querySelector('.showWords'),
     select = document.querySelector('select'),
     main_btn = document.querySelector('#main_btn'),
@@ -31,10 +30,7 @@ let btn = document.querySelector('#btn_start'),
     descWord = document.querySelector('.descWord'),
     idImg = document.querySelector('#idImg'),
     mainTwo = document.querySelector('.mainTwo'),
-    // next = document.querySelector('.next'),
     inputText = document.querySelector('#inputText'),
-    error = document.querySelector('#error'),
-    dalee = document.querySelector('#dalee'),
     btn_test = document.querySelector('#btn_test'),
     dateWord = document.querySelector('.dateWord');
 
@@ -324,17 +320,12 @@ function logger() {
 
 
 btn.addEventListener('click', () => {
-    // next.style.display = 'flex';
     if (select.value == 'Слова') {
-        // body.style.justifyContent = 'space-evenly';
-        // btn_next.classList.add('animate__animated', 'animate__bounceIn', 'animate__fast');
-        // mainWord.classList.add('decoration-sky-500');
-        // mainWord.classList.add('text-green-500');
-        if (randText == 1) {
-            mainWord.classList.add('text-green-500');
-        } else {
-            mainWord.classList.add('text-purple-400');
-        }
+        randText == 1 ? mainWord.classList.add('text-green-500') : mainWord.classList.add('text-purple-400');
+        //     mainWord.classList.add('text-green-500');
+        // } else {
+        //     mainWord.classList.add('text-purple-400');
+        // }
         mainTwo.style.display = 'flex';
         mainWord.classList.add('underline');
         mainWord.classList.remove('fs-3');
