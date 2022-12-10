@@ -32,7 +32,8 @@ let btn = document.querySelector('#btn_start'),
     mainTwo = document.querySelector('.mainTwo'),
     inputText = document.querySelector('#inputText'),
     btn_test = document.querySelector('#btn_test'),
-    dateWord = document.querySelector('.dateWord');
+    dateWord = document.querySelector('.dateWord'),
+    textareaID = document.querySelector('textarea');
 
 
 
@@ -166,9 +167,9 @@ function logger() {
     } else {
         window.scrollTo(0,0);
         descWord.classList.remove('blur-sm');
-        if (inputText.style.display == 'block') {
-            inputText.value = '';
-            inputText.style.display = 'none';
+        if (textareaID.style.display == 'block') {
+            textareaID.value = '';
+            textareaID.style.display = 'none';
         }
         // descWord.classList.add('blur-sm');
         descWord.style.cursor = 'pointer';
@@ -176,20 +177,18 @@ function logger() {
         if (dateWord.style.display == 'flex') dateWord.style.display = 'none';
         // main.classList.add('animate__animated', 'animate__bounceIn', 'animate__fast');
         main.classList.add('animate__animated', 'animate__backInDown', 'animate__faster');
-        // animate__backInDown
-        // next.classList.add('animate__animated', 'animate__bounceIn', 'animate__fast');
+
         if ((posts.length - 1) != 0) {
             alert_info.innerHTML = posts.length - 1;
         } else {
             alert_info.remove();
             // alert_info.innerHTML = 'Последняя';
         }
+
+
         let i = randomInteger(0, posts.length - 1);
-        // let i = randomInteger(0, 20);
         console.log(i);
 
-
-        // idImg.src = '../pictures/no_photo.png';
         idImg.style.display = 'none';
 
         console.log(posts[i].pic);
@@ -289,7 +288,7 @@ function logger() {
                 // console.log(ShifrSlova);
 
                 if (posts[i].isInput == true) {
-                    inputText.style.display = 'block';
+                    textareaID.style.display = 'block';
                     // inputText.focus({ preventScroll:true });
                     descWord.classList.add('blur-sm');
                     isLoggerInput = true;
@@ -396,7 +395,7 @@ descWord.addEventListener('click', (e) => {
             if (isLoggerInput == true) {
                 descWord.classList.remove('blur-sm'); 
                 isLoggerInput = false;
-                inputText.style.display = 'none';
+                textareaID.style.display = 'none';
             } else {
                 protect();
             }
@@ -426,21 +425,25 @@ dateWord.addEventListener('click', (e) => {
 
 inputText.addEventListener('input', function (e) {
     e.preventDefault();
-    if (isLoggerInput == true) {
+    if (inputText.value.toLowerCase().trim() == mainWord.innerHTML.toLowerCase().trim()) words();
+});
 
+
+
+
+textareaID.addEventListener('input', function (e) {
+    e.preventDefault();
+    console.dir(textareaID.style);
+    if (isLoggerInput == true) {
         console.log('textArrayLogger = ' + textArrayLogger.toLowerCase().replace(/[\s.,%]/g, ''));
         console.log('inputText = ' + inputText.value.toLowerCase().replace(/[\s.,%]/g, ''));
-        if (inputText.value.toLowerCase().replace(/[\s.,%]/g, '') == textArrayLogger.toLowerCase().replace(/[\s.,%]/g, '')) {
+        if (textareaID.value.toLowerCase().replace(/[\s.,%]/g, '') == textArrayLogger.toLowerCase().replace(/[\s.,%]/g, '')) {
             isLoggerInput = false;
             window.scrollTo(0,0);
             logger();
         }
     }
 
-
-    if (inputText.value.toLowerCase().trim() == mainWord.innerHTML.toLowerCase().trim()) {
-        words();
-    }
 });
 
 
@@ -466,7 +469,7 @@ DarkTheme();
 
 function DarkTheme() {
     let date = new Date();
-    if (date.getHours() > 16 || date.getHours() < 6) {
+    if (date.getHours() > 10 || date.getHours() < 6) {
         console.log('yes');
         alert_info.style.color = 'rgb(209, 213, 219)';
         body.classList.add('bg-slate-900');
@@ -479,5 +482,7 @@ function DarkTheme() {
         dateWord.style.color = '#fff';
         inputText.style.backgroundColor = 'rgb(51 65 85)';
         inputText.style.color = '#fff';
+        textareaID.style.backgroundColor = 'rgb(51 65 85)';
+        textareaID.style.color = '#fff';
     }
 }
