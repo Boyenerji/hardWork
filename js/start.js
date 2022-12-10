@@ -290,6 +290,7 @@ function logger() {
 
                 if (posts[i].isInput == true) {
                     inputText.style.display = 'block';
+                    inputText.focus({ preventScroll: true });
                     descWord.classList.add('blur-sm');
                     isLoggerInput = true;
                     isShifr = false;
