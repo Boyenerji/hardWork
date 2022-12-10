@@ -196,35 +196,39 @@ function logger() {
             window.scrollTo(0,0);
             mainWord.innerHTML = posts[i].name;
 
-            console.log(posts[i].isInput);
-
-
             testArr = [];
             testArr2 = [];
 
             posts[i].desc.trim();
-                arrNull = posts[i].desc.split(' ');
+            arrNull = posts[i].desc.split(' ');
+            // console.log(arrNull);
 
-                // console.log(arrNull.length);
+            arrNull.forEach(element => {
+                if (element.length > 0 && element[0].match(/[?!,-.'";—()%а-яА-ЯёЁ0-9]/ig)) {
+                    console.log(element);
+                    testArr.push(element);
+                    testArr2.push(element);
+                }
+            });
 
-                arrNull.forEach(element => {
-                    if (element.length > 0 && element[0].match(/[?!,-.'";—()%а-яА-ЯёЁ0-9]/ig)) {
-                        console.log(element);
-                        testArr.push(element);
-                        testArr2.push(element);
-                    }
-                });
+            textArrayLogger = testArr.join(' ');
 
-                textArrayLogger = testArr.join(' ');
-                console.log(testArr.join(' '));
-                console.log('Длина массива = ' + testArr.length);
+            if (posts[i].isInput == true) {
+                textareaID.style.display = 'block';
+                // inputText.focus({ preventScroll:true });
+                descWord.classList.add('blur-sm');
+                isLoggerInput = true;
+                isShifr = false;
+                descWord.innerHTML = '<p class="leading-relaxed">' + textArrayLogger + '</p>';
+            } else {
+
+                // console.log(testArr.join(' '));
+                // console.log('Длина массива = ' + testArr.length);
                 isShifr = true;
-                
 
                 let rand1 = randomInteger(0, testArr.length - 1),
                     rand2 = randomInteger(0, testArr.length - 1),
                     rand3 = randomInteger(0, testArr.length - 1);
-
                 
                 if (testArr[rand1].length <= 3) {
                     console.log('Равно одной букве = ' + testArr[rand1]);
@@ -233,7 +237,7 @@ function logger() {
                         console.log(rand1);
                     }
                 }
-    
+        
                 if (testArr[rand2].length <= 3) {
                     console.log('rand2 = ' + rand2);
                     console.log('Равно одной букве2 = ' + testArr[rand2]);
@@ -275,25 +279,14 @@ function logger() {
                 console.log('rand2 = ' + rand2);
                 console.log('rand3 = ' + rand3);
 
-                // let ShifrSlova = descWordShifr[rand1] + ' ' + descWordShifr[rand2];
-                // console.log(ShifrSlova);
 
-                if (posts[i].isInput == true) {
-                    textareaID.style.display = 'block';
-                    // inputText.focus({ preventScroll:true });
-                    descWord.classList.add('blur-sm');
-                    isLoggerInput = true;
-                    isShifr = false;
-                    descWord.innerHTML = '<p class="leading-relaxed">' + testArr.join(' ') + '</p>';
-                } else {
-                    testArr.splice(rand1, 1, `<span class="blur-sm">${testArr[rand1]}</span>`);
-                    testArr.splice(rand2, 1, `<span class="blur-sm">${testArr[rand2]}</span>`);
-                    if (testArr.length > 10) testArr.splice(rand3, 1, `<span class="blur-sm">${testArr[rand3]}</span>`);
+                testArr.splice(rand1, 1, `<span class="blur-sm">${testArr[rand1]}</span>`);
+                testArr.splice(rand2, 1, `<span class="blur-sm">${testArr[rand2]}</span>`);
+                if (testArr.length > 10) testArr.splice(rand3, 1, `<span class="blur-sm">${testArr[rand3]}</span>`);
 
-                    console.log('testArr = ' + testArr.join(' '));
-                    descWord.innerHTML = '<p class="leading-relaxed">' + testArr.join(' ') + '</p>';
-                }
-                
+                console.log('testArr = ' + testArr.join(' '));
+                descWord.innerHTML = '<p class="leading-relaxed">' + testArr.join(' ') + '</p>';
+            }
                 if (posts[i].dateWord.length > 0) {
                     dateWord.innerHTML = '';
                     dateWord.style.display = 'flex';
