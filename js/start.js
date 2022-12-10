@@ -290,7 +290,7 @@ function logger() {
 
                 if (posts[i].isInput == true) {
                     inputText.style.display = 'block';
-                    inputText.focus({ preventScroll: true });
+                    // inputText.focus({ preventScroll:true });
                     descWord.classList.add('blur-sm');
                     isLoggerInput = true;
                     isShifr = false;
@@ -425,7 +425,8 @@ dateWord.addEventListener('click', (e) => {
 // });
 
 inputText.addEventListener('input', function (e) {
-
+    inputText.focus({ preventScroll:true });
+    e.preventDefault();
     if (isLoggerInput == true) {
 
         console.log('textArrayLogger = ' + textArrayLogger.toLowerCase().replace(/[\s.,%]/g, ''));
