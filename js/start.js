@@ -167,30 +167,25 @@ function logger() {
     } else {
         window.scrollTo(0,0);
         descWord.classList.remove('blur-sm');
-        if (textareaID.style.display == 'block') {
-            textareaID.value = '';
-            textareaID.style.display = 'none';
-        }
-        // descWord.classList.add('blur-sm');
+        textareaID.value = '';
+        if (textareaID.style.display == 'block') textareaID.style.display = 'none';
+
         descWord.style.cursor = 'pointer';
         dateWord.classList.add('blur-sm');
         if (dateWord.style.display == 'flex') dateWord.style.display = 'none';
-        // main.classList.add('animate__animated', 'animate__bounceIn', 'animate__fast');
+
         main.classList.add('animate__animated', 'animate__backInDown', 'animate__faster');
 
         if ((posts.length - 1) != 0) {
             alert_info.innerHTML = posts.length - 1;
         } else {
             alert_info.remove();
-            // alert_info.innerHTML = 'Последняя';
         }
-
 
         let i = randomInteger(0, posts.length - 1);
         console.log(i);
 
         idImg.style.display = 'none';
-
         console.log(posts[i].pic);
 
         idImg.src = `${posts[i].pic}`;
@@ -389,7 +384,7 @@ descWord.addEventListener('click', (e) => {
                 isLoggerInput = false;
                 textareaID.style.display = 'none';
             } else {
-                protect();
+                logger();
             }
         }
     }
