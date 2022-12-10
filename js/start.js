@@ -204,10 +204,6 @@ function logger() {
             console.log(posts[i].isInput);
 
 
-
-
-
-
             testArr = [];
             testArr2 = [];
 
@@ -327,10 +323,6 @@ function logger() {
 btn.addEventListener('click', () => {
     if (select.value == 'Слова') {
         randText == 1 ? mainWord.classList.add('text-green-500') : mainWord.classList.add('text-purple-400');
-        //     mainWord.classList.add('text-green-500');
-        // } else {
-        //     mainWord.classList.add('text-purple-400');
-        // }
         mainTwo.style.display = 'flex';
         mainWord.classList.add('underline');
         mainWord.classList.remove('fs-3');
@@ -360,7 +352,7 @@ btn.addEventListener('click', () => {
 });
 
 
-mainTwo.addEventListener('touchend', (e) => {
+mainTwo.addEventListener('click', (e) => {
     e.preventDefault();
     if (isMainTwo == true) {
         if (descWord.className.indexOf('blur-sm') !== -1) {
@@ -447,15 +439,7 @@ textareaID.addEventListener('input', function (e) {
 });
 
 
-
-// next.addEventListener('click', (e) => {
-//     e.preventDefault();
-//     protect();
-// });
-
-
 function protect() {
-    // window.scrollTo(0,0);
     select.value == 'Слова' ? words() : logger();
 }
 
@@ -469,7 +453,7 @@ DarkTheme();
 
 function DarkTheme() {
     let date = new Date();
-    if (date.getHours() > 10 || date.getHours() < 6) {
+    if (date.getHours() > 16 || date.getHours() < 6) {
         console.log('yes');
         alert_info.style.color = 'rgb(209, 213, 219)';
         body.classList.add('bg-slate-900');
