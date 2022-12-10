@@ -425,7 +425,6 @@ dateWord.addEventListener('click', (e) => {
 // });
 
 inputText.addEventListener('input', function (e) {
-    inputText.focus({ preventScroll:true });
     e.preventDefault();
     if (isLoggerInput == true) {
 
