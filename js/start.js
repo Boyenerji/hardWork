@@ -275,9 +275,9 @@ function logger() {
                 }
 
 
-                console.log('rand1 = ' + rand1);
-                console.log('rand2 = ' + rand2);
-                console.log('rand3 = ' + rand3);
+                console.log('rand1 = ' + testArr[rand1]);
+                console.log('rand2 = ' + testArr[rand2]);
+                console.log('rand3 = ' + testArr[rand3]);
 
 
                 testArr.splice(rand1, 1, `<span class="blur-sm">${testArr[rand1]}</span>`);
