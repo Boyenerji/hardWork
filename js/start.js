@@ -171,6 +171,7 @@ function logger() {
         if (textareaID.style.display == 'block') textareaID.style.display = 'none';
 
         descWord.style.cursor = 'pointer';
+        dateWord.style.cursor = 'pointer';
         dateWord.classList.add('blur-sm');
         if (dateWord.style.display == 'flex') dateWord.style.display = 'none';
 
