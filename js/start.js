@@ -129,7 +129,8 @@ function words() {
         if (randomWords == 1) {
             mainWord.classList.add('blur');
             mainWord.style.cursor = 'pointer';
-
+            inputText.style.display = 'block';
+            inputText.focus();
         } else {
             descWord.classList.add('blur-sm');
             descWord.style.cursor = 'pointer';
@@ -137,27 +138,17 @@ function words() {
 
         isMainTwo = true;
 
-        main.classList.add('animate__animated', 'animate__zoomIn', 'animate__faster');
-        // next.classList.add('animate__animated', 'animate__bounceIn', 'animate__fast');
-        if ((WordsArr.length - 1) != 0) {
-            alert_info.innerHTML = WordsArr.length - 1;
-        } else {
-            // dalee.innerText = 'Конец.'
-            alert_info.remove();
-        }
+        main.classList.add('animate__animated', 'animate__backInDown', 'animate__faster');
+        ((WordsArr.length - 1) != 0) ? alert_info.innerHTML = WordsArr.length - 1 : alert_info.remove();
+
         let i = randomInteger(0, WordsArr.length - 1);
-        console.log(i);
+        
         mainWord.innerHTML = WordsArr[i].name;
         descWord.innerHTML = WordsArr[i].desc;
 
-
-        if (randomWords == 1) {
-            inputText.style.display = 'block';
-            inputText.focus();
-        }
         WordsArr.splice(i, 1);
         setTimeout(() => {
-            main.classList.remove('animate__animated', 'animate__zoomIn', 'animate__faster');
+            main.classList.remove('animate__animated', 'animate__backInDown', 'animate__faster');
         }, 500);
 
     }
@@ -445,5 +436,6 @@ function DarkTheme() {
         inputText.style.color = '#fff';
         textareaID.style.backgroundColor = 'rgb(51 65 85)';
         textareaID.style.color = '#fff';
+        mainTwo.classList.add('bg-slate-800');
     }
 }
