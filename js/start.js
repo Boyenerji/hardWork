@@ -33,6 +33,7 @@ let btn = document.querySelector('#btn_start'),
     inputText = document.querySelector('#inputText'),
     btn_test = document.querySelector('#btn_test'),
     dateWord = document.querySelector('.dateWord'),
+    echoWarning = document.querySelector('#echoWarning'),
     textareaID = document.querySelector('textarea');
 
 
@@ -114,12 +115,16 @@ function words() {
             inputText.style.display = 'none';
         }
 
+        if (mainWord.style.cursor == 'pointer') mainWord.style.cursor = 'auto';
+        if (echoWarning.style.display == 'block') echoWarning.style.display = 'none';
+
+
         mainWord.classList.remove('blur');
         descWord.classList.remove('blur-sm');
+
+
         randomWords = randomInteger(1, 2);
-
-
-        // console.log(randomWords);
+        console.log('randomWords = ' + randomWords);
 
         if (randomWords == 1) {
             mainWord.classList.add('blur');
@@ -168,17 +173,12 @@ function logger() {
         if (textareaID.style.display == 'block') textareaID.style.display = 'none';
 
         descWord.style.cursor = 'pointer';
-        // dateWord.style.cursor = 'pointer';
         dateWord.classList.add('blur-sm');
         if (dateWord.style.display == 'flex') dateWord.style.display = 'none';
 
         main.classList.add('animate__animated', 'animate__backInDown', 'animate__faster');
 
-        if ((posts.length - 1) != 0) {
-            alert_info.innerHTML = posts.length - 1;
-        } else {
-            alert_info.remove();
-        }
+        ((posts.length - 1) != 0) ? alert_info.innerHTML = posts.length - 1 : alert_info.remove();
 
         let i = randomInteger(0, posts.length - 1);
         console.log(i);
@@ -349,8 +349,9 @@ mainTwo.addEventListener('click', (e) => {
         }
         isMainTwo = false;
     } else {
-        console.log(inputText.style.display);
-        if (inputText.style.display !== 'block') protect();
+        echoWarning.style.display = 'block';
+        echoWarning.innerHTML = 'Введите ответ';
+        if (inputText.style.display !== 'block') words();
     }
 });
 
@@ -359,11 +360,7 @@ descWord.addEventListener('click', (e) => {
     e.preventDefault();
 
     if (select.value == 'Слова') {
-        if (descWord.className.indexOf('blur-sm') !== -1) {
-            descWord.classList.remove('blur-sm'); 
-        } else {
-            protect();
-        }
+        if (descWord.className.indexOf('blur-sm') !== -1) descWord.classList.remove('blur-sm'); 
     } else {
         console.log('Не слова');
         if (isShifr == true) {
@@ -383,7 +380,7 @@ descWord.addEventListener('click', (e) => {
 
 mainWord.addEventListener('click', (e) => {
     e.preventDefault();
-    descWord.style.cursor = 'auto';
+    mainWord.style.cursor = 'auto';
     mainWord.classList.remove('blur');
 });
 
@@ -394,12 +391,6 @@ dateWord.addEventListener('click', (e) => {
 });
 
 
-
-// btn_test.addEventListener('click', (e) => {
-//     e.preventDefault();
-//     console.dir(main);
-//     console.log(main.getBoundingClientRect());
-// });
 
 inputText.addEventListener('input', function (e) {
     e.preventDefault();
