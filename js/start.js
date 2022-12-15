@@ -148,14 +148,11 @@ function words() {
 
         if (randomWords == 1) {
             inputText.style.display = 'block';
-            // body.style.justifyContent = 'flex-start';
             inputText.focus();
         }
         WordsArr.splice(i, 1);
         setTimeout(() => {
-            // main.classList.remove('animate__animated', 'animate__bounceIn', 'animate__fast');
             main.classList.remove('animate__animated', 'animate__zoomIn', 'animate__faster');
-            // next.classList.remove('animate__animated', 'animate__bounceIn', 'animate__fast');
         }, 500);
 
     }
@@ -171,7 +168,7 @@ function logger() {
         if (textareaID.style.display == 'block') textareaID.style.display = 'none';
 
         descWord.style.cursor = 'pointer';
-        dateWord.style.cursor = 'pointer';
+        // dateWord.style.cursor = 'pointer';
         dateWord.classList.add('blur-sm');
         if (dateWord.style.display == 'flex') dateWord.style.display = 'none';
 

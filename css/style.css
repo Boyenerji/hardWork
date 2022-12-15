@@ -172,7 +172,7 @@ select:hover {
 
 
 .showWords img {
-    width: 70%;
+    width: 80%;
     height: auto;
     border-radius: 8px;
     margin: 0 auto;
@@ -189,6 +189,7 @@ p {
     border-radius: 7px;
     color: black;
     display: none;
+    cursor: pointer;
 
 }
 
