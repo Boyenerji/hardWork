@@ -6,7 +6,7 @@ import { WordsArr } from './words.js';
 
 
 let timerId,
-    randText = randomInteger(1, 2),
+    randText = randomInteger(1, 4),
     idAnim,
     randomWords,
     isShifr = false,
@@ -108,7 +108,7 @@ function words() {
     if (WordsArr.length == 0) {
         location.reload();
     } else {
-        window.scrollTo(0,0);
+        
 
         if (inputText.style.display == 'block') {
             inputText.value = '';
@@ -145,6 +145,8 @@ function words() {
         
         mainWord.innerHTML = WordsArr[i].name;
         descWord.innerHTML = WordsArr[i].desc;
+
+        window.scrollTo(0,0);
 
         WordsArr.splice(i, 1);
         setTimeout(() => {
@@ -299,7 +301,23 @@ function logger() {
 
 btn.addEventListener('click', () => {
     if (select.value == 'Слова') {
-        randText == 1 ? mainWord.classList.add('text-green-500') : mainWord.classList.add('text-purple-400');
+        switch (randText) {
+            case 1:
+                mainWord.classList.add('text-green-500')
+                break;
+            case 2:
+                mainWord.classList.add('text-purple-400')
+                break;
+            case 3:
+                mainWord.classList.add('text-orange-500')
+                break;
+            case 4:
+                mainWord.classList.add('text-cyan-600')
+                break;
+            default:
+                mainWord.classList.add('text-blue-600')
+                break;
+        }
         mainTwo.style.display = 'flex';
         mainWord.classList.add('underline');
         mainWord.classList.remove('fs-3');
