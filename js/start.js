@@ -32,7 +32,7 @@ let btn = document.querySelector('#btn_start'),
     // btn_test = document.querySelector('#btn_test'),
     dateWord = document.querySelector('.dateWord'),
     echoWarning = document.querySelector('#echoWarning'),
-    // divTextarea = document.querySelector('.divTextarea'),
+    divTextarea = document.querySelector('.divTextarea'),
     textareaID = document.querySelector('textarea');
 
 
@@ -159,6 +159,7 @@ function logger() {
     if (posts.length == 1) {
         location.reload();
     } else {
+        console.log(divTextarea.style.display);
         window.scrollTo(0,0);
         descWord.classList.remove('blur-sm');
         textareaID.value = '';
@@ -204,11 +205,11 @@ function logger() {
             textArrayLogger = testArr.join(' ');
 
             if (posts[i].isInput == true) {
-                // divTextarea.style.display = 'block';
-                textareaID.style.display = 'block';
-                textareaID.focus({
-                    preventScroll: true
-                });
+                divTextarea.style.display = 'block';
+                // textareaID.style.display = 'block';
+                // textareaID.focus({
+                //     preventScroll: true
+                // });
                 descWord.classList.add('blur-sm');
                 isLoggerInput = true;
                 isShifr = false;
@@ -349,13 +350,14 @@ btn.addEventListener('click', () => {
 });
 
 
-// divTextarea.addEventListener('click', (e) => {
-//     divTextarea.style.display = 'none';
-//     textareaID.style.display = 'block';
-//     textareaID.focus({
-//         preventScroll: true
-//     });
-// });
+divTextarea.addEventListener('click', (e) => {
+    e.preventDefault();
+    divTextarea.style.display = 'none';
+    textareaID.style.display = 'block';
+    textareaID.focus({
+        preventScroll: true
+    });
+});
 
 
 mainTwo.addEventListener('click', (e) => {
@@ -392,6 +394,7 @@ descWord.addEventListener('click', (e) => {
                 descWord.classList.remove('blur-sm'); 
                 isLoggerInput = false;
                 textareaID.style.display = 'none';
+                divTextarea.style.display = 'none';
             } else {
                 logger();
             }
@@ -426,7 +429,7 @@ textareaID.addEventListener('input', function (e) {
     // console.dir(textareaID.style);
     if (isLoggerInput == true) {
         console.log('textArrayLogger = ' + textArrayLogger.toLowerCase().replace(/[\s.,%]/g, ''));
-        console.log('inputText = ' + inputText.value.toLowerCase().replace(/[\s.,%]/g, ''));
+        console.log('inputText = ' + textareaID.value.toLowerCase().replace(/[\s.,%]/g, ''));
         if (textareaID.value.toLowerCase().replace(/[\s.,%]/g, '') == textArrayLogger.toLowerCase().replace(/[\s.,%]/g, '')) {
             isLoggerInput = false;
             window.scrollTo(0,0);
