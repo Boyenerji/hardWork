@@ -208,6 +208,8 @@ p {
     width: 40%;
     border-radius: 8px;
     margin: 10px auto;
+    justify-content: center;
+    align-items: center;
     /* border: 2px solid red; */
     height: 300px;
     cursor: pointer;

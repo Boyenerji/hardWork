@@ -5,9 +5,7 @@ import { arrWords } from './posts.js'; // посты
 import { WordsArr } from './words.js';
 
 
-let timerId,
-    randText = randomInteger(1, 4),
-    idAnim,
+let randText = randomInteger(1, 4),
     randomWords,
     isShifr = false,
     testArr = [],
@@ -21,7 +19,7 @@ let btn = document.querySelector('#btn_start'),
     body = document.querySelector('body'),
     showWords = document.querySelector('.showWords'),
     select = document.querySelector('select'),
-    main_btn = document.querySelector('#main_btn'),
+    // main_btn = document.querySelector('#main_btn'),
     main = document.querySelector('.main'),
     alert_info = document.querySelector('#alert_info'),
     hello_h1 = document.querySelector('#hello_h1'),
@@ -31,7 +29,7 @@ let btn = document.querySelector('#btn_start'),
     idImg = document.querySelector('#idImg'),
     mainTwo = document.querySelector('.mainTwo'),
     inputText = document.querySelector('#inputText'),
-    btn_test = document.querySelector('#btn_test'),
+    // btn_test = document.querySelector('#btn_test'),
     dateWord = document.querySelector('.dateWord'),
     echoWarning = document.querySelector('#echoWarning'),
     textareaID = document.querySelector('textarea');
@@ -122,7 +120,6 @@ function words() {
 
         mainWord.classList.remove('blur');
         descWord.classList.remove('blur-sm');
-
 
         randomWords = randomInteger(1, 2);
         console.log('randomWords = ' + randomWords);
@@ -352,39 +349,18 @@ mainTwo.addEventListener('click', (e) => {
     e.preventDefault();
 
     if (inputText.style.display === 'block') {
-        inputText.focus();
+        inputText.focus({
+            preventScroll: true
+        });
     } else {
         if (isMainTwo == true) {
-            if (descWord.className.indexOf('blur-sm') !== -1) {
-                descWord.classList.remove('blur-sm'); 
-            }
-            if (mainWord.className.indexOf('blur-sm') !== -1) {
-                mainWord.classList.remove('blur-sm'); 
-            }
+            if (descWord.className.indexOf('blur-sm') !== -1) descWord.classList.remove('blur-sm');
+            if (mainWord.className.indexOf('blur-sm') !== -1) mainWord.classList.remove('blur-sm');
             isMainTwo = false;
         } else {
-
-            echoWarning.style.display = 'block';
-            echoWarning.innerHTML = 'Введите ответ';
-            if (inputText.style.display !== 'block') words();
+            words();
         }
-}
-
-
-    // if (isMainTwo == true) {
-    //     if (descWord.className.indexOf('blur-sm') !== -1) {
-    //         descWord.classList.remove('blur-sm'); 
-    //     }
-    //     if (mainWord.className.indexOf('blur-sm') !== -1) {
-    //         mainWord.classList.remove('blur-sm'); 
-    //     }
-    //     isMainTwo = false;
-    // } else {
-
-    //     // echoWarning.style.display = 'block';
-    //     // echoWarning.innerHTML = 'Введите ответ';
-    //     if (inputText.style.display !== 'block') words();
-    // }
+    }
 });
 
 
@@ -448,9 +424,9 @@ textareaID.addEventListener('input', function (e) {
 });
 
 
-function protect() {
-    select.value == 'Слова' ? words() : logger();
-}
+// function protect() {
+//     select.value == 'Слова' ? words() : logger();
+// }
 
 
 function randomInteger(min, max) {
@@ -462,7 +438,7 @@ DarkTheme();
 
 function DarkTheme() {
     let date = new Date();
-    if (date.getHours() > 16 || date.getHours() < 6) {
+    if (date.getHours() > 16 || date.getHours() < 7) {
         console.log('yes');
         alert_info.style.color = 'rgb(209, 213, 219)';
         body.classList.add('bg-slate-900');
