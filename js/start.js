@@ -32,7 +32,7 @@ let btn = document.querySelector('#btn_start'),
     // btn_test = document.querySelector('#btn_test'),
     dateWord = document.querySelector('.dateWord'),
     echoWarning = document.querySelector('#echoWarning'),
-    divTextarea = document.querySelector('.divTextarea'),
+    // divTextarea = document.querySelector('.divTextarea'),
     textareaID = document.querySelector('textarea');
 
 
@@ -204,9 +204,11 @@ function logger() {
             textArrayLogger = testArr.join(' ');
 
             if (posts[i].isInput == true) {
-                divTextarea.style.display = 'block';
-                // textareaID.style.display = 'block';
-                // inputText.focus({ preventScroll:true });
+                // divTextarea.style.display = 'block';
+                textareaID.style.display = 'block';
+                textareaID.focus({
+                    preventScroll: true
+                });
                 descWord.classList.add('blur-sm');
                 isLoggerInput = true;
                 isShifr = false;
@@ -347,13 +349,13 @@ btn.addEventListener('click', () => {
 });
 
 
-divTextarea.addEventListener('click', (e) => {
-    divTextarea.style.display = 'none';
-    textareaID.style.display = 'block';
-    textareaID.focus({
-        preventScroll: true
-    });
-});
+// divTextarea.addEventListener('click', (e) => {
+//     divTextarea.style.display = 'none';
+//     textareaID.style.display = 'block';
+//     textareaID.focus({
+//         preventScroll: true
+//     });
+// });
 
 
 mainTwo.addEventListener('click', (e) => {
@@ -421,7 +423,7 @@ inputText.addEventListener('input', function (e) {
 
 textareaID.addEventListener('input', function (e) {
     e.preventDefault();
-    console.dir(textareaID.style);
+    // console.dir(textareaID.style);
     if (isLoggerInput == true) {
         console.log('textArrayLogger = ' + textArrayLogger.toLowerCase().replace(/[\s.,%]/g, ''));
         console.log('inputText = ' + inputText.value.toLowerCase().replace(/[\s.,%]/g, ''));
