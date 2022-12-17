@@ -111,6 +111,7 @@ function words() {
         
 
         if (inputText.style.display == 'block') {
+            inputText.blur();
             inputText.value = '';
             inputText.style.display = 'none';
         }
@@ -130,7 +131,7 @@ function words() {
             mainWord.classList.add('blur');
             mainWord.style.cursor = 'pointer';
             inputText.style.display = 'block';
-            inputText.focus();
+            // inputText.focus();
         } else {
             descWord.classList.add('blur-sm');
             descWord.style.cursor = 'pointer';
@@ -349,19 +350,41 @@ btn.addEventListener('click', () => {
 
 mainTwo.addEventListener('click', (e) => {
     e.preventDefault();
-    if (isMainTwo == true) {
-        if (descWord.className.indexOf('blur-sm') !== -1) {
-            descWord.classList.remove('blur-sm'); 
-        }
-        if (mainWord.className.indexOf('blur-sm') !== -1) {
-            mainWord.classList.remove('blur-sm'); 
-        }
-        isMainTwo = false;
+
+    if (inputText.style.display === 'block') {
+        inputText.focus();
     } else {
-        echoWarning.style.display = 'block';
-        echoWarning.innerHTML = 'Введите ответ';
-        if (inputText.style.display !== 'block') words();
-    }
+        if (isMainTwo == true) {
+            if (descWord.className.indexOf('blur-sm') !== -1) {
+                descWord.classList.remove('blur-sm'); 
+            }
+            if (mainWord.className.indexOf('blur-sm') !== -1) {
+                mainWord.classList.remove('blur-sm'); 
+            }
+            isMainTwo = false;
+        } else {
+
+            echoWarning.style.display = 'block';
+            echoWarning.innerHTML = 'Введите ответ';
+            if (inputText.style.display !== 'block') words();
+        }
+}
+
+
+    // if (isMainTwo == true) {
+    //     if (descWord.className.indexOf('blur-sm') !== -1) {
+    //         descWord.classList.remove('blur-sm'); 
+    //     }
+    //     if (mainWord.className.indexOf('blur-sm') !== -1) {
+    //         mainWord.classList.remove('blur-sm'); 
+    //     }
+    //     isMainTwo = false;
+    // } else {
+
+    //     // echoWarning.style.display = 'block';
+    //     // echoWarning.innerHTML = 'Введите ответ';
+    //     if (inputText.style.display !== 'block') words();
+    // }
 });
 
 
