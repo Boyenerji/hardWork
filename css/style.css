@@ -220,15 +220,6 @@ p {
 }
 
 
-.divTextarea {
-    display: none;
-    width: 100%;
-    height: 140px;
-    border-radius: 8px;
-    background-color: rgb(241 245 249);
-    color: rgb(100 116 139);
-}
-
 #blurID {
     /* text-shadow: #fff 0 0 60px; */
     filter: blur(1.5rem);

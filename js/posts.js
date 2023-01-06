@@ -344,7 +344,6 @@ export const arrWords = [{
     dateWord: '',
     isInput: true
 },
-
 {
     pic: '../pictures/redut.jpg',
     name: 'Редут.',
@@ -354,7 +353,33 @@ export const arrWords = [{
     `,
     dateWord: '',
     isInput: true
+},
+{
+    pic: '../pictures/olimp.jpg',
+    name: 'Олимп.',
+    desc: 
+    `
+        В древнегреческой мифологии Олимп - священная гора, место пребывания богов во главе с Зевсом.
+    `,
+    dateWord: '',
+    isInput: true
+},
+
+{
+    pic: '../pictures/ptol.jpg',
+    name: 'Сын цезаря.',
+    desc: 
+    `
+        Птолемей XV Цезарион.
+
+    `,
+    dateWord: '',
+    isInput: true
 }
+
+
+
+
 ];
 
 

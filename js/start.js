@@ -32,7 +32,6 @@ let btn = document.querySelector('#btn_start'),
     // btn_test = document.querySelector('#btn_test'),
     dateWord = document.querySelector('.dateWord'),
     echoWarning = document.querySelector('#echoWarning'),
-    divTextarea = document.querySelector('.divTextarea'),
     textareaID = document.querySelector('textarea');
 
 
@@ -159,7 +158,6 @@ function logger() {
     if (posts.length == 1) {
         location.reload();
     } else {
-        console.log(divTextarea.style.display);
         window.scrollTo(0,0);
         descWord.classList.remove('blur-sm');
         textareaID.value = '';
@@ -205,11 +203,7 @@ function logger() {
             textArrayLogger = testArr.join(' ');
 
             if (posts[i].isInput == true) {
-                divTextarea.style.display = 'block';
-                // textareaID.style.display = 'block';
-                // textareaID.focus({
-                //     preventScroll: true
-                // });
+                textareaID.style.display = 'block';
                 descWord.classList.add('blur-sm');
                 isLoggerInput = true;
                 isShifr = false;
@@ -350,16 +344,6 @@ btn.addEventListener('click', () => {
 });
 
 
-divTextarea.addEventListener('click', (e) => {
-    e.preventDefault();
-    divTextarea.style.display = 'none';
-    textareaID.style.display = 'block';
-    textareaID.focus({
-        preventScroll: true
-    });
-});
-
-
 mainTwo.addEventListener('click', (e) => {
     e.preventDefault();
 
@@ -469,8 +453,6 @@ function DarkTheme() {
         inputText.style.color = '#fff';
         textareaID.style.backgroundColor = 'rgb(51 65 85)';
         textareaID.style.color = '#fff';
-        divTextarea.style.backgroundColor = 'rgb(51 65 85)';
-        divTextarea.style.color = '#fff';
         mainTwo.classList.add('bg-slate-800');
     }
 }
