@@ -375,6 +375,18 @@ export const arrWords = [{
     `,
     dateWord: '',
     isInput: true
+},
+
+{
+    pic: '../pictures/kord.jpg',
+    name: 'КОРД.',
+    desc: 
+    `
+        Российский крупнокалиберный пулемёт с ленточным питанием под патрон 12,7.
+
+    `,
+    dateWord: '',
+    isInput: true
 }
 
 
