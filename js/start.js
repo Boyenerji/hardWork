@@ -36,58 +36,6 @@ let btn = document.querySelector('#btn_start'),
 
 
 
-    // let a = ['\n', 'Животное', 'типа', 'ёжика\n'];
-    // a.forEach(function(item, i) {
-    //     console.log(item);
-    //     console.log(i);
-    // });
-    // a = a.filter(el => el.includes(/[a-я]/))
-    // console.log(a)
-    
-
-// let bro = 'string';
-
-
-// if (bro.indexOf('<br>') === -1) {
-//     console.log('Не такого');
-// };
-
-
-
-// let names = 'Гарри Трамп Фрэд Барни Хелен Ригби  Билл Абель Крис Ханд ';
-
-// console.log(names);
-
-// var re = /\s*\s*/;
-// var nameList = names.split(re);
-
-// console.log(nameList);
-
-
-// let bro = `<ol>
-//             <li>Северная Америка.</li>
-//             <li>Южная Америка</li>
-//             <li>Антарктида.</li>
-//             <li>Африка.</li>
-//             <li>Евразия.</li>
-//             <li>Австралия</li>
-// </ol>`;
-
-// bro = bro.replace(/<ol>/gi, '');
-// bro = bro.replace(/<\/ol>/gi, '');
-// bro = bro.replace(/<\/ol>/gi, '');
-// bro = bro.replace(/<\/ol>/gi, '');
-// console.log(bro);
-
-// bro.split(/<ol>/);
-
-// console.log(bro);
-
-// bro.forEach(element => {
-//     console.log(element);
-// });
-
-
 
 
 
@@ -96,16 +44,26 @@ while (posts.length <= 20) {
     let a = randomInteger(0, arrWords.length - 1);
     posts.unshift(arrWords[a]);
     arrWords.splice([a], 1);
+    // console.log(words);
+}
+
+const words = [];
+while (words.length <= 20) {
+    let a = randomInteger(0, WordsArr.length - 1);
+    words.unshift(WordsArr[a]);
+    WordsArr.splice([a], 1);
 }
 
 console.dir(posts);
-console.dir(arrWords);
+console.dir(words);
 
 
-function words() {
-    if (WordsArr.length == 0) {
+function wordsFunc() {
+    if (words.length == 0) {
         location.reload();
     } else {
+
+        
         
 
         if (inputText.style.display == 'block') {
@@ -118,6 +76,9 @@ function words() {
         if (echoWarning.style.display == 'block') echoWarning.style.display = 'none';
 
 
+
+
+
         mainWord.classList.remove('blur');
         descWord.classList.remove('blur-sm');
 
@@ -125,11 +86,12 @@ function words() {
         console.log('randomWords = ' + randomWords);
 
         if (randomWords == 1) {
+            console.log('Блюрим тайтл');
             mainWord.classList.add('blur');
             mainWord.style.cursor = 'pointer';
             inputText.style.display = 'block';
-            // inputText.focus();
         } else {
+            console.log('Блюрим описание');
             descWord.classList.add('blur-sm');
             descWord.style.cursor = 'pointer';
         }
@@ -137,16 +99,32 @@ function words() {
         isMainTwo = true;
 
         main.classList.add('animate__animated', 'animate__backInDown', 'animate__faster');
-        ((WordsArr.length - 1) != 0) ? alert_info.innerHTML = WordsArr.length - 1 : alert_info.remove();
 
-        let i = randomInteger(0, WordsArr.length - 1);
+
+
+        ((words.length - 1) != 0) ? alert_info.innerHTML = words.length - 1 : alert_info.remove();
+        let i = randomInteger(0, words.length - 1);
+
+
+        if(words[i].isEnglish == true) {
+            mainWord.style.color = '#FFFFFF';
+            main.style.backgroundColor = '#1E90FF';
+            descWord.style.color = 'white';
+        } else {
+            mainWord.style.color = '';
+            main.style.backgroundColor = '';
+            descWord.style.color = '';
+        }
         
-        mainWord.innerHTML = WordsArr[i].name;
-        descWord.innerHTML = WordsArr[i].desc;
+        mainWord.innerHTML = words[i].name;
+        descWord.innerHTML = words[i].desc;
 
-        window.scrollTo(0,0);
 
-        WordsArr.splice(i, 1);
+
+        // window.scrollTo(0,0);
+        words.splice(i, 1);
+
+
         setTimeout(() => {
             main.classList.remove('animate__animated', 'animate__backInDown', 'animate__faster');
         }, 500);
@@ -326,7 +304,7 @@ btn.addEventListener('click', () => {
         descWord.style.padding = '10px';
         picWord.remove();
         body.style.justifyContent = 'space-between';
-        words();
+        wordsFunc();
     } else {
         body.style.justifyContent = 'flex-start';
         logger();
@@ -357,7 +335,7 @@ mainTwo.addEventListener('click', (e) => {
             if (mainWord.className.indexOf('blur-sm') !== -1) mainWord.classList.remove('blur-sm');
             isMainTwo = false;
         } else {
-            words();
+            wordsFunc();
         }
     }
 });
@@ -402,7 +380,7 @@ dateWord.addEventListener('click', (e) => {
 
 inputText.addEventListener('input', function (e) {
     e.preventDefault();
-    if (inputText.value.toLowerCase().trim() == mainWord.innerHTML.toLowerCase().trim()) words();
+    if (inputText.value.toLowerCase().trim() == mainWord.innerHTML.toLowerCase().trim()) wordsFunc();
 });
 
 
@@ -445,7 +423,7 @@ function DarkTheme() {
         hello_h1.style.color = '#fff';
         main.classList.add('bg-slate-800');
         mainTwo.classList.add('bg-slate-900');
-        descWord.style.color = 'rgb(209 213 219)';
+        descWord.classList.add('text-white');
         select.style.backgroundColor = '#6c757d';
         select.style.color = '#fff';
         dateWord.style.color = '#fff';

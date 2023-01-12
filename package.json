@@ -2,7 +2,7 @@
   "name": "repeatwords",
   "version": "1.0.0",
   "description": "qq all",
-  "main": "index.js",
+  "main": "start.js",
   "type": "module",
   "scripts": {
     "dev": "nodemon start.js"
