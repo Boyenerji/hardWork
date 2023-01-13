@@ -48,7 +48,7 @@ while (posts.length <= 20) {
 }
 
 const words = [];
-while (words.length <= 20) {
+while (words.length <= 25) {
     let a = randomInteger(0, WordsArr.length - 1);
     words.unshift(WordsArr[a]);
     WordsArr.splice([a], 1);
@@ -192,9 +192,35 @@ function logger() {
                 // console.log('Длина массива = ' + testArr.length);
                 isShifr = true;
 
+
+                
+
                 let rand1 = randomInteger(0, testArr.length - 1),
                     rand2 = randomInteger(0, testArr.length - 1),
-                    rand3 = randomInteger(0, testArr.length - 1);
+                    rand3 = randomInteger(0, testArr.length - 1),
+                    rand4 = randomInteger(0, testArr.length - 1);
+
+                // let mas = [rand1, rand2, rand3, rand4];
+
+
+                // console.log(testArr[mas[rand1]]);
+
+                // mas.forEach(element => {
+                //     console.log('Слово: ' + testArr[element] + ' Длина слова: ' + testArr[element].length);
+                //     // if (testArr[element].length <= 3) {
+                //     //     while (testArr[element].length <= 3) {
+                //     //         rand1 = randomInteger(0, testArr.length - 1);
+                //     //         console.log(rand1);
+                //     //     }
+                //     // }
+                // });
+
+
+                // for (let i = 0; i < array.length; i++) {
+                //     console.log(testArr[mas[i]]);
+                    
+                // }
+                
                 
                 if (testArr[rand1].length <= 3) {
                     console.log('Равно одной букве = ' + testArr[rand1]);
