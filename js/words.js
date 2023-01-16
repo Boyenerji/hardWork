@@ -190,6 +190,24 @@ export const WordsArr = [{
 },
 
 {
+    name: 'Лампада',
+    desc: 'Лампа с фителем.',
+    isEnglish: false
+},
+
+{
+    name: 'Щекотливый',
+    desc: 'Требующий большой осмотрительности.',
+    isEnglish: false
+},
+
+{
+    name: 'Покуситься',
+    desc: 'Попытаться.',
+    isEnglish: false
+},
+
+{
     name: 'Granny',
     desc: 'Бабушка',
     isEnglish: true
