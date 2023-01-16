@@ -3,6 +3,9 @@
 
 import { arrWords } from './posts.js'; // посты
 import { WordsArr } from './words.js';
+import { englishWords } from './engwords.js';
+
+console.log(englishWords);
 
 
 let randText = randomInteger(1, 4),
@@ -13,7 +16,8 @@ let randText = randomInteger(1, 4),
     arrNull = '',
     isMainTwo = false,
     isLoggerInput = false,
-    textArrayLogger = '';
+    textArrayLogger = '',
+    letArr = [];
 
 let btn = document.querySelector('#btn_start'),
     body = document.querySelector('body'),
@@ -59,6 +63,10 @@ console.dir(words);
 
 
 function wordsFunc() {
+
+
+
+
     if (words.length == 0) {
         location.reload();
     } else {
@@ -119,6 +127,10 @@ function wordsFunc() {
         mainWord.innerHTML = words[i].name;
         descWord.innerHTML = words[i].desc;
 
+        inputText.focus({
+            preventScroll: true
+        });
+
 
 
         // window.scrollTo(0,0);
@@ -172,6 +184,7 @@ function logger() {
 
             arrNull.forEach(element => {
                 if (element.length > 0 && element[0].match(/[?!,-.'";—()%а-яА-ЯёЁ0-9]/ig)) {
+                    // showWords.innerHTML += `<button>${element}</button>`
                     console.log(element);
                     testArr.push(element);
                     testArr2.push(element);
@@ -330,6 +343,12 @@ btn.addEventListener('click', () => {
         descWord.style.padding = '10px';
         picWord.remove();
         body.style.justifyContent = 'space-between';
+
+
+        letArr = words;
+        console.log(letArr);
+
+
         wordsFunc();
     } else {
         body.style.justifyContent = 'flex-start';
@@ -382,7 +401,7 @@ descWord.addEventListener('click', (e) => {
                 descWord.classList.remove('blur-sm'); 
                 isLoggerInput = false;
                 textareaID.style.display = 'none';
-                divTextarea.style.display = 'none';
+                // divTextarea.style.display = 'none';
             } else {
                 logger();
             }
