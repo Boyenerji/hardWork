@@ -208,180 +208,19 @@ export const WordsArr = [{
 },
 
 {
-    name: 'Granny',
-    desc: 'Бабушка',
-    isEnglish: true
+    name: 'Речистый',
+    desc: 'Красноречивый.',
+    isEnglish: false
 },
 
 {
-    name: 'Realize',
-    desc: 'Реализовать',
-    isEnglish: true
-},
-
-{
-    name: 'Protect',
-    desc: 'Защищать',
-    isEnglish: true
-},
-
-{
-    name: 'Usually',
-    desc: 'Обычно',
-    isEnglish: true
-},
-
-{
-    name: 'Helping',
-    desc: 'Эффективный',
-    isEnglish: true
-},
-
-{
-    name: 'Bride',
-    desc: 'Невеста',
-    isEnglish: true
-},
-
-{
-    name: 'Judge',
-    desc: 'Судить',
-    isEnglish: true
-},
-
-{
-    name: 'Behavior',
-    desc: 'Поведение',
-    isEnglish: true
-},
-
-{
-    name: 'Earlier',
-    desc: 'Ранее',
-    isEnglish: true
-},
-
-{
-    name: 'Cute',
-    desc: 'Милый',
-    isEnglish: true
-},
-
-{
-    name: 'Calm',
-    desc: 'Успокаивать',
-    isEnglish: true
-},
-
-{
-    name: 'Wear',
-    desc: 'Носить',
-    isEnglish: true
-},
-
-{
-    name: 'Decision',
-    desc: 'Решение',
-    isEnglish: true
-},
-
-{
-    name: 'Lovely',
-    desc: 'Прекрасный',
-    isEnglish: true
-},
-
-{
-    name: 'Court',
-    desc: 'Суд',
-    isEnglish: true
-},
-
-{
-    name: 'Lose',
-    desc: 'Терять',
-    isEnglish: true
-},
-
-{
-    name: 'Shut',
-    desc: 'Закрывать',
-    isEnglish: true
-},
-
-{
-    name: 'Notice',
-    desc: 'Обращать внимание',
-    isEnglish: true
-},
-
-{
-    name: 'Witness',
-    desc: 'Свидетель',
-    isEnglish: true
-},
-
-{
-    name: 'Guilty',
-    desc: 'Виновный',
-    isEnglish: true
-},
-
-{
-    name: 'Suppose',
-    desc: 'Предполагать',
-    isEnglish: true
-},
-
-{
-    name: 'Near',
-    desc: 'Вблизи',
-    isEnglish: true
-},
-
-{
-    name: 'Thunder',
-    desc: 'Гром',
-    isEnglish: true
-},
-
-{
-    name: 'Century',
-    desc: 'Век',
-    isEnglish: true
-},
-
-{
-    name: 'Bow',
-    desc: 'Лук',
-    isEnglish: true
-},
-
-{
-    name: 'Heat',
-    desc: 'Тепло',
-    isEnglish: true
-},
-
-{
-    name: 'Total',
-    desc: 'Сумма',
-    isEnglish: true
-},
-
-{
-    name: 'Ox',
-    desc: 'Бык',
-    isEnglish: true
+    name: 'Мещанин',
+    desc: 'Мелкий торговец, низший служащий.',
+    isEnglish: false
 },
 
 
-{name: 'Ax', desc: 'Топор', isEnglish: true},
-{name: 'Cruel', desc: 'Жестокий', isEnglish: true},
-{name: 'Foreign', desc: 'Иностранный', isEnglish: true},
-{name: 'Van', desc: 'Фургон', isEnglish: true},
-{name: 'Shake', desc: 'Пожимать руку', isEnglish: true},
-{name: 'Society', desc: 'Общество', isEnglish: true},
+
 
 
 
