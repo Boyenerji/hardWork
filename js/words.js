@@ -214,11 +214,28 @@ export const WordsArr = [{
 },
 
 {
-    name: 'Мещанин',
+    name: 'МещанИн',
     desc: 'Мелкий торговец, низший служащий.',
     isEnglish: false
 },
 
+{
+    name: 'Облобызать',
+    desc: 'Расцеловать.',
+    isEnglish: false
+},
+
+{
+    name: 'Косноязычный',
+    desc: 'Невнятный',
+    isEnglish: false
+},
+
+{
+    name: 'Штоф',
+    desc: 'Старая мера объема жидкости. 1.2литра',
+    isEnglish: false
+},
 
 
 
