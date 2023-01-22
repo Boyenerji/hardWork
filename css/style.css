@@ -116,6 +116,13 @@ select:hover {
     text-align: center;
 }
 
+.example {
+    width: 60%;
+    text-align: center;
+    margin-top: 10px;
+    cursor: pointer;
+    color: rgb(71 85 105);
+}
 
 .mainWord {
     padding: 10px 10px 0 10px;

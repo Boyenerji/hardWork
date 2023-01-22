@@ -30,6 +30,7 @@ let btn = document.querySelector('#btn_start'),
     picWord = document.querySelector('.picWord'),
     mainWord = document.querySelector('.mainWord'),
     descWord = document.querySelector('.descWord'),
+    example = document.querySelector('.example'),
     idImg = document.querySelector('#idImg'),
     mainTwo = document.querySelector('.mainTwo'),
     inputText = document.querySelector('#inputText'),
@@ -72,19 +73,20 @@ function wordsFunc() {
     } else {
 
         
-        
-
         if (inputText.style.display == 'block') {
             inputText.blur();
             inputText.value = '';
             inputText.style.display = 'none';
         }
+        // console.log(example.innerHTML);
+        // console.log(example.innerHTML.length);
+
+
+        if (example.className.indexOf('blur-sm') == -1) example.classList.add('blur-sm');
+        if (example.innerHTML.length > 0) example.innerHTML = '';
 
         if (mainWord.style.cursor == 'pointer') mainWord.style.cursor = 'auto';
         if (echoWarning.style.display == 'block') echoWarning.style.display = 'none';
-
-
-
 
 
         mainWord.classList.remove('blur');
@@ -114,18 +116,26 @@ function wordsFunc() {
         let i = randomInteger(0, words.length - 1);
 
 
-        if(words[i].isEnglish == true) {
-            mainWord.style.color = '#FFFFFF';
-            main.style.backgroundColor = '#1E90FF';
-            descWord.style.color = 'white';
-        } else {
-            mainWord.style.color = '';
-            main.style.backgroundColor = '';
-            descWord.style.color = '';
-        }
+        // if(words[i].isEnglish == true) {
+        //     mainWord.style.color = '#FFFFFF';
+        //     main.style.backgroundColor = '#1E90FF';
+        //     descWord.style.color = 'white';
+        // } else {
+        //     mainWord.style.color = '';
+        //     main.style.backgroundColor = '';
+        //     descWord.style.color = '';
+        // }
         
         mainWord.innerHTML = words[i].name;
         descWord.innerHTML = words[i].desc;
+
+        // console.log(words[i].example.length);
+
+        if (words[i].example.length != 0) {
+            let randomExample = randomInteger(0, words[i].example.length - 1);
+            console.log(words[i].example[randomExample]);
+            example.innerHTML = words[i].example[randomExample];
+        }
 
         inputText.focus({
             preventScroll: true
@@ -419,6 +429,12 @@ dateWord.addEventListener('click', (e) => {
     e.preventDefault();
     dateWord.style.cursor = 'auto';
     dateWord.classList.remove('blur-sm');
+});
+
+example.addEventListener('click', (e) => {
+    e.preventDefault();
+    // example.style.cursor = 'auto';
+    example.classList.remove('blur-sm');
 });
 
 
