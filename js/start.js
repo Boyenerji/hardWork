@@ -385,6 +385,8 @@ mainTwo.addEventListener('click', (e) => {
             preventScroll: true
         });
     } else {
+        console.log('aga');
+        console.log(isMainTwo);
         if (isMainTwo == true) {
             if (descWord.className.indexOf('blur-sm') !== -1) descWord.classList.remove('blur-sm');
             if (mainWord.className.indexOf('blur-sm') !== -1) mainWord.classList.remove('blur-sm');
@@ -400,7 +402,9 @@ descWord.addEventListener('click', (e) => {
     e.preventDefault();
 
     if (select.value == 'Слова') {
-        if (descWord.className.indexOf('blur-sm') !== -1) descWord.classList.remove('blur-sm'); 
+        if (descWord.className.indexOf('blur-sm') !== -1) {
+            descWord.classList.remove('blur-sm'); 
+        }
     } else {
         console.log('Не слова');
         if (isShifr == true) {
@@ -423,6 +427,8 @@ mainWord.addEventListener('click', (e) => {
     e.preventDefault();
     mainWord.style.cursor = 'auto';
     mainWord.classList.remove('blur');
+    inputText.style.display = 'none';
+    isMainTwo = false;
 });
 
 dateWord.addEventListener('click', (e) => {
@@ -493,5 +499,6 @@ function DarkTheme() {
         textareaID.style.backgroundColor = 'rgb(51 65 85)';
         textareaID.style.color = '#fff';
         mainTwo.classList.add('bg-slate-800');
+        example.style.color = '#cbd5e1';
     }
 }
