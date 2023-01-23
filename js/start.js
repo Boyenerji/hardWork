@@ -10,13 +10,9 @@ console.log(englishWords);
 
 let randText = randomInteger(1, 4),
     randomWords,
-    isShifr = false,
-    testArr = [],
-    testArr2 = [],
-    arrNull = '',
     isMainTwo = false,
-    isLoggerInput = false,
     textArrayLogger = '',
+    a = 0,
     letArr = [];
 
 let btn = document.querySelector('#btn_start'),
@@ -160,10 +156,11 @@ function logger() {
     } else {
         window.scrollTo(0,0);
         descWord.classList.remove('blur-sm');
-        textareaID.value = '';
-        if (textareaID.style.display == 'block') textareaID.style.display = 'none';
+        // textareaID.value = '';
+        // if (textareaID.style.display == 'block') textareaID.style.display = 'none';
 
         descWord.style.cursor = 'pointer';
+        descWord.classList.add('blur-sm');
         dateWord.classList.add('blur-sm');
         if (dateWord.style.display == 'flex') dateWord.style.display = 'none';
 
@@ -185,139 +182,24 @@ function logger() {
             window.scrollTo(0,0);
             mainWord.innerHTML = posts[i].name;
 
-            testArr = [];
-            testArr2 = [];
+            descWord.innerHTML = '<p class="leading-relaxed">' + posts[i].desc + '</p>';
 
-            posts[i].desc.trim();
-            arrNull = posts[i].desc.split(' ');
-            // console.log(arrNull);
-
-            arrNull.forEach(element => {
-                if (element.length > 0 && element[0].match(/[?!,-.'";—()%а-яА-ЯёЁ0-9]/ig)) {
-                    // showWords.innerHTML += `<button>${element}</button>`
-                    console.log(element);
-                    testArr.push(element);
-                    testArr2.push(element);
-                }
-            });
-
-            textArrayLogger = testArr.join(' ');
-
-            if (posts[i].isInput == true) {
-                textareaID.style.display = 'block';
-                descWord.classList.add('blur-sm');
-                isLoggerInput = true;
-                isShifr = false;
-                descWord.innerHTML = '<p class="leading-relaxed">' + textArrayLogger + '</p>';
-            } else {
-
-                // console.log(testArr.join(' '));
-                // console.log('Длина массива = ' + testArr.length);
-                isShifr = true;
-
-
-                
-
-                let rand1 = randomInteger(0, testArr.length - 1),
-                    rand2 = randomInteger(0, testArr.length - 1),
-                    rand3 = randomInteger(0, testArr.length - 1),
-                    rand4 = randomInteger(0, testArr.length - 1);
-
-                // let mas = [rand1, rand2, rand3, rand4];
-
-
-                // console.log(testArr[mas[rand1]]);
-
-                // mas.forEach(element => {
-                //     console.log('Слово: ' + testArr[element] + ' Длина слова: ' + testArr[element].length);
-                //     // if (testArr[element].length <= 3) {
-                //     //     while (testArr[element].length <= 3) {
-                //     //         rand1 = randomInteger(0, testArr.length - 1);
-                //     //         console.log(rand1);
-                //     //     }
-                //     // }
-                // });
-
-
-                // for (let i = 0; i < array.length; i++) {
-                //     console.log(testArr[mas[i]]);
-                    
-                // }
-                
-                
-                if (testArr[rand1].length <= 3) {
-                    console.log('Равно одной букве = ' + testArr[rand1]);
-                    while (testArr[rand1].length <= 3) {
-                        rand1 = randomInteger(0, testArr.length - 1);
-                        console.log(rand1);
-                    }
-                }
-        
-                if (testArr[rand2].length <= 3) {
-                    console.log('rand2 = ' + rand2);
-                    console.log('Равно одной букве2 = ' + testArr[rand2]);
-                    while (testArr[rand2].length <= 3) {
-                        rand2 = randomInteger(0, testArr.length - 1);
-                        console.log(rand2);
-                    }
-                }
-
-                if (testArr.length > 10) {
-                    if (testArr[rand3].length <= 3) {
-                    console.log('rand3 = ' + rand3);
-                    console.log('Равно одной букве3 = ' + testArr[rand3]);
-                        while (testArr[rand3].length <= 3) {
-                            rand3 = randomInteger(0, testArr.length - 1);
-                            console.log(rand3);
-                        }
-                    }
-                }
-
-
-                if (testArr.length > 10) {
-                    if (rand1 == rand2 || rand1 == rand3 || rand2 == rand3) {
-                        while (rand1 == rand2 || rand1 == rand3 || rand2 == rand3) {
-                            rand2 = randomInteger(0, testArr.length - 1);
-                            rand3 = randomInteger(0, testArr.length - 1);
-                        }
-                    }
-                } else {
-                    if (rand1 == rand2) {
-                        while (rand1 == rand2) {
-                            rand2 = randomInteger(0, testArr.length - 1);
-                        }
-                    }
-                }
-
-
-                console.log('rand1 = ' + testArr[rand1]);
-                console.log('rand2 = ' + testArr[rand2]);
-                console.log('rand3 = ' + testArr[rand3]);
-
-
-                testArr.splice(rand1, 1, `<span class="blur-sm">${testArr[rand1]}</span>`);
-                testArr.splice(rand2, 1, `<span class="blur-sm">${testArr[rand2]}</span>`);
-                if (testArr.length > 10) testArr.splice(rand3, 1, `<span class="blur-sm">${testArr[rand3]}</span>`);
-
-                console.log('testArr = ' + testArr.join(' '));
-                descWord.innerHTML = '<p class="leading-relaxed">' + testArr.join(' ') + '</p>';
+            if (posts[i].dateWord.length > 0) {
+                dateWord.innerHTML = '';
+                dateWord.style.display = 'flex';
+                dateWord.innerHTML +=
+                    `<svg width="22" height="22" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2a10 10 0 1 0 0 20 10 10 0 1 0 0-20z"></path>
+                    <path d="M12 6v6l4 2"></path>
+                </svg>`;
+                dateWord.innerHTML += `<p>${posts[i].dateWord}</p>`;
             }
-                if (posts[i].dateWord.length > 0) {
-                    dateWord.innerHTML = '';
-                    dateWord.style.display = 'flex';
-                    dateWord.innerHTML +=
-                        `<svg width="22" height="22" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M12 2a10 10 0 1 0 0 20 10 10 0 1 0 0-20z"></path>
-                        <path d="M12 6v6l4 2"></path>
-                    </svg>`;
-                    dateWord.innerHTML += `<p>${posts[i].dateWord}</p>`;
-                }
-                posts.splice(i, 1);
+            posts.splice(i, 1);
 
-                setTimeout(() => {
-                    main.classList.remove('animate__animated', 'animate__backInDown', 'animate__faster');
-                }, 500);
-            };
+            setTimeout(() => {
+                main.classList.remove('animate__animated', 'animate__backInDown', 'animate__faster');
+            }, 500);
+        };
 
     }
 }
@@ -390,6 +272,7 @@ mainTwo.addEventListener('click', (e) => {
         if (isMainTwo == true) {
             if (descWord.className.indexOf('blur-sm') !== -1) descWord.classList.remove('blur-sm');
             if (mainWord.className.indexOf('blur-sm') !== -1) mainWord.classList.remove('blur-sm');
+            if (example.className.indexOf('blur-sm') !== -1) example.classList.remove('blur-sm');
             isMainTwo = false;
         } else {
             wordsFunc();
@@ -400,25 +283,19 @@ mainTwo.addEventListener('click', (e) => {
 
 descWord.addEventListener('click', (e) => {
     e.preventDefault();
-
+   
     if (select.value == 'Слова') {
         if (descWord.className.indexOf('blur-sm') !== -1) {
             descWord.classList.remove('blur-sm'); 
         }
     } else {
-        console.log('Не слова');
-        if (isShifr == true) {
-            isShifr = false;
-            descWord.innerHTML = '<p class="leading-relaxed">' + testArr2.join(' ') + '</p>';
+        if (a == 0) {
+            console.log('Не слова');
+            descWord.classList.remove('blur-sm');
+            a++;
         } else {
-            if (isLoggerInput == true) {
-                descWord.classList.remove('blur-sm'); 
-                isLoggerInput = false;
-                textareaID.style.display = 'none';
-                // divTextarea.style.display = 'none';
-            } else {
-                logger();
-            }
+            a = 0;
+            logger();
         }
     }
 });
@@ -453,20 +330,20 @@ inputText.addEventListener('input', function (e) {
 
 
 
-textareaID.addEventListener('input', function (e) {
-    e.preventDefault();
-    // console.dir(textareaID.style);
-    if (isLoggerInput == true) {
-        console.log('textArrayLogger = ' + textArrayLogger.toLowerCase().replace(/[\s.,%]/g, ''));
-        console.log('inputText = ' + textareaID.value.toLowerCase().replace(/[\s.,%]/g, ''));
-        if (textareaID.value.toLowerCase().replace(/[\s.,%]/g, '') == textArrayLogger.toLowerCase().replace(/[\s.,%]/g, '')) {
-            isLoggerInput = false;
-            window.scrollTo(0,0);
-            logger();
-        }
-    }
+// textareaID.addEventListener('input', function (e) {
+//     e.preventDefault();
+//     // console.dir(textareaID.style);
+//     if (isLoggerInput == true) {
+//         console.log('textArrayLogger = ' + textArrayLogger.toLowerCase().replace(/[\s.,%]/g, ''));
+//         console.log('inputText = ' + textareaID.value.toLowerCase().replace(/[\s.,%]/g, ''));
+//         if (textareaID.value.toLowerCase().replace(/[\s.,%]/g, '') == textArrayLogger.toLowerCase().replace(/[\s.,%]/g, '')) {
+//             isLoggerInput = false;
+//             window.scrollTo(0,0);
+//             logger();
+//         }
+//     }
 
-});
+// });
 
 
 // function protect() {
