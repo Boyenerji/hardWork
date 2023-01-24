@@ -12,6 +12,7 @@ let randText = randomInteger(1, 4),
     randomWords,
     isMainTwo = false,
     textArrayLogger = '',
+    myr = '',
     a = 0,
     letArr = [];
 
@@ -160,7 +161,7 @@ function logger() {
         // if (textareaID.style.display == 'block') textareaID.style.display = 'none';
 
         descWord.style.cursor = 'pointer';
-        descWord.classList.add('blur-sm');
+        // descWord.classList.add('blur-sm');
         dateWord.classList.add('blur-sm');
         if (dateWord.style.display == 'flex') dateWord.style.display = 'none';
 
@@ -181,6 +182,8 @@ function logger() {
             idImg.style.display = 'block';
             window.scrollTo(0,0);
             mainWord.innerHTML = posts[i].name;
+
+            // myr = posts[i].desc;
 
             descWord.innerHTML = '<p class="leading-relaxed">' + posts[i].desc + '</p>';
 
@@ -290,8 +293,19 @@ descWord.addEventListener('click', (e) => {
         }
     } else {
         if (a == 0) {
+            // console.dir(descWord.children[0].childNodes[1]);
+
+            // console.dir(descWord.children[0]);
+
+            let prof = descWord.children[0].children;
+            for (let key in prof) {
+                if (prof[key].classList == 'blur-sm') prof[key].classList.remove('blur-sm');
+            }
+
+            
+            // descWord.children[0].childNodes[1].classList.remove('blur-sm');
             console.log('Не слова');
-            descWord.classList.remove('blur-sm');
+            // descWord.classList.remove('blur-sm');
             a++;
         } else {
             a = 0;
