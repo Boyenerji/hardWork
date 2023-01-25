@@ -14,6 +14,7 @@ let randText = randomInteger(1, 4),
     textArrayLogger = '',
     myr = '',
     a = 0,
+    y = 0,
     letArr = [];
 
 let btn = document.querySelector('#btn_start'),
@@ -156,6 +157,7 @@ function logger() {
         location.reload();
     } else {
         window.scrollTo(0,0);
+        y = 0;
         descWord.classList.remove('blur-sm');
         // textareaID.value = '';
         // if (textareaID.style.display == 'block') textareaID.style.display = 'none';
@@ -292,6 +294,9 @@ descWord.addEventListener('click', (e) => {
             descWord.classList.remove('blur-sm'); 
         }
     } else {
+
+        console.log('A = ' + a);
+
         if (a == 0) {
             // console.dir(descWord.children[0].childNodes[1]);
 
@@ -299,14 +304,24 @@ descWord.addEventListener('click', (e) => {
 
             let prof = descWord.children[0].children;
             for (let key in prof) {
-                if (prof[key].classList == 'blur-sm') prof[key].classList.remove('blur-sm');
+                if (prof[key].classList == 'blur-sm') {
+                    y++;
+                    prof[key].classList.remove('blur-sm');
+                }
             }
 
-            
+            console.log('Y = ' + y);
+            if (y == 0) {
+                a = 0;
+                console.log(a);
+                logger();
+            } else {
+                a++;
+            }
             // descWord.children[0].childNodes[1].classList.remove('blur-sm');
-            console.log('Не слова');
+            // console.log('Не слова');
             // descWord.classList.remove('blur-sm');
-            a++;
+            // a++;
         } else {
             a = 0;
             logger();
