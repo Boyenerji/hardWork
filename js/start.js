@@ -5,6 +5,7 @@ import { arrWords } from './posts.js'; // посты
 import { WordsArr } from './words.js';
 import { englishWords } from './engwords.js';
 
+
 console.log(englishWords);
 
 
@@ -73,9 +74,10 @@ function wordsFunc() {
         
         if (inputText.style.display == 'block') {
             inputText.blur();
-            inputText.value = '';
             inputText.style.display = 'none';
-        }
+        } 
+        inputText.value = '';
+
         // console.log(example.innerHTML);
         // console.log(example.innerHTML.length);
 
@@ -357,7 +359,14 @@ document.addEventListener('keydown', function(event) {
 
 inputText.addEventListener('input', function (e) {
     e.preventDefault();
-    if (inputText.value.toLowerCase().trim() == mainWord.innerHTML.toLowerCase().trim()) wordsFunc();
+    if (inputText.value.toLowerCase().trim() == mainWord.innerHTML.toLowerCase().trim()) {
+        inputText.style.display = 'none';
+        mainWord.classList.remove('blur');
+        example.classList.remove('blur-sm');
+        setTimeout(() => {
+            wordsFunc();
+        }, 3000);
+    }
 });
 
 
