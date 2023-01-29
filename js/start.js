@@ -288,10 +288,83 @@ mainTwo.addEventListener('click', (e) => {
 
 descWord.addEventListener('click', (e) => {
     e.preventDefault();
+
+    ifBlur();
    
+    // if (select.value == 'Слова') {
+    //     if (descWord.className.indexOf('blur-sm') !== -1) {
+    //         descWord.classList.remove('blur-sm'); 
+    //     }
+    // } else {
+
+    //     console.log('A = ' + a);
+
+    //     if (a == 0) {
+            
+
+    //         let prof = descWord.children[0].children;
+    //         for (let key in prof) {
+    //             if (prof[key].classList == 'blur-sm') {
+    //                 y++;
+    //                 prof[key].classList.remove('blur-sm');
+    //             }
+    //         }
+
+    //         console.log('Y = ' + y);
+    //         if (y == 0) {
+    //             a = 0;
+    //             console.log(a);
+    //             logger();
+    //         } else {
+    //             a++;
+    //         }
+            
+    //     } else {
+    //         a = 0;
+    //         logger();
+    //     }
+    // }
+});
+
+mainWord.addEventListener('click', (e) => {
+    e.preventDefault();
+    mainWord.style.cursor = 'auto';
+    mainWord.classList.remove('blur');
+    inputText.style.display = 'none';
+    isMainTwo = false;
+});
+
+dateWord.addEventListener('click', (e) => {
+    e.preventDefault();
+    dateWord.style.cursor = 'auto';
+    dateWord.classList.remove('blur-sm');
+});
+
+example.addEventListener('click', (e) => {
+    e.preventDefault();
+    // example.style.cursor = 'auto';
+    example.classList.remove('blur-sm');
+});
+
+document.addEventListener('keydown', function(event) {
+    if (event.key == 'ArrowRight') {
+        ifBlur();
+    }
+ 
+});
+
+
+
+inputText.addEventListener('input', function (e) {
+    e.preventDefault();
+    if (inputText.value.toLowerCase().trim() == mainWord.innerHTML.toLowerCase().trim()) wordsFunc();
+});
+
+
+function ifBlur() {
     if (select.value == 'Слова') {
         if (descWord.className.indexOf('blur-sm') !== -1) {
-            descWord.classList.remove('blur-sm'); 
+            descWord.classList.remove('blur-sm');
         }
     } else {
 
@@ -322,79 +395,7 @@ descWord.addEventListener('click', (e) => {
             logger();
         }
     }
-});
-
-mainWord.addEventListener('click', (e) => {
-    e.preventDefault();
-    mainWord.style.cursor = 'auto';
-    mainWord.classList.remove('blur');
-    inputText.style.display = 'none';
-    isMainTwo = false;
-});
-
-dateWord.addEventListener('click', (e) => {
-    e.preventDefault();
-    dateWord.style.cursor = 'auto';
-    dateWord.classList.remove('blur-sm');
-});
-
-example.addEventListener('click', (e) => {
-    e.preventDefault();
-    // example.style.cursor = 'auto';
-    example.classList.remove('blur-sm');
-});
-
-document.addEventListener('keydown', function(event) {
-    if (event.key == 'ArrowRight') {
-
-        if (select.value == 'Слова') {
-            if (descWord.className.indexOf('blur-sm') !== -1) {
-                descWord.classList.remove('blur-sm');
-            }
-        } else {
-    
-            console.log('A = ' + a);
-    
-            if (a == 0) {
-                
-    
-                let prof = descWord.children[0].children;
-                for (let key in prof) {
-                    if (prof[key].classList == 'blur-sm') {
-                        y++;
-                        prof[key].classList.remove('blur-sm');
-                    }
-                }
-    
-                console.log('Y = ' + y);
-                if (y == 0) {
-                    a = 0;
-                    console.log(a);
-                    logger();
-                } else {
-                    a++;
-                }
-                
-            } else {
-                a = 0;
-                logger();
-            }
-        }
-
-        
-    }
-
-    
-});
-
-
-
-inputText.addEventListener('input', function (e) {
-    e.preventDefault();
-    if (inputText.value.toLowerCase().trim() == mainWord.innerHTML.toLowerCase().trim()) wordsFunc();
-});
-
-
+}
 
 
 // textareaID.addEventListener('input', function (e) {
