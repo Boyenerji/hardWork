@@ -8,8 +8,16 @@ import { englishWords } from './engwords.js';
 
 console.log(englishWords);
 
+let arrColors = [
+    'text-green-500',
+    'text-purple-400',
+    'text-orange-500',
+    'text-cyan-600',
+    'text-blue-600'
+];
 
-let randText = randomInteger(1, 4),
+
+let randText = randomInteger(0, 4),
     randomWords,
     isMainTwo = false,
     textArrayLogger = '',
@@ -214,23 +222,9 @@ function logger() {
 
 btn.addEventListener('click', () => {
     if (select.value == 'Слова') {
-        switch (randText) {
-            case 1:
-                mainWord.classList.add('text-green-500')
-                break;
-            case 2:
-                mainWord.classList.add('text-purple-400')
-                break;
-            case 3:
-                mainWord.classList.add('text-orange-500')
-                break;
-            case 4:
-                mainWord.classList.add('text-cyan-600')
-                break;
-            default:
-                mainWord.classList.add('text-blue-600')
-                break;
-        }
+
+        mainWord.classList.add(`${arrColors[randText]}`);
+
         mainTwo.style.display = 'flex';
         mainWord.classList.add('underline');
         mainWord.classList.remove('fs-3');
@@ -259,8 +253,6 @@ btn.addEventListener('click', () => {
     select.remove();
     hello_h1.remove();
 
-
-    // alert_info.style.display = 'block';
     showWords.style.display = 'flex';
     window.scrollTo(0,0);
 });
