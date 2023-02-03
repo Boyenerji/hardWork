@@ -184,37 +184,66 @@ function logger() {
         let i = randomInteger(0, posts.length - 1);
         console.log(i);
 
+        window.scrollTo(0,0);
+
         idImg.style.display = 'none';
         console.log(posts[i].pic);
 
         idImg.src = `${posts[i].pic}`;
-        mainWord.innerHTML = 'wait...'
-        descWord.innerHTML = 'wait...';
+        // mainWord.innerHTML = 'wait...'
+        // descWord.innerHTML = 'wait...';
+
+
+        mainWord.innerHTML = posts[i].name;
+        descWord.innerHTML = '<p class="leading-relaxed">' + posts[i].desc + '</p>';
+
+
+       
+
         idImg.onload = () => {
             idImg.style.display = 'block';
-            window.scrollTo(0,0);
-            mainWord.innerHTML = posts[i].name;
+            // window.scrollTo(0,0);
 
-            // myr = posts[i].desc;
 
-            descWord.innerHTML = '<p class="leading-relaxed">' + posts[i].desc + '</p>';
+            // mainWord.innerHTML = posts[i].name;
 
-            if (posts[i].dateWord.length > 0) {
-                dateWord.innerHTML = '';
-                dateWord.style.display = 'flex';
-                dateWord.innerHTML +=
-                    `<svg width="22" height="22" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 2a10 10 0 1 0 0 20 10 10 0 1 0 0-20z"></path>
-                    <path d="M12 6v6l4 2"></path>
-                </svg>`;
-                dateWord.innerHTML += `<p>${posts[i].dateWord}</p>`;
-            }
-            posts.splice(i, 1);
 
-            setTimeout(() => {
-                main.classList.remove('animate__animated', 'animate__backInDown', 'animate__faster');
-            }, 500);
+            // descWord.innerHTML = '<p class="leading-relaxed">' + posts[i].desc + '</p>';
+
+            // if (posts[i].dateWord.length > 0) {
+            //     dateWord.innerHTML = '';
+            //     dateWord.style.display = 'flex';
+            //     dateWord.innerHTML +=
+            //         `<svg width="22" height="22" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            //         <path d="M12 2a10 10 0 1 0 0 20 10 10 0 1 0 0-20z"></path>
+            //         <path d="M12 6v6l4 2"></path>
+            //     </svg>`;
+            //     dateWord.innerHTML += `<p>${posts[i].dateWord}</p>`;
+            // }
+            // posts.splice(i, 1);
+
+            // setTimeout(() => {
+            //     main.classList.remove('animate__animated', 'animate__backInDown', 'animate__faster');
+            // }, 500);
         };
+
+        if (posts[i].dateWord.length > 0) {
+            dateWord.innerHTML = '';
+            dateWord.style.display = 'flex';
+            dateWord.innerHTML +=
+                `<svg width="22" height="22" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 2a10 10 0 1 0 0 20 10 10 0 1 0 0-20z"></path>
+                <path d="M12 6v6l4 2"></path>
+            </svg>`;
+            dateWord.innerHTML += `<p>${posts[i].dateWord}</p>`;
+        }
+        posts.splice(i, 1);
+
+        setTimeout(() => {
+            main.classList.remove('animate__animated', 'animate__backInDown', 'animate__faster');
+        }, 500);
+
+
 
     }
 }
