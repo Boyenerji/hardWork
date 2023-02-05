@@ -194,6 +194,7 @@ function logger() {
         descWord.innerHTML = '<p class="leading-relaxed">' + posts[i].desc + '</p>';
 
 
+        
         idImg.onload = () => {
             idImg.style.display = 'block';
         };
