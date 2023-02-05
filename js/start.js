@@ -266,7 +266,11 @@ mainTwo.addEventListener('click', (e) => {
     console.log(isMainTwo);
     if (isMainTwo == true) {
         if (descWord.className.indexOf('blur-sm') !== -1) descWord.classList.remove('blur-sm');
-        if (mainWord.className.indexOf('blur') !== -1) mainWord.classList.remove('blur');
+        if (mainWord.className.indexOf('blur') !== -1) {
+            mainWord.classList.remove('blur');
+        } else {
+            wordsFunc();
+        }
         if (example.className.indexOf('blur-sm') !== -1) example.classList.remove('blur-sm');
         isMainTwo = false;
     } else {
@@ -285,7 +289,6 @@ mainWord.addEventListener('click', (e) => {
     e.preventDefault();
     mainWord.style.cursor = 'auto';
     mainWord.classList.remove('blur');
-    inputText.style.display = 'none';
     isMainTwo = false;
 });
 
@@ -309,25 +312,9 @@ document.addEventListener('keydown', function(event) {
 });
 
 
-
-// inputText.addEventListener('input', function (e) {
-//     e.preventDefault();
-//     if (inputText.value.toLowerCase().trim() == mainWord.innerHTML.toLowerCase().trim()) {
-//         inputText.style.display = 'none';
-//         mainWord.classList.remove('blur');
-//         example.classList.remove('blur-sm');
-//         setTimeout(() => {
-//             wordsFunc();
-//         }, 3000);
-//     }
-// });
-
-
 function ifBlur() {
     if (select.value == 'Слова') {
-        if (descWord.className.indexOf('blur-sm') !== -1) {
-            descWord.classList.remove('blur-sm');
-        }
+        if (descWord.className.indexOf('blur-sm') !== -1) descWord.classList.remove('blur-sm');
     } else {
 
         console.log('A = ' + a);
@@ -358,27 +345,6 @@ function ifBlur() {
         }
     }
 }
-
-
-// textareaID.addEventListener('input', function (e) {
-//     e.preventDefault();
-//     // console.dir(textareaID.style);
-//     if (isLoggerInput == true) {
-//         console.log('textArrayLogger = ' + textArrayLogger.toLowerCase().replace(/[\s.,%]/g, ''));
-//         console.log('inputText = ' + textareaID.value.toLowerCase().replace(/[\s.,%]/g, ''));
-//         if (textareaID.value.toLowerCase().replace(/[\s.,%]/g, '') == textArrayLogger.toLowerCase().replace(/[\s.,%]/g, '')) {
-//             isLoggerInput = false;
-//             window.scrollTo(0,0);
-//             logger();
-//         }
-//     }
-
-// });
-
-
-// function protect() {
-//     select.value == 'Слова' ? words() : logger();
-// }
 
 
 function randomInteger(min, max) {
