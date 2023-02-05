@@ -40,11 +40,11 @@ let btn = document.querySelector('#btn_start'),
     example = document.querySelector('.example'),
     idImg = document.querySelector('#idImg'),
     mainTwo = document.querySelector('.mainTwo'),
-    inputText = document.querySelector('#inputText'),
+    // inputText = document.querySelector('#inputText'),
     // btn_test = document.querySelector('#btn_test'),
     dateWord = document.querySelector('.dateWord'),
-    echoWarning = document.querySelector('#echoWarning'),
-    textareaID = document.querySelector('textarea');
+    echoWarning = document.querySelector('#echoWarning');
+
 
 
 
@@ -73,22 +73,18 @@ console.dir(words);
 function wordsFunc() {
 
 
-
-
     if (words.length == 0) {
         location.reload();
     } else {
 
         
-        if (inputText.style.display == 'block') {
-            inputText.blur();
-            inputText.style.display = 'none';
-        } 
-        inputText.value = '';
+        // if (inputText.style.display == 'block') {
+        //     inputText.blur();
+        //     inputText.style.display = 'none';
+        // } 
+        // inputText.value = '';
 
-        // console.log(example.innerHTML);
-        // console.log(example.innerHTML.length);
-
+        
 
         if (example.className.indexOf('blur-sm') == -1) example.classList.add('blur-sm');
         if (example.innerHTML.length > 0) example.innerHTML = '';
@@ -107,7 +103,7 @@ function wordsFunc() {
             console.log('Блюрим тайтл');
             mainWord.classList.add('blur');
             mainWord.style.cursor = 'pointer';
-            inputText.style.display = 'block';
+            // inputText.style.display = 'block';
         } else {
             console.log('Блюрим описание');
             descWord.classList.add('blur-sm');
@@ -145,9 +141,9 @@ function wordsFunc() {
             example.innerHTML = words[i].example[randomExample];
         }
 
-        inputText.focus({
-            preventScroll: true
-        });
+        // inputText.focus({
+        //     preventScroll: true
+        // });
 
 
 
@@ -198,33 +194,8 @@ function logger() {
         descWord.innerHTML = '<p class="leading-relaxed">' + posts[i].desc + '</p>';
 
 
-       
-
         idImg.onload = () => {
             idImg.style.display = 'block';
-            // window.scrollTo(0,0);
-
-
-            // mainWord.innerHTML = posts[i].name;
-
-
-            // descWord.innerHTML = '<p class="leading-relaxed">' + posts[i].desc + '</p>';
-
-            // if (posts[i].dateWord.length > 0) {
-            //     dateWord.innerHTML = '';
-            //     dateWord.style.display = 'flex';
-            //     dateWord.innerHTML +=
-            //         `<svg width="22" height="22" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            //         <path d="M12 2a10 10 0 1 0 0 20 10 10 0 1 0 0-20z"></path>
-            //         <path d="M12 6v6l4 2"></path>
-            //     </svg>`;
-            //     dateWord.innerHTML += `<p>${posts[i].dateWord}</p>`;
-            // }
-            // posts.splice(i, 1);
-
-            // setTimeout(() => {
-            //     main.classList.remove('animate__animated', 'animate__backInDown', 'animate__faster');
-            // }, 500);
         };
 
         if (posts[i].dateWord.length > 0) {
@@ -274,6 +245,7 @@ btn.addEventListener('click', () => {
         wordsFunc();
     } else {
         body.style.justifyContent = 'flex-start';
+        body.style.height = 'auto';
         logger();
     }
 
@@ -290,63 +262,23 @@ btn.addEventListener('click', () => {
 mainTwo.addEventListener('click', (e) => {
     e.preventDefault();
 
-    if (inputText.style.display === 'block') {
-        inputText.focus({
-            preventScroll: true
-        });
+    console.log('aga');
+    console.log(isMainTwo);
+    if (isMainTwo == true) {
+        if (descWord.className.indexOf('blur-sm') !== -1) descWord.classList.remove('blur-sm');
+        if (mainWord.className.indexOf('blur') !== -1) mainWord.classList.remove('blur');
+        if (example.className.indexOf('blur-sm') !== -1) example.classList.remove('blur-sm');
+        isMainTwo = false;
     } else {
-        console.log('aga');
-        console.log(isMainTwo);
-        if (isMainTwo == true) {
-            if (descWord.className.indexOf('blur-sm') !== -1) descWord.classList.remove('blur-sm');
-            if (mainWord.className.indexOf('blur-sm') !== -1) mainWord.classList.remove('blur-sm');
-            if (example.className.indexOf('blur-sm') !== -1) example.classList.remove('blur-sm');
-            isMainTwo = false;
-        } else {
-            wordsFunc();
-        }
+        wordsFunc();
     }
+    
 });
 
 
 descWord.addEventListener('click', (e) => {
     e.preventDefault();
-
     ifBlur();
-   
-    // if (select.value == 'Слова') {
-    //     if (descWord.className.indexOf('blur-sm') !== -1) {
-    //         descWord.classList.remove('blur-sm'); 
-    //     }
-    // } else {
-
-    //     console.log('A = ' + a);
-
-    //     if (a == 0) {
-            
-
-    //         let prof = descWord.children[0].children;
-    //         for (let key in prof) {
-    //             if (prof[key].classList == 'blur-sm') {
-    //                 y++;
-    //                 prof[key].classList.remove('blur-sm');
-    //             }
-    //         }
-
-    //         console.log('Y = ' + y);
-    //         if (y == 0) {
-    //             a = 0;
-    //             console.log(a);
-    //             logger();
-    //         } else {
-    //             a++;
-    //         }
-            
-    //     } else {
-    //         a = 0;
-    //         logger();
-    //     }
-    // }
 });
 
 mainWord.addEventListener('click', (e) => {
@@ -378,17 +310,17 @@ document.addEventListener('keydown', function(event) {
 
 
 
-inputText.addEventListener('input', function (e) {
-    e.preventDefault();
-    if (inputText.value.toLowerCase().trim() == mainWord.innerHTML.toLowerCase().trim()) {
-        inputText.style.display = 'none';
-        mainWord.classList.remove('blur');
-        example.classList.remove('blur-sm');
-        setTimeout(() => {
-            wordsFunc();
-        }, 3000);
-    }
-});
+// inputText.addEventListener('input', function (e) {
+//     e.preventDefault();
+//     if (inputText.value.toLowerCase().trim() == mainWord.innerHTML.toLowerCase().trim()) {
+//         inputText.style.display = 'none';
+//         mainWord.classList.remove('blur');
+//         example.classList.remove('blur-sm');
+//         setTimeout(() => {
+//             wordsFunc();
+//         }, 3000);
+//     }
+// });
 
 
 function ifBlur() {
