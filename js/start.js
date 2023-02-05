@@ -266,11 +266,7 @@ mainTwo.addEventListener('click', (e) => {
     console.log(isMainTwo);
     if (isMainTwo == true) {
         if (descWord.className.indexOf('blur-sm') !== -1) descWord.classList.remove('blur-sm');
-        if (mainWord.className.indexOf('blur') !== -1) {
-            mainWord.classList.remove('blur');
-        } else {
-            wordsFunc();
-        }
+        if (mainWord.className.indexOf('blur') !== -1)  mainWord.classList.remove('blur');
         if (example.className.indexOf('blur-sm') !== -1) example.classList.remove('blur-sm');
         isMainTwo = false;
     } else {
@@ -298,9 +294,7 @@ dateWord.addEventListener('click', (e) => {
     dateWord.classList.remove('blur-sm');
 });
 
-example.addEventListener('click', (e) => {
-    e.preventDefault();
-    // example.style.cursor = 'auto';
+example.addEventListener('click', () => {
     example.classList.remove('blur-sm');
 });
 
