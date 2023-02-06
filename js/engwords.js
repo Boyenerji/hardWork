@@ -3,18 +3,10 @@
 
 export const englishWords = [
 
-{
-    name: 'Granny',
-    desc: 'Бабушка',
-    example: 
-    [
-       ''
-    ]
-},
 
 {
     name: 'Realize',
-    desc: 'Реализовать',
+    desc: ['Осознавать', 'Понимать', 'Претворить в жизнь'],
     example: 
     [
        ''
@@ -23,7 +15,7 @@ export const englishWords = [
 
 {
     name: 'Protect',
-    desc: 'Защищать',
+    desc: ['Защищать', 'Оберегать', 'Уберечь'],
     example: 
     [
        ''
@@ -32,7 +24,7 @@ export const englishWords = [
 
 {
     name: 'Usually',
-    desc: 'Обычно',
+    desc: ['Обычно', 'Обыкновенно'],
     example: 
     [
        ''
@@ -41,7 +33,7 @@ export const englishWords = [
 
 {
     name: 'Helping',
-    desc: 'Эффективный',
+    desc: ['Помощь', 'Содействие', 'Оказание помощи'],
     example: 
     [
        ''
@@ -50,7 +42,7 @@ export const englishWords = [
 
 {
     name: 'Bride',
-    desc: 'Невеста',
+    desc: ['Невеста'],
     example: 
     [
        ''
@@ -59,7 +51,7 @@ export const englishWords = [
 
 {
     name: 'Judge',
-    desc: 'Судить',
+    desc: ['Судить'],
     example: 
     [
        ''
@@ -68,7 +60,7 @@ export const englishWords = [
 
 {
     name: 'Behavior',
-    desc: 'Поведение',
+    desc: ['Поведение'],
     example: 
     [
        ''
@@ -77,7 +69,7 @@ export const englishWords = [
 
 {
     name: 'Earlier',
-    desc: 'Ранее',
+    desc: ['Ранее'],
     example: 
     [
        ''
@@ -86,7 +78,7 @@ export const englishWords = [
 
 {
     name: 'Cute',
-    desc: 'Милый',
+    desc: ['Милый'],
     example: 
     [
        ''
@@ -95,7 +87,7 @@ export const englishWords = [
 
 {
     name: 'Calm',
-    desc: 'Успокаивать',
+    desc: ['Успокаивать'],
     example: 
     [
        ''
@@ -104,7 +96,7 @@ export const englishWords = [
 
 {
     name: 'Wear',
-    desc: 'Носить',
+    desc: ['Носить'],
     example: 
     [
        ''
@@ -113,7 +105,7 @@ export const englishWords = [
 
 {
     name: 'Decision',
-    desc: 'Решение',
+    desc: ['Решение'],
     example: 
     [
        ''
@@ -122,7 +114,7 @@ export const englishWords = [
 
 {
     name: 'Lovely',
-    desc: 'Прекрасный',
+    desc: ['Прекрасный'],
     example: 
     [
        ''
@@ -131,7 +123,7 @@ export const englishWords = [
 
 {
     name: 'Court',
-    desc: 'Суд',
+    desc: ['Суд'],
     example: 
     [
        ''
@@ -140,7 +132,12 @@ export const englishWords = [
 
 {
     name: 'Lose',
-    desc: 'Терять',
+    desc: [
+        'Терять.',
+        'Потерять.',
+        'Упускать.',
+        'Утратить.'
+    ],
     example: 
     [
        ''
@@ -149,7 +146,10 @@ export const englishWords = [
 
 {
     name: 'Shut',
-    desc: 'Закрывать',
+    desc: [
+        'Закрыть',
+        'Закрывать'
+    ],
     example: 
     [
        ''
@@ -158,7 +158,11 @@ export const englishWords = [
 
 {
     name: 'Notice',
-    desc: 'Обращать внимание',
+    desc: [
+        'Уведомление',
+        'Извещение',
+        'Предупреждение'
+    ],
     example: 
     [
        ''
@@ -167,16 +171,23 @@ export const englishWords = [
 
 {
     name: 'Witness',
-    desc: 'Свидетель',
+    desc: [
+        'Свидетель.',
+        'Очевидец.'
+    ],
     example: 
     [
-       ''
+       `The witness hesitated.
+       Свидетельница замялась.`
     ]
 },
 
 {
     name: 'Guilty',
-    desc: 'Виновный',
+    desc: [
+        'Виновный',
+        'Виноватый'
+    ],
     example: 
     [
        ''
@@ -185,7 +196,7 @@ export const englishWords = [
 
 {
     name: 'Suppose',
-    desc: 'Предполагать',
+    desc: ['Предполагать'],
     example: 
     [
        ''
@@ -194,7 +205,10 @@ export const englishWords = [
 
 {
     name: 'Near',
-    desc: 'Вблизи',
+    desc: [
+        'Рядом',
+        'Поблизости'
+    ],
     example: 
     [
        ''
@@ -203,7 +217,10 @@ export const englishWords = [
 
 {
     name: 'Thunder',
-    desc: 'Гром',
+    desc: [
+        'Гром',
+        'Грохот'
+    ],
     example: 
     [
        ''
@@ -212,7 +229,10 @@ export const englishWords = [
 
 {
     name: 'Century',
-    desc: 'Век',
+    desc: [
+        'Век',
+        'Столетие'
+    ],
     example: 
     [
        ''
@@ -221,7 +241,7 @@ export const englishWords = [
 
 {
     name: 'Bow',
-    desc: 'Лук',
+    desc: ['Лук'],
     example: 
     [
        ''
@@ -230,7 +250,7 @@ export const englishWords = [
 
 {
     name: 'Heat',
-    desc: 'Тепло',
+    desc: ['Тепло', 'Жара'],
     example: 
     [
        ''
@@ -239,7 +259,7 @@ export const englishWords = [
 
 {
     name: 'Total',
-    desc: 'Сумма',
+    desc: ['Весь'],
     example: 
     [
        ''
@@ -248,7 +268,7 @@ export const englishWords = [
 
 {
     name: 'Ox',
-    desc: 'Бык',
+    desc: ['Бык'],
     example: 
     [
        ''
@@ -257,7 +277,7 @@ export const englishWords = [
 
 {
     name: 'Ax', 
-    desc: 'Топор',
+    desc: ['Топор'],
     example: 
     [
        ''
@@ -266,7 +286,7 @@ export const englishWords = [
 
 {
     name: 'Cruel', 
-    desc: 'Жестокий',
+    desc: ['Жестокий'],
     example: 
     [
        ''
@@ -274,24 +294,40 @@ export const englishWords = [
 },
 {
     name: 'Foreign', 
-    desc: 'Иностранный'
+    desc: ['Иностранный'],
+    example: 
+    [
+       ''
+    ]
 },
 {
     name: 'Van', 
-    desc: 'Фургон'
+    desc: ['Фургон'],
+    example: 
+    [
+       ''
+    ]
 },
 
 {
     name: 'Pretty good', 
-    desc: 'Довольно хорошо'
+    desc: ['Довольно хорошо'],
+    example: 
+    [
+       ''
+    ]
     
    
 },
 
 {
     name: 'How do you feel?',
-    desc: 'Общество',
-    
+    desc: ['Как ты себя чувствуешь?'],
+    example: 
+    [
+       ''
+    ]
+        
 }
 
 

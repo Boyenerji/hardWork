@@ -85,18 +85,9 @@ console.dir(words);
 function wordsFunc() {
 
 
-    if (words.length == 0) {
+    if (words.length == 0 || englishWordsArr.length == 0) {
         location.reload();
     } else {
-
-        
-        // if (inputText.style.display == 'block') {
-        //     inputText.blur();
-        //     inputText.style.display = 'none';
-        // } 
-        // inputText.value = '';
-
-        
 
         if (example.className.indexOf('blur-sm') == -1) example.classList.add('blur-sm');
         if (example.innerHTML.length > 0) example.innerHTML = '';
@@ -126,42 +117,44 @@ function wordsFunc() {
 
         main.classList.add('animate__animated', 'animate__backInDown', 'animate__faster');
 
-
-
-        ((words.length - 1) != 0) ? alert_info.innerHTML = words.length - 1 : alert_info.remove();
-        let i = randomInteger(0, words.length - 1);
-
-
-        // if(words[i].isEnglish == true) {
-        //     mainWord.style.color = '#FFFFFF';
-        //     main.style.backgroundColor = '#1E90FF';
-        //     descWord.style.color = 'white';
-        // } else {
-        //     mainWord.style.color = '';
-        //     main.style.backgroundColor = '';
-        //     descWord.style.color = '';
-        // }
-        
-        mainWord.innerHTML = words[i].name;
-        descWord.innerHTML = words[i].desc;
-
-        // console.log(words[i].example.length);
-
-        if (words[i].example.length != 0) {
-            let randomExample = randomInteger(0, words[i].example.length - 1);
-            console.log(words[i].example[randomExample]);
-            example.innerHTML = words[i].example[randomExample];
+        let i;
+        if (select.value == 'English') {
+            ((englishWordsArr.length - 1) != 0) ? alert_info.innerHTML = englishWordsArr.length - 1 : alert_info.remove();
+            i = randomInteger(0, englishWordsArr.length - 1);
+        } else {
+            ((words.length - 1) != 0) ? alert_info.innerHTML = words.length - 1 : alert_info.remove();
+            i = randomInteger(0, words.length - 1);
         }
 
-        // inputText.focus({
-        //     preventScroll: true
-        // });
+        // ((words.length - 1) != 0) ? alert_info.innerHTML = words.length - 1 : alert_info.remove();
+        // let i = randomInteger(0, words.length - 1);
+
+        if (select.value == 'English') {
+            let randEndWord = randomInteger(0, englishWordsArr[i].desc.length - 1);
+            mainWord.innerHTML = englishWordsArr[i].name;
+            descWord.innerHTML = englishWordsArr[i].desc[randEndWord];
+        } else {
+            mainWord.innerHTML = words[i].name;
+            descWord.innerHTML = words[i].desc;
+        }
+
+        if (select.value == 'English') {
+            if (englishWordsArr[i].example.length != 0) {
+                let randomExample = randomInteger(0, englishWordsArr[i].example.length - 1);
+                console.log(englishWordsArr[i].example[randomExample]);
+                example.innerHTML = englishWordsArr[i].example[randomExample];
+            }
+        } else {
+            if (words[i].example.length != 0) {
+                let randomExample = randomInteger(0, words[i].example.length - 1);
+                console.log(words[i].example[randomExample]);
+                example.innerHTML = words[i].example[randomExample];
+            }
+        }
 
 
-
-        // window.scrollTo(0,0);
-        words.splice(i, 1);
-
+        (select.value == 'English') ? englishWordsArr.splice(i, 1) : words.splice(i, 1);
+        // words.splice(i, 1);
 
         setTimeout(() => {
             main.classList.remove('animate__animated', 'animate__backInDown', 'animate__faster');
@@ -234,7 +227,7 @@ function logger() {
 
 
 btn.addEventListener('click', () => {
-    if (select.value == 'Слова') {
+    if (select.value == 'Слова' || select.value == 'English' ) {
 
         mainWord.classList.add(`${arrColors[randText]}`);
 
@@ -374,10 +367,6 @@ function DarkTheme() {
         select.style.backgroundColor = '#6c757d';
         select.style.color = '#fff';
         dateWord.style.color = '#fff';
-        // inputText.style.backgroundColor = 'rgb(51 65 85)';
-        // inputText.style.color = '#fff';
-        // textareaID.style.backgroundColor = 'rgb(51 65 85)';
-        // textareaID.style.color = '#fff';
         mainTwo.classList.add('bg-slate-800');
         example.style.color = '#cbd5e1';
     }
