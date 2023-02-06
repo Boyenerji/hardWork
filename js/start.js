@@ -6,7 +6,7 @@ import { WordsArr } from './words.js';
 import { englishWords } from './engwords.js';
 
 
-console.log(englishWords);
+console.dir(englishWords);
 
 let arrColors = [
     'text-green-500',
@@ -66,6 +66,18 @@ while (words.length <= 25) {
     WordsArr.splice([a], 1);
 }
 
+
+const englishWordsArr = [];
+while (englishWordsArr.length <= 25) {
+    let a = randomInteger(0, englishWords.length - 1);
+    englishWordsArr.unshift(englishWords[a]);
+    englishWords.splice([a], 1);
+}
+
+
+
+
+console.dir(englishWordsArr);
 console.dir(posts);
 console.dir(words);
 
@@ -362,10 +374,10 @@ function DarkTheme() {
         select.style.backgroundColor = '#6c757d';
         select.style.color = '#fff';
         dateWord.style.color = '#fff';
-        inputText.style.backgroundColor = 'rgb(51 65 85)';
-        inputText.style.color = '#fff';
-        textareaID.style.backgroundColor = 'rgb(51 65 85)';
-        textareaID.style.color = '#fff';
+        // inputText.style.backgroundColor = 'rgb(51 65 85)';
+        // inputText.style.color = '#fff';
+        // textareaID.style.backgroundColor = 'rgb(51 65 85)';
+        // textareaID.style.color = '#fff';
         mainTwo.classList.add('bg-slate-800');
         example.style.color = '#cbd5e1';
     }
