@@ -563,6 +563,15 @@ export const WordsArr = [
     ]
 },
 
+{
+    name: 'Близ',
+    desc: 'Рядом, подле.',
+    example: 
+    [
+       'Близ реки.'
+    ]
+},
+
 
 
 
