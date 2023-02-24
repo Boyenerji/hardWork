@@ -43,7 +43,8 @@ let btn = document.querySelector('#btn_start'),
     // inputText = document.querySelector('#inputText'),
     // btn_test = document.querySelector('#btn_test'),
     dateWord = document.querySelector('.dateWord'),
-    echoWarning = document.querySelector('#echoWarning');
+    echoWarning = document.querySelector('#echoWarning'),
+    main_2 = document.querySelector('.main_2');
 
 
 
@@ -77,6 +78,47 @@ while (englishWordsArr.length <= 25) {
 
 
 
+// let das = {
+//     name: 'Когда родился Ленин',
+//     desc: '',
+//     example: [],
+//     choice: [
+//         '22 апреля 1870',
+//         '12 апреля 1872',
+//         '22 мая 1878'
+//     ],
+//     trueChoice: '22 апреля 1870',
+//     isTest: true
+// }
+
+// console.log(das.choice.sort(() => Math.random() - 0.5));
+
+
+// if (das.isTest == true) {
+//     main.innerHTML += das.name;
+//     das.choice.forEach(element => {
+//         main.innerHTML += `<button>${element}</button>`;
+//     });
+    
+//     let popp = document.querySelectorAll('button');
+//     for (let j = 1; j < popp.length; j++) {
+//         console.log(j);
+//         console.log(popp[j]);
+//         popp[j].addEventListener('click', function(e) {
+//             // console.dir(e.target.style.display);
+//             console.log(e.target.innerText);
+//             if (e.target.innerText == das.trueChoice) console.log('Верно');
+//       });
+//     }
+//     console.log(popp);
+// }
+
+
+
+// console.dir(btn);
+
+// btn.click();
+
 console.dir(englishWordsArr);
 console.dir(posts);
 console.dir(words);
@@ -99,6 +141,8 @@ function wordsFunc() {
         mainWord.classList.remove('blur');
         descWord.classList.remove('blur-sm');
 
+
+
         randomWords = randomInteger(1, 2);
         console.log('randomWords = ' + randomWords);
 
@@ -112,8 +156,9 @@ function wordsFunc() {
             descWord.classList.add('blur-sm');
             descWord.style.cursor = 'pointer';
         }
-
         isMainTwo = true;
+
+
 
         main.classList.add('animate__animated', 'animate__backInDown', 'animate__faster');
 
@@ -170,17 +215,18 @@ function logger() {
         window.scrollTo(0,0);
         y = 0;
         descWord.classList.remove('blur-sm');
-        // textareaID.value = '';
-        // if (textareaID.style.display == 'block') textareaID.style.display = 'none';
 
         descWord.style.cursor = 'pointer';
-        // descWord.classList.add('blur-sm');
         dateWord.classList.add('blur-sm');
         if (dateWord.style.display == 'flex') dateWord.style.display = 'none';
 
         main.classList.add('animate__animated', 'animate__backInDown', 'animate__faster');
 
         ((posts.length - 1) != 0) ? alert_info.innerHTML = posts.length - 1 : alert_info.remove();
+
+
+
+
 
         let i = randomInteger(0, posts.length - 1);
         console.log(i);
@@ -191,15 +237,55 @@ function logger() {
         console.log(posts[i].pic);
 
         idImg.src = `${posts[i].pic}`;
-        // mainWord.innerHTML = 'wait...'
-        // descWord.innerHTML = 'wait...';
 
 
-        mainWord.innerHTML = posts[i].name;
-        descWord.innerHTML = '<p class="leading-relaxed">' + posts[i].desc + '</p>';
+        // mainWord.innerHTML = posts[i].name;
+
+        if (posts[i].isTest == true) {
+
+            // console.log(posts[i].trueChoice);
+            // console.log(posts[i].nameChoice);
+
+            mainWord.innerHTML = '';
+            descWord.innerHTML = '';
+
+            // console.log(posts[i].choice);
+
+            mainWord.innerHTML = posts[i].nameChoice;
+
+            posts[i].choice.forEach(element => {
+                descWord.innerHTML += `<button>${element}</button>`;
+            });
+
+            let letChoice = posts[i].trueChoice;
+
+            // console.log(posts[i].trueChoice);
+            
+            let popp = document.querySelectorAll('button');
+            for (let j = 0; j < popp.length; j++) {
+                console.log(j);
+                console.log(popp[j]);
+                popp[j].addEventListener('click', function(e) {
+                    console.dir(e.target.style.display);
+                    console.log(e.target.innerText);
+                    if (e.target.innerText == letChoice) {
+                        ifBlur();
+                    } else {
+                        e.target.style.display = 'none';
+                    }
+            });
+            }
+            // console.log(popp);
+            
+
+        } else {
+            mainWord.innerHTML = posts[i].name;
+            descWord.innerHTML = '<p class="leading-relaxed">' + posts[i].desc + '</p>';
+        }
 
 
-        
+        // descWord.innerHTML = '<p class="leading-relaxed">' + posts[i].desc + '</p>';
+
         idImg.onload = () => {
             idImg.style.display = 'block';
         };
@@ -282,7 +368,7 @@ mainTwo.addEventListener('click', (e) => {
 });
 
 
-descWord.addEventListener('click', (e) => {
+main_2.addEventListener('click', (e) => {
     e.preventDefault();
     ifBlur();
 });
@@ -351,6 +437,8 @@ function randomInteger(min, max) {
     let rand = min - 0.5 + Math.random() * (max - min + 1);
     return Math.round(rand);
 }
+
+
 
 DarkTheme();
 
