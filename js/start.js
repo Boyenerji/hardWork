@@ -487,5 +487,6 @@ function DarkTheme() {
         dateWord.style.color = '#fff';
         mainTwo.classList.add('bg-slate-800');
         example.style.color = '#cbd5e1';
+        mainWord2.style.color = '#fff';
     }
 }
