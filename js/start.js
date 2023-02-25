@@ -279,7 +279,7 @@ function logger() {
                     //     ifBlur();
                     // }
 
-                    if (e.target.innerText !== 'Для теста') {
+                    if (e.target.innerText !== '>') {
                         mainWord2.innerHTML += e.target.innerText + ' ';
                         e.target.style.display = 'none';
                     }
