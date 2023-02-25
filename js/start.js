@@ -247,7 +247,7 @@ function logger() {
 
         if (posts[i].isInput == 0) {
 
-
+            mainWord2.innerHTML = '';
             mainWord.innerHTML = mainWordLet;
             descWord.innerHTML = '';
 

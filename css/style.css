@@ -133,6 +133,7 @@ select:hover {
     background: black;
     padding: 10px;
     margin: 10px;
+    color: #fff;
 }
 
 .descWord p {
