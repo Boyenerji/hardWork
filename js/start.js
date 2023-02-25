@@ -36,12 +36,13 @@ let btn = document.querySelector('#btn_start'),
     hello_h1 = document.querySelector('#hello_h1'),
     picWord = document.querySelector('.picWord'),
     mainWord = document.querySelector('.mainWord'),
+    mainWord2 = document.querySelector('.mainWord2'),
     descWord = document.querySelector('.descWord'),
     example = document.querySelector('.example'),
     idImg = document.querySelector('#idImg'),
     mainTwo = document.querySelector('.mainTwo'),
     // inputText = document.querySelector('#inputText'),
-    // btn_test = document.querySelector('#btn_test'),
+    btn_test = document.querySelector('#btn_test'),
     dateWord = document.querySelector('.dateWord'),
     echoWarning = document.querySelector('#echoWarning'),
     main_2 = document.querySelector('.main_2');
@@ -216,6 +217,10 @@ function logger() {
         y = 0;
         descWord.classList.remove('blur-sm');
 
+
+
+        
+
         descWord.style.cursor = 'pointer';
         dateWord.classList.add('blur-sm');
         if (dateWord.style.display == 'flex') dateWord.style.display = 'none';
@@ -237,46 +242,66 @@ function logger() {
         console.log(posts[i].pic);
 
         idImg.src = `${posts[i].pic}`;
+        
+        let mainWordLet = posts[i].name;
+
+        if (posts[i].isInput == 0) {
 
 
-        // mainWord.innerHTML = posts[i].name;
-
-        if (posts[i].isTest == true) {
-
-            // console.log(posts[i].trueChoice);
-            // console.log(posts[i].nameChoice);
-
-            mainWord.innerHTML = '';
+            mainWord.innerHTML = mainWordLet;
             descWord.innerHTML = '';
 
-            // console.log(posts[i].choice);
+       
+            posts[i].arrInput.sort(() => Math.random() - 0.5);
+            console.log(posts[i].arrInput.sort(() => Math.random() - 0.5));
+            // mainWord.innerHTML = posts[i].nameChoice;
 
-            mainWord.innerHTML = posts[i].nameChoice;
-
-            posts[i].choice.forEach(element => {
+            posts[i].arrInput.forEach(element => {
                 descWord.innerHTML += `<button>${element}</button>`;
             });
 
-            let letChoice = posts[i].trueChoice;
+            let letInput = posts[i].trueInput;
 
-            // console.log(posts[i].trueChoice);
+        
             
             let popp = document.querySelectorAll('button');
+            
             for (let j = 0; j < popp.length; j++) {
                 console.log(j);
                 console.log(popp[j]);
                 popp[j].addEventListener('click', function(e) {
                     console.dir(e.target.style.display);
                     console.log(e.target.innerText);
-                    if (e.target.innerText == letChoice) {
+
+                    if (e.target.innerText == 'Для теста') {
+                        mainWord2.innerHTML = '';
                         ifBlur();
-                    } else {
-                        e.target.style.display = 'none';
                     }
+
+                    mainWord2.innerHTML += e.target.innerText + ' ';
+                    e.target.style.display = 'none';
+
+                    console.log(letInput);
+                    console.log(mainWord2.innerText);
+
+
+                    letInput.forEach(element => {
+                        if (element == mainWord2.innerText) {
+                            console.log('aga');
+                            mainWord2.innerHTML = '';
+                            ifBlur();
+                        }
+                    });
+
+                    // if (letInput == mainWord2.innerText) {
+                    //     console.log('aga');
+                    //     mainWord2.innerHTML = '';
+                    //     ifBlur();
+                    // }
+
+                    
             });
             }
-            // console.log(popp);
-            
 
         } else {
             mainWord.innerHTML = posts[i].name;
@@ -338,6 +363,7 @@ btn.addEventListener('click', () => {
     } else {
         body.style.justifyContent = 'flex-start';
         body.style.height = 'auto';
+        btn_test.style.display = 'block';
         logger();
     }
 
@@ -367,12 +393,6 @@ mainTwo.addEventListener('click', (e) => {
     
 });
 
-
-main_2.addEventListener('click', (e) => {
-    e.preventDefault();
-    ifBlur();
-});
-
 mainWord.addEventListener('click', (e) => {
     e.preventDefault();
     mainWord.style.cursor = 'auto';
@@ -389,6 +409,12 @@ dateWord.addEventListener('click', (e) => {
 example.addEventListener('click', () => {
     example.classList.remove('blur-sm');
 });
+
+btn_test.addEventListener('click', () => {
+    ifBlur();
+});
+
+
 
 document.addEventListener('keydown', function(event) {
     if (event.key == 'ArrowRight') {
