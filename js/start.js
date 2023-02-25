@@ -273,13 +273,16 @@ function logger() {
                     console.dir(e.target.style.display);
                     console.log(e.target.innerText);
 
-                    if (e.target.innerText == 'Для теста') {
-                        mainWord2.innerHTML = '';
-                        ifBlur();
+                    // if (e.target.innerText == 'Для теста') {
+                    //     mainWord2.innerHTML = '';
+                    //     ifBlur();
+                    // }
+
+                    if (e.target.innerText !== 'Для теста') {
+                        mainWord2.innerHTML += e.target.innerText + ' ';
+                        e.target.style.display = 'none';
                     }
 
-                    mainWord2.innerHTML += e.target.innerText + ' ';
-                    e.target.style.display = 'none';
 
                     console.log(letInput);
                     console.log(mainWord2.innerText);
