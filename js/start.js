@@ -244,10 +244,11 @@ function logger() {
         idImg.src = `${posts[i].pic}`;
         
         let mainWordLet = posts[i].name;
+        mainWord2.innerHTML = '';
 
         if (posts[i].isInput == 0) {
 
-            mainWord2.innerHTML = '';
+            
             mainWord.innerHTML = mainWordLet;
             descWord.innerHTML = '';
 
