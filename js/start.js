@@ -210,16 +210,70 @@ function logger() {
         switch (posts[i].isInput) {
             case 0:
                 console.log('0');
+
+                mainWord.innerHTML = mainWordLet;
+                descWord.innerHTML = '';
+
+                posts[i].arrInput.sort(() => Math.random() - 0.5);
+                console.log(posts[i].arrInput.sort(() => Math.random() - 0.5));
+
+                posts[i].arrInput.forEach(element => {
+                    descWord.innerHTML += `<button>${element}</button>`;
+                });
+
+                let letInput = posts[i].trueInput;
+
+                let popp = document.querySelectorAll('button');
+
+                for (let j = 0; j < popp.length; j++) {
+                    console.log(j);
+                    console.log(popp[j]);
+                    popp[j].addEventListener('click', function (e) {
+                        console.dir(e.target.style.display);
+                        console.log(e.target.innerText);
+
+
+                        if (e.target.innerText !== '>') {
+                            mainWord2.innerHTML += e.target.innerText + ' ';
+                            e.target.style.display = 'none';
+                        }
+
+
+                        console.log(letInput);
+                        console.log(mainWord2.innerText);
+
+
+                        letInput.forEach(element => {
+                            if (element == mainWord2.innerText) {
+                                console.log('aga');
+                                mainWord2.innerHTML = '';
+                                ifBlur();
+                            }
+                        });
+
+                    });
+                }
+
                 break;
 
             case 1:
                 console.log('1');
+
+                mainWord.innerHTML = posts[i].name;
+                descWord.innerHTML = '<p class="leading-relaxed">' + posts[i].desc + '</p>';
                 break;
-            
+
             case 2:
                 console.log('2');
+
+                audio.innerHTML = '';
+                audio.style.display = 'flex';
+                mainWord.innerHTML = posts[i].name;
+                descWord.innerHTML = '<p class="leading-relaxed">' + posts[i].audio + '</p>';
+
+
                 break;
-        
+
             default:
                 console.log('error');
                 break;
@@ -227,71 +281,55 @@ function logger() {
 
 
 
-        if (posts[i].isInput == 0) {
+        // if (posts[i].isInput == 0) {
 
+        //     mainWord.innerHTML = mainWordLet;
+        //     descWord.innerHTML = '';
+
+        //     posts[i].arrInput.sort(() => Math.random() - 0.5);
+        //     console.log(posts[i].arrInput.sort(() => Math.random() - 0.5));
+
+        //     posts[i].arrInput.forEach(element => {
+        //         descWord.innerHTML += `<button>${element}</button>`;
+        //     });
+
+        //     let letInput = posts[i].trueInput;
+
+        //     let popp = document.querySelectorAll('button');
             
-            mainWord.innerHTML = mainWordLet;
-            descWord.innerHTML = '';
-
-       
-            posts[i].arrInput.sort(() => Math.random() - 0.5);
-            console.log(posts[i].arrInput.sort(() => Math.random() - 0.5));
-            // mainWord.innerHTML = posts[i].nameChoice;
-
-            posts[i].arrInput.forEach(element => {
-                descWord.innerHTML += `<button>${element}</button>`;
-            });
-
-            let letInput = posts[i].trueInput;
-
-        
-            
-            let popp = document.querySelectorAll('button');
-            
-            for (let j = 0; j < popp.length; j++) {
-                console.log(j);
-                console.log(popp[j]);
-                popp[j].addEventListener('click', function(e) {
-                    console.dir(e.target.style.display);
-                    console.log(e.target.innerText);
-
-                    // if (e.target.innerText == 'Для теста') {
-                    //     mainWord2.innerHTML = '';
-                    //     ifBlur();
-                    // }
-
-                    if (e.target.innerText !== '>') {
-                        mainWord2.innerHTML += e.target.innerText + ' ';
-                        e.target.style.display = 'none';
-                    }
+        //     for (let j = 0; j < popp.length; j++) {
+        //         console.log(j);
+        //         console.log(popp[j]);
+        //         popp[j].addEventListener('click', function(e) {
+        //             console.dir(e.target.style.display);
+        //             console.log(e.target.innerText);
 
 
-                    console.log(letInput);
-                    console.log(mainWord2.innerText);
+        //             if (e.target.innerText !== '>') {
+        //                 mainWord2.innerHTML += e.target.innerText + ' ';
+        //                 e.target.style.display = 'none';
+        //             }
 
 
-                    letInput.forEach(element => {
-                        if (element == mainWord2.innerText) {
-                            console.log('aga');
-                            mainWord2.innerHTML = '';
-                            ifBlur();
-                        }
-                    });
+        //             console.log(letInput);
+        //             console.log(mainWord2.innerText);
 
-                    // if (letInput == mainWord2.innerText) {
-                    //     console.log('aga');
-                    //     mainWord2.innerHTML = '';
-                    //     ifBlur();
-                    // }
 
+        //             letInput.forEach(element => {
+        //                 if (element == mainWord2.innerText) {
+        //                     console.log('aga');
+        //                     mainWord2.innerHTML = '';
+        //                     ifBlur();
+        //                 }
+        //             });
                     
-            });
-            }
+        //     });
+        //     }
 
-        } else {
-            mainWord.innerHTML = posts[i].name;
-            descWord.innerHTML = '<p class="leading-relaxed">' + posts[i].desc + '</p>';
-        }
+        // } else {
+        //     mainWord.innerHTML = posts[i].name;
+        //     descWord.innerHTML = '<p class="leading-relaxed">' + posts[i].desc + '</p>';
+        // }
 
 
         
@@ -300,13 +338,14 @@ function logger() {
             idImg.style.display = 'block';
         };
 
-        if (posts[i].audio.length > 0) {
-            audio.innerHTML = '';
-            audio.style.display = 'flex';
-            audio.innerHTML += `<p>${posts[i].audio}</p>`;
-        }
-        posts.splice(i, 1);
+        // if (posts[i].audio.length > 0) {
+        //     audio.innerHTML = '';
+        //     audio.style.display = 'flex';
+        //     audio.innerHTML += `<p>${posts[i].audio}</p>`;
+        // }
 
+        
+        posts.splice(i, 1);
         setTimeout(() => {
             main.classList.remove('animate__animated', 'animate__backInDown', 'animate__faster');
         }, 500);
