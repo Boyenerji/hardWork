@@ -181,7 +181,7 @@ function logger() {
         
 
         descWord.style.cursor = 'pointer';
-        // dateWord.classList.add('blur-sm');
+        mainWord.classList.add('blur-sm');
         if (audio.style.display == 'flex') audio.style.display = 'none';
 
         main.classList.add('animate__animated', 'animate__backInDown', 'animate__faster');
@@ -415,9 +415,9 @@ mainTwo.addEventListener('click', (e) => {
 
 mainWord.addEventListener('click', (e) => {
     e.preventDefault();
-    mainWord.style.cursor = 'auto';
-    mainWord.classList.remove('blur');
-    isMainTwo = false;
+    // mainWord.style.cursor = 'auto';
+    mainWord.classList.remove('blur-sm');
+    // isMainTwo = false;
 });
 
 
