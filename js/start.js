@@ -44,7 +44,7 @@ let btn = document.querySelector('#btn_start'),
     // inputText = document.querySelector('#inputText'),
     btn_test = document.querySelector('#btn_test'),
     btn_test2 = document.querySelector('#btn_test2'),
-    dateWord = document.querySelector('.dateWord'),
+    audio = document.querySelector('.audio'),
     echoWarning = document.querySelector('#echoWarning'),
     main_2 = document.querySelector('.main_2');
 
@@ -181,8 +181,8 @@ function logger() {
         
 
         descWord.style.cursor = 'pointer';
-        dateWord.classList.add('blur-sm');
-        if (dateWord.style.display == 'flex') dateWord.style.display = 'none';
+        // dateWord.classList.add('blur-sm');
+        if (audio.style.display == 'flex') audio.style.display = 'none';
 
         main.classList.add('animate__animated', 'animate__backInDown', 'animate__faster');
 
@@ -198,12 +198,34 @@ function logger() {
         window.scrollTo(0,0);
 
         idImg.style.display = 'none';
-        console.log(posts[i].pic);
+        // console.log(posts[i].pic);
 
         idImg.src = `${posts[i].pic}`;
         
         let mainWordLet = posts[i].name;
         mainWord2.innerHTML = '';
+
+
+
+        switch (posts[i].isInput) {
+            case 0:
+                console.log('0');
+                break;
+
+            case 1:
+                console.log('1');
+                break;
+            
+            case 2:
+                console.log('2');
+                break;
+        
+            default:
+                console.log('error');
+                break;
+        }
+
+
 
         if (posts[i].isInput == 0) {
 
@@ -272,21 +294,16 @@ function logger() {
         }
 
 
-        // descWord.innerHTML = '<p class="leading-relaxed">' + posts[i].desc + '</p>';
+        
 
         idImg.onload = () => {
             idImg.style.display = 'block';
         };
 
-        if (posts[i].dateWord.length > 0) {
-            dateWord.innerHTML = '';
-            dateWord.style.display = 'flex';
-            dateWord.innerHTML +=
-                `<svg width="22" height="22" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                <path d="M12 2a10 10 0 1 0 0 20 10 10 0 1 0 0-20z"></path>
-                <path d="M12 6v6l4 2"></path>
-            </svg>`;
-            dateWord.innerHTML += `<p>${posts[i].dateWord}</p>`;
+        if (posts[i].audio.length > 0) {
+            audio.innerHTML = '';
+            audio.style.display = 'flex';
+            audio.innerHTML += `<p>${posts[i].audio}</p>`;
         }
         posts.splice(i, 1);
 
@@ -364,11 +381,6 @@ mainWord.addEventListener('click', (e) => {
     isMainTwo = false;
 });
 
-dateWord.addEventListener('click', (e) => {
-    e.preventDefault();
-    dateWord.style.cursor = 'auto';
-    dateWord.classList.remove('blur-sm');
-});
 
 example.addEventListener('click', () => {
     example.classList.remove('blur-sm');
@@ -448,7 +460,6 @@ function DarkTheme() {
         descWord.classList.add('text-white');
         select.style.backgroundColor = '#6c757d';
         select.style.color = '#fff';
-        dateWord.style.color = '#fff';
         mainTwo.classList.add('bg-slate-800');
         example.style.color = '#cbd5e1';
         mainWord2.style.color = '#fff';
