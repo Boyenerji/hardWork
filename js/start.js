@@ -43,6 +43,7 @@ let btn = document.querySelector('#btn_start'),
     mainTwo = document.querySelector('.mainTwo'),
     // inputText = document.querySelector('#inputText'),
     btn_test = document.querySelector('#btn_test'),
+    btn_test2 = document.querySelector('#btn_test2'),
     dateWord = document.querySelector('.dateWord'),
     echoWarning = document.querySelector('#echoWarning'),
     main_2 = document.querySelector('.main_2');
@@ -326,6 +327,7 @@ btn.addEventListener('click', () => {
         body.style.justifyContent = 'flex-start';
         body.style.height = 'auto';
         btn_test.style.display = 'block';
+        btn_test2.style.display = 'block';
         logger();
     }
 
@@ -373,6 +375,10 @@ example.addEventListener('click', () => {
 });
 
 btn_test.addEventListener('click', () => {
+    ifBlur();
+});
+
+btn_test2.addEventListener('click', () => {
     ifBlur();
 });
 
