@@ -54,7 +54,7 @@ let btn = document.querySelector('#btn_start'),
 
 
 const posts = [];
-while (posts.length <= 20) {
+while (posts.length <= 22) {
     let a = randomInteger(0, arrWords.length - 1);
     posts.unshift(arrWords[a]);
     arrWords.splice([a], 1);
@@ -77,48 +77,6 @@ while (englishWordsArr.length <= 25) {
 }
 
 
-
-
-// let das = {
-//     name: 'Когда родился Ленин',
-//     desc: '',
-//     example: [],
-//     choice: [
-//         '22 апреля 1870',
-//         '12 апреля 1872',
-//         '22 мая 1878'
-//     ],
-//     trueChoice: '22 апреля 1870',
-//     isTest: true
-// }
-
-// console.log(das.choice.sort(() => Math.random() - 0.5));
-
-
-// if (das.isTest == true) {
-//     main.innerHTML += das.name;
-//     das.choice.forEach(element => {
-//         main.innerHTML += `<button>${element}</button>`;
-//     });
-    
-//     let popp = document.querySelectorAll('button');
-//     for (let j = 1; j < popp.length; j++) {
-//         console.log(j);
-//         console.log(popp[j]);
-//         popp[j].addEventListener('click', function(e) {
-//             // console.dir(e.target.style.display);
-//             console.log(e.target.innerText);
-//             if (e.target.innerText == das.trueChoice) console.log('Верно');
-//       });
-//     }
-//     console.log(popp);
-// }
-
-
-
-// console.dir(btn);
-
-// btn.click();
 
 console.dir(englishWordsArr);
 console.dir(posts);
@@ -474,7 +432,7 @@ DarkTheme();
 
 function DarkTheme() {
     let date = new Date();
-    if (date.getHours() > 16 || date.getHours() < 7) {
+    if (date.getHours() > 16 || date.getHours() < 9) {
         console.log('yes');
         alert_info.style.color = 'rgb(209, 213, 219)';
         body.classList.add('bg-slate-900');

@@ -127,6 +127,7 @@ select:hover {
     color: rgb(71 85 105);
     text-align: center;
     word-break: break-word;
+    margin-top: 15px;
 }
 
 .descWord button {
@@ -213,6 +214,7 @@ select:hover {
 
 .mainWord2 {
     text-align: center;
+    margin-top: 10px;
 }
 
 p {
