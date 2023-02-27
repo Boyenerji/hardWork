@@ -1071,10 +1071,15 @@ export const arrWords = [{
     `
         Аритмия - это нарушение сердечного ритма, когда сердце начинает биться с нерегулярной или неправильной частотой
     `,
-    audio: '',
+    audio: 
+    `
+        <audio controls
+            src="../audio/aritmia.mp3">
+        </audio>
+    `,
     arrInput: [],
     trueInput: [],
-    isInput: 1
+    isInput: randomInteger(1, 2)
 },
 
 {
@@ -1086,9 +1091,9 @@ export const arrWords = [{
     `,
     audio: 
     `
-    <audio controls
-        src="../audio/stenocardia.m4a">
-    </audio>
+        <audio controls
+            src="../audio/stenocardia.m4a">
+        </audio>
     `,
     arrInput: [],
     trueInput: [],
@@ -1122,10 +1127,15 @@ export const arrWords = [{
     `
         Асептика - это система мер и процедур, направленных на предотвращение внесения микроорганизмов в рану или ткани пациента во время медицинской процедуры
     `,
-    audio: '',
+    audio: 
+    `
+        <audio controls
+            src="../audio/aseptic.mp3">
+        </audio>
+    `,
     arrInput: [],
     trueInput: [],
-    isInput: 1
+    isInput: randomInteger(1, 2)
 },
 
 
