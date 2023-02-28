@@ -208,6 +208,12 @@ select:hover {
     color: white;
 }
 
+
+.textA {
+    color: black;
+    display: none;
+}
+
 .showWords {
     /* font-size: 1.9vh; */
     display: none;

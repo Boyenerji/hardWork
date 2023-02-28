@@ -4,6 +4,7 @@
 import { arrWords } from './posts.js'; // посты
 import { WordsArr } from './words.js';
 import { englishWords } from './engwords.js';
+// import { text } from 'express';
 
 
 console.dir(englishWords);
@@ -38,6 +39,7 @@ let btn = document.querySelector('#btn_start'),
     mainWord = document.querySelector('.mainWord'),
     mainWord2 = document.querySelector('.mainWord2'),
     descWord = document.querySelector('.descWord'),
+    textA = document.querySelector('.textA'),
     example = document.querySelector('.example'),
     idImg = document.querySelector('#idImg'),
     mainTwo = document.querySelector('.mainTwo'),
@@ -173,8 +175,11 @@ function logger() {
         location.reload();
     } else {
         window.scrollTo(0,0);
-        y = 0;
+        // y = 0;
         descWord.classList.remove('blur-sm');
+
+
+
 
 
 
@@ -203,6 +208,7 @@ function logger() {
         idImg.src = `${posts[i].pic}`;
         
         let mainWordLet = posts[i].name;
+        let textAlet = posts[i].textA;
         mainWord2.innerHTML = '';
 
 
@@ -270,7 +276,37 @@ function logger() {
                 audio.style.display = 'flex';
                 mainWord.innerHTML = posts[i].name;
                 descWord.innerHTML = '<p class="leading-relaxed">' + posts[i].audio + '</p>';
+                break;
 
+            case 3:
+                console.log('3');
+
+                mainWord.innerHTML = posts[i].name;
+                descWord.innerHTML = '';
+                textA.style.display = 'block';
+
+
+                textA.addEventListener('input', function (e) {
+                    e.preventDefault();
+                    console.log(textA.value);
+                    console.log(textAlet);
+
+                    textAlet.forEach(element => {
+                        if (textA.value.toLowerCase().trim() == element.toLowerCase().trim()) {
+                            textA.style.display = 'none';
+                            console.log('Congrat');
+                            logger();
+                        }
+                    });
+
+                    // if (textA.value.toLowerCase().trim() == textAlet.toLowerCase().trim()) {
+                    //     console.log('Congrat');
+                       
+                    //     // setTimeout(() => {
+                    //     //     wordsFunc();
+                    //     // }, 3000);
+                    // }
+                });
 
                 break;
 
@@ -279,78 +315,14 @@ function logger() {
                 break;
         }
 
-
-
-        // if (posts[i].isInput == 0) {
-
-        //     mainWord.innerHTML = mainWordLet;
-        //     descWord.innerHTML = '';
-
-        //     posts[i].arrInput.sort(() => Math.random() - 0.5);
-        //     console.log(posts[i].arrInput.sort(() => Math.random() - 0.5));
-
-        //     posts[i].arrInput.forEach(element => {
-        //         descWord.innerHTML += `<button>${element}</button>`;
-        //     });
-
-        //     let letInput = posts[i].trueInput;
-
-        //     let popp = document.querySelectorAll('button');
-            
-        //     for (let j = 0; j < popp.length; j++) {
-        //         console.log(j);
-        //         console.log(popp[j]);
-        //         popp[j].addEventListener('click', function(e) {
-        //             console.dir(e.target.style.display);
-        //             console.log(e.target.innerText);
-
-
-        //             if (e.target.innerText !== '>') {
-        //                 mainWord2.innerHTML += e.target.innerText + ' ';
-        //                 e.target.style.display = 'none';
-        //             }
-
-
-        //             console.log(letInput);
-        //             console.log(mainWord2.innerText);
-
-
-        //             letInput.forEach(element => {
-        //                 if (element == mainWord2.innerText) {
-        //                     console.log('aga');
-        //                     mainWord2.innerHTML = '';
-        //                     ifBlur();
-        //                 }
-        //             });
-                    
-        //     });
-        //     }
-
-        // } else {
-        //     mainWord.innerHTML = posts[i].name;
-        //     descWord.innerHTML = '<p class="leading-relaxed">' + posts[i].desc + '</p>';
-        // }
-
-
-        
-
         idImg.onload = () => {
             idImg.style.display = 'block';
         };
 
-        // if (posts[i].audio.length > 0) {
-        //     audio.innerHTML = '';
-        //     audio.style.display = 'flex';
-        //     audio.innerHTML += `<p>${posts[i].audio}</p>`;
-        // }
-
-        
         posts.splice(i, 1);
         setTimeout(() => {
             main.classList.remove('animate__animated', 'animate__backInDown', 'animate__faster');
         }, 500);
-
-
 
     }
 }
@@ -421,6 +393,7 @@ mainWord.addEventListener('click', (e) => {
 });
 
 
+
 example.addEventListener('click', () => {
     example.classList.remove('blur-sm');
 });
@@ -448,32 +421,35 @@ function ifBlur() {
         if (descWord.className.indexOf('blur-sm') !== -1) descWord.classList.remove('blur-sm');
     } else {
 
-        console.log('A = ' + a);
+        logger();
 
-        if (a == 0) {
+
+        // console.log('A = ' + a);
+
+        // if (a == 0) {
             
 
-            let prof = descWord.children[0].children;
-            for (let key in prof) {
-                if (prof[key].classList == 'blur-sm') {
-                    y++;
-                    prof[key].classList.remove('blur-sm');
-                }
-            }
+        //     let prof = descWord.children[0].children;
+        //     for (let key in prof) {
+        //         if (prof[key].classList == 'blur-sm') {
+        //             y++;
+        //             prof[key].classList.remove('blur-sm');
+        //         }
+        //     }
 
-            console.log('Y = ' + y);
-            if (y == 0) {
-                a = 0;
-                console.log(a);
-                logger();
-            } else {
-                a++;
-            }
+        //     console.log('Y = ' + y);
+        //     if (y == 0) {
+        //         a = 0;
+        //         console.log(a);
+        //         logger();
+        //     } else {
+        //         a++;
+        //     }
             
-        } else {
-            a = 0;
-            logger();
-        }
+        // } else {
+        //     a = 0;
+        //     logger();
+        // }
     }
 }
 
