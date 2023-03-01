@@ -212,6 +212,12 @@ function logger() {
         mainWord2.innerHTML = '';
 
 
+        if (textA.style.display == 'block') {
+            textA.innerHTML = '';
+            textA.style.display == 'none'
+        }
+
+
 
         switch (posts[i].isInput) {
             case 0:
