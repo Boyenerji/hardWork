@@ -213,8 +213,8 @@ function logger() {
 
 
         if (textA.style.display == 'block') {
-            textA.innerHTML = '';
-            textA.style.display == 'none'
+            textA.value = '';
+            textA.style.display = 'none'
         }
 
 
