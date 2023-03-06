@@ -186,7 +186,7 @@ function logger() {
         
 
         descWord.style.cursor = 'pointer';
-        mainWord.classList.add('blur-sm');
+        // mainWord.classList.add('blur-sm');
         if (audio.style.display == 'flex') audio.style.display = 'none';
 
         main.classList.add('animate__animated', 'animate__backInDown', 'animate__faster');
