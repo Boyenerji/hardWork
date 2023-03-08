@@ -1886,7 +1886,7 @@ export const arrWords = [{
 },
 
 {
-    pic: '',
+    pic: '../pictures/grach.jpg',
     name: 'Пистолет Ярыгина «Грач»',
     desc: 
     `
