@@ -1827,10 +1827,13 @@ export const arrWords = [{
     `,
     audio: 
     `
+        <audio controls
+            src="../audio/karbit.mp3">
+        </audio>
     `,
     arrInput: [],
     trueInput: [],
-    isInput: 1
+    isInput: randomInteger(1, 2)
 },
 
 
