@@ -5,8 +5,8 @@ export const englishWords = [
 
 
 {
-    name: 'Realize',
-    desc: ['Осознавать', 'Понимать', 'Претворить в жизнь'],
+    name: 'Кирэк',
+    desc: ['Надо', 'Нужно'],
     example: 
     [
        ''
@@ -14,8 +14,8 @@ export const englishWords = [
 },
 
 {
-    name: 'Protect',
-    desc: ['Защищать', 'Оберегать', 'Уберечь'],
+    name: 'Китэргэ',
+    desc: ['Уходить', 'Отбывать'],
     example: 
     [
        ''
@@ -23,8 +23,8 @@ export const englishWords = [
 },
 
 {
-    name: 'Usually',
-    desc: ['Обычно', 'Обыкновенно'],
+    name: 'Кич Белэн',
+    desc: ['Вечером'],
     example: 
     [
        ''
@@ -32,8 +32,8 @@ export const englishWords = [
 },
 
 {
-    name: 'Helping',
-    desc: ['Помощь', 'Содействие', 'Оказание помощи'],
+    name: 'Кичэ',
+    desc: ['Вчера'],
     example: 
     [
        ''
@@ -41,8 +41,8 @@ export const englishWords = [
 },
 
 {
-    name: 'Bride',
-    desc: ['Невеста'],
+    name: 'Көне буе йоклау',
+    desc: ['Спать целый день'],
     example: 
     [
        ''
@@ -50,8 +50,8 @@ export const englishWords = [
 },
 
 {
-    name: 'Judge',
-    desc: ['Судить'],
+    name: 'Тукта',
+    desc: ['Погоди', 'Подожди'],
     example: 
     [
        ''
@@ -59,8 +59,8 @@ export const englishWords = [
 },
 
 {
-    name: 'Behavior',
-    desc: ['Поведение'],
+    name: 'Корыч',
+    desc: ['Сталь'],
     example: 
     [
        ''
@@ -68,8 +68,8 @@ export const englishWords = [
 },
 
 {
-    name: 'Earlier',
-    desc: ['Ранее'],
+    name: 'Кояш',
+    desc: ['Солнце'],
     example: 
     [
        ''
@@ -77,8 +77,8 @@ export const englishWords = [
 },
 
 {
-    name: 'Cute',
-    desc: ['Милый'],
+    name: 'Көпшә',
+    desc: ['Труба'],
     example: 
     [
        ''
@@ -86,8 +86,8 @@ export const englishWords = [
 },
 
 {
-    name: 'Calm',
-    desc: ['Успокаивать'],
+    name: 'Көтәргә',
+    desc: ['Ждать'],
     example: 
     [
        ''
@@ -95,8 +95,8 @@ export const englishWords = [
 },
 
 {
-    name: 'Wear',
-    desc: ['Носить'],
+    name: 'Куркыныч',
+    desc: ['Страшный', 'Ужасный'],
     example: 
     [
        ''
@@ -104,8 +104,8 @@ export const englishWords = [
 },
 
 {
-    name: 'Decision',
-    desc: ['Решение'],
+    name: 'Кунелле',
+    desc: ['Веселый'],
     example: 
     [
        ''
@@ -113,8 +113,8 @@ export const englishWords = [
 },
 
 {
-    name: 'Lovely',
-    desc: ['Прекрасный'],
+    name: 'Кунелсез',
+    desc: ['Невеселый'],
     example: 
     [
        ''
@@ -122,8 +122,8 @@ export const englishWords = [
 },
 
 {
-    name: 'Court',
-    desc: ['Суд'],
+    name: 'Куптэнге',
+    desc: ['Давнишний'],
     example: 
     [
        ''
@@ -131,12 +131,11 @@ export const englishWords = [
 },
 
 {
-    name: 'Lose',
+    name: 'Кыен',
     desc: [
-        'Терять.',
-        'Потерять.',
-        'Упускать.',
-        'Утратить.'
+        'Тяжело',
+        'Тяжелый',
+
     ],
     example: 
     [
@@ -145,10 +144,11 @@ export const englishWords = [
 },
 
 {
-    name: 'Shut',
+    name: 'Кыйбат',
     desc: [
-        'Закрыть',
-        'Закрывать'
+        'Дорогой',
+        'Ценный',
+
     ],
     example: 
     [
@@ -156,179 +156,9 @@ export const englishWords = [
     ]
 },
 
-{
-    name: 'Notice',
-    desc: [
-        'Уведомление',
-        'Извещение',
-        'Предупреждение'
-    ],
-    example: 
-    [
-       ''
-    ]
-},
 
-{
-    name: 'Witness',
-    desc: [
-        'Свидетель.',
-        'Очевидец.'
-    ],
-    example: 
-    [
-       `The witness hesitated.
-       Свидетельница замялась.`
-    ]
-},
 
-{
-    name: 'Guilty',
-    desc: [
-        'Виновный',
-        'Виноватый'
-    ],
-    example: 
-    [
-       ''
-    ]
-},
 
-{
-    name: 'Suppose',
-    desc: ['Предполагать'],
-    example: 
-    [
-       ''
-    ]
-},
-
-{
-    name: 'Near',
-    desc: [
-        'Рядом',
-        'Поблизости'
-    ],
-    example: 
-    [
-       ''
-    ]
-},
-
-{
-    name: 'Thunder',
-    desc: [
-        'Гром',
-        'Грохот'
-    ],
-    example: 
-    [
-       ''
-    ]
-},
-
-{
-    name: 'Century',
-    desc: [
-        'Век',
-        'Столетие'
-    ],
-    example: 
-    [
-       ''
-    ]
-},
-
-{
-    name: 'Bow',
-    desc: ['Лук'],
-    example: 
-    [
-       ''
-    ]
-},
-
-{
-    name: 'Heat',
-    desc: ['Тепло', 'Жара'],
-    example: 
-    [
-       ''
-    ]
-},
-
-{
-    name: 'Total',
-    desc: ['Весь'],
-    example: 
-    [
-       ''
-    ]
-},
-
-{
-    name: 'Ox',
-    desc: ['Бык'],
-    example: 
-    [
-       ''
-    ]
-},
-
-{
-    name: 'Ax', 
-    desc: ['Топор'],
-    example: 
-    [
-       ''
-    ]
-},
-
-{
-    name: 'Cruel', 
-    desc: ['Жестокий'],
-    example: 
-    [
-       ''
-    ]
-},
-{
-    name: 'Foreign', 
-    desc: ['Иностранный'],
-    example: 
-    [
-       ''
-    ]
-},
-{
-    name: 'Van', 
-    desc: ['Фургон'],
-    example: 
-    [
-       ''
-    ]
-},
-
-{
-    name: 'Pretty good', 
-    desc: ['Довольно хорошо'],
-    example: 
-    [
-       ''
-    ]
-    
-   
-},
-
-{
-    name: 'How do you feel?',
-    desc: ['Как ты себя чувствуешь?'],
-    example: 
-    [
-       ''
-    ]
-        
-}
 
 
 
