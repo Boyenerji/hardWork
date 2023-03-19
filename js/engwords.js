@@ -156,6 +156,63 @@ export const englishWords = [
     ]
 },
 
+{
+    name: 'Ал',
+    desc: [
+        'Бери',
+
+    ],
+    example: 
+    [
+       ''
+    ]
+},
+
+{
+    name: 'Алырга',
+    desc: [
+        'Брать',
+
+    ],
+    example: 
+    [
+       ''
+    ]
+},
+
+{
+    name: 'Бир',
+    desc: [
+        'Давай',
+    ],
+    example: 
+    [
+       ''
+    ]
+},
+
+{
+    name: 'Уйла',
+    desc: [
+        'Думай',
+    ],
+    example: 
+    [
+       ''
+    ]
+},
+
+{
+    name: 'Кит',
+    desc: [
+        'Уходи',
+    ],
+    example: 
+    [
+       ''
+    ]
+},
+
 
 
 
