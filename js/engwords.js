@@ -67,14 +67,6 @@ export const englishWords = [
     ]
 },
 
-{
-    name: 'Кояш',
-    desc: ['Солнце'],
-    example: 
-    [
-       ''
-    ]
-},
 
 {
     name: 'Көпшә',
@@ -121,14 +113,6 @@ export const englishWords = [
     ]
 },
 
-{
-    name: 'Куптэнге',
-    desc: ['Давнишний'],
-    example: 
-    [
-       ''
-    ]
-},
 
 {
     name: 'Кыен',
@@ -169,10 +153,30 @@ export const englishWords = [
 },
 
 {
-    name: 'Алырга',
+    name: 'Я пришёл',
     desc: [
-        'Брать',
+        `
+            <audio controls
+                src="../audio/tatWord3.mp3">
+            </audio>
+        `
+    ],
+    example: 
+    [
+       ''
+    ]
+},
 
+
+
+{
+    name: 'Я взял',
+    desc: [
+        `
+            <audio controls
+                src="../audio/tatWord2.mp3">
+            </audio>
+        `
     ],
     example: 
     [
@@ -181,31 +185,13 @@ export const englishWords = [
 },
 
 {
-    name: 'Бир',
+    name: 'Пожалуйста',
     desc: [
-        'Давай',
-    ],
-    example: 
-    [
-       ''
-    ]
-},
-
-{
-    name: 'Уйла',
-    desc: [
-        'Думай',
-    ],
-    example: 
-    [
-       ''
-    ]
-},
-
-{
-    name: 'Кит',
-    desc: [
-        'Уходи',
+        `
+            <audio controls
+                src="../audio/tatWord1.mp3">
+            </audio>
+        `
     ],
     example: 
     [
