@@ -73,7 +73,7 @@ while (words.length <= 25) {
 
 
 const englishWordsArr = [];
-while (englishWordsArr.length <= 20) {
+while (englishWordsArr.length <= 15) {
     let a = randomInteger(0, englishWords.length - 1);
     englishWordsArr.unshift(englishWords[a]);
     englishWords.splice([a], 1);
@@ -137,6 +137,9 @@ function wordsFunc() {
         // let i = randomInteger(0, words.length - 1);
 
         if (select.value == 'English') {
+            console.log(englishWordsArr);
+            console.log(englishWordsArr[i]);
+            console.log(englishWordsArr[i].desc.length);
             let randEndWord = randomInteger(0, englishWordsArr[i].desc.length - 1 );
             mainWord.innerHTML = englishWordsArr[i].name;
             descWord.innerHTML = englishWordsArr[i].desc[randEndWord];

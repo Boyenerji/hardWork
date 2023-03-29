@@ -143,7 +143,7 @@ export const englishWords = [
 {
     name: 'Ал',
     desc: [
-        'Бери',
+        'Бери'
 
     ],
     example: 
