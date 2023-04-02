@@ -1926,7 +1926,7 @@ export const arrWords = [{
     name: 'Клееный шпон',
     desc: 
     `
-        Клееный шпон - это материал, который получается из тонких листов древесной фанеры, склеенных между собой при помощи клея.
+        Клееный шпон - это древесный материал, представляющий собой тонкие листы древесины, склеенные между собой под давлением и температурой.
     `,
     audio: 
     `
@@ -2001,7 +2001,8 @@ export const arrWords = [{
     `,
     arrInput: [],
     trueInput: [],
-    isInput: 1
+    isInput: 1,
+    repeat: 0
 },
 
 {
@@ -2016,7 +2017,7 @@ export const arrWords = [{
     `,
     arrInput: [],
     trueInput: [],
-    isInput: 1
+    isInput: 1,
 },
 
 {
@@ -2031,9 +2032,7 @@ export const arrWords = [{
     audio: 
     `
     `,
-    arrInput: [],
-    trueInput: [],
-    isInput: 1
+    isInput: 1,
 },
 
 {
@@ -2049,7 +2048,8 @@ export const arrWords = [{
     `,
     arrInput: [],
     trueInput: [],
-    isInput: 1
+    isInput: 1,
+    repeat: 0
 },
 
 {
@@ -2064,7 +2064,8 @@ export const arrWords = [{
     `,
     arrInput: [],
     trueInput: [],
-    isInput: 1
+    isInput: 1,
+    repeat: 0
 },
 
 {
@@ -2079,7 +2080,7 @@ export const arrWords = [{
     `,
     arrInput: [],
     trueInput: [],
-    isInput: 1
+    isInput: 1,
 },
 
 {
@@ -2094,7 +2095,7 @@ export const arrWords = [{
     `,
     arrInput: [],
     trueInput: [],
-    isInput: 1
+    isInput: 1,
 },
 
 {
@@ -2109,7 +2110,7 @@ export const arrWords = [{
     `,
     arrInput: [],
     trueInput: [],
-    isInput: 1
+    isInput: 1,
 },
 
 {
@@ -2124,7 +2125,7 @@ export const arrWords = [{
     `,
     arrInput: [],
     trueInput: [],
-    isInput: 1
+    isInput: 1,
 },
 
 {
@@ -2139,7 +2140,7 @@ export const arrWords = [{
     `,
     arrInput: [],
     trueInput: [],
-    isInput: 1
+    isInput: 1,
 },
 
 {
@@ -2154,7 +2155,7 @@ export const arrWords = [{
     `,
     arrInput: [],
     trueInput: [],
-    isInput: 1
+    isInput: 1,
 },
 
 {
@@ -2169,7 +2170,7 @@ export const arrWords = [{
     `,
     arrInput: [],
     trueInput: [],
-    isInput: 1
+    isInput: 1,
 },
 
 {
@@ -2184,7 +2185,7 @@ export const arrWords = [{
     `,
     arrInput: [],
     trueInput: [],
-    isInput: 1
+    isInput: 1,
 },
 
 
@@ -2200,7 +2201,8 @@ export const arrWords = [{
     `,
     arrInput: [],
     trueInput: [],
-    isInput: 1
+    isInput: 1,
+    repeat: 0
 },
 
 {
@@ -2215,7 +2217,8 @@ export const arrWords = [{
     `,
     arrInput: [],
     trueInput: [],
-    isInput: 1
+    isInput: 1,
+    repeat: 0
 },
 
 {
@@ -2230,7 +2233,8 @@ export const arrWords = [{
     `,
     arrInput: [],
     trueInput: [],
-    isInput: 1
+    isInput: 1,
+    repeat: 0
 },
 
 {
@@ -2246,7 +2250,8 @@ export const arrWords = [{
     `,
     arrInput: [],
     trueInput: [],
-    isInput: 1
+    isInput: 1,
+    repeat: 0
 },
 
 
@@ -2263,7 +2268,8 @@ export const arrWords = [{
     `,
     arrInput: [],
     trueInput: [],
-    isInput: 1
+    isInput: 1,
+    repeat: 0
 },
 
 {
@@ -2278,23 +2284,10 @@ export const arrWords = [{
     `,
     arrInput: [],
     trueInput: [],
-    isInput: 1
+    isInput: 1,
+    repeat: 0
 },
 
-{
-    pic: '',
-    name: 'Леонардо да Винчи',
-    desc: 
-    `
-        Леонардо да Винчи был амбидекстром, то есть человеком, одинаково хорошо владеющим и правой, и левой руками.
-    `,
-    audio: 
-    `
-    `,
-    arrInput: [],
-    trueInput: [],
-    isInput: 1
-},
 
 {
     pic: '',
@@ -2308,7 +2301,8 @@ export const arrWords = [{
     `,
     arrInput: [],
     trueInput: [],
-    isInput: 1
+    isInput: 1,
+    repeat: 0
 },
 
 
@@ -2324,7 +2318,8 @@ export const arrWords = [{
     `,
     arrInput: [],
     trueInput: [],
-    isInput: 1
+    isInput: 1,
+    repeat: 0
 },
 
 {
@@ -2339,7 +2334,8 @@ export const arrWords = [{
     `,
     arrInput: [],
     trueInput: [],
-    isInput: 1
+    isInput: 1,
+    repeat: 0
 },
 
 {
@@ -2354,7 +2350,8 @@ export const arrWords = [{
     `,
     arrInput: [],
     trueInput: [],
-    isInput: 1
+    isInput: 1,
+    repeat: 0
 },
 
 {
@@ -2369,7 +2366,8 @@ export const arrWords = [{
     `,
     arrInput: [],
     trueInput: [],
-    isInput: 1
+    isInput: 1,
+    repeat: 0
 },
 
 {
@@ -2384,7 +2382,8 @@ export const arrWords = [{
     `,
     arrInput: [],
     trueInput: [],
-    isInput: 1
+    isInput: 1,
+    repeat: 0
 },
 
 {
@@ -2399,7 +2398,8 @@ export const arrWords = [{
     `,
     arrInput: [],
     trueInput: [],
-    isInput: 1
+    isInput: 1,
+    repeat: 0
 },
 
 
@@ -2415,7 +2415,8 @@ export const arrWords = [{
     `,
     arrInput: [],
     trueInput: [],
-    isInput: 1
+    isInput: 1,
+    repeat: 0
 },
 
 
@@ -2431,7 +2432,8 @@ export const arrWords = [{
     `,
     arrInput: [],
     trueInput: [],
-    isInput: 1
+    isInput: 1,
+    repeat: 0
 },
 
 
@@ -2448,7 +2450,8 @@ export const arrWords = [{
     `,
     arrInput: [],
     trueInput: [],
-    isInput: 1
+    isInput: 1,
+    repeat: 0
 },
 
 {
@@ -2463,7 +2466,8 @@ export const arrWords = [{
     `,
     arrInput: [],
     trueInput: [],
-    isInput: 1
+    isInput: 1,
+    repeat: 0
 },
 
 {
@@ -2478,7 +2482,8 @@ export const arrWords = [{
     `,
     arrInput: [],
     trueInput: [],
-    isInput: 1
+    isInput: 1,
+    repeat: 0
 },
 
 {
@@ -2493,7 +2498,8 @@ export const arrWords = [{
     `,
     arrInput: [],
     trueInput: [],
-    isInput: 1
+    isInput: 1,
+    repeat: 0
 },
 
 
@@ -2509,7 +2515,8 @@ export const arrWords = [{
     `,
     arrInput: [],
     trueInput: [],
-    isInput: 1
+    isInput: 1,
+    repeat: 0
 },
 
 {
@@ -2528,7 +2535,8 @@ export const arrWords = [{
     `,
     arrInput: [],
     trueInput: [],
-    isInput: randomInteger(1, 2)
+    isInput: randomInteger(1, 2),
+    repeat: 0
 },
 
 {
@@ -2543,7 +2551,8 @@ export const arrWords = [{
     `,
     arrInput: [],
     trueInput: [],
-    isInput: 1
+    isInput: 1,
+    repeat: 0
 },
 
 {
@@ -2558,7 +2567,8 @@ export const arrWords = [{
     `,
     arrInput: [],
     trueInput: [],
-    isInput: 1
+    isInput: 1,
+    repeat: 0
 },
 
 {
@@ -2573,7 +2583,8 @@ export const arrWords = [{
     `,
     arrInput: [],
     trueInput: [],
-    isInput: 1
+    isInput: 1,
+    repeat: 0
 },
 
 {
@@ -2588,7 +2599,8 @@ export const arrWords = [{
     `,
     arrInput: [],
     trueInput: [],
-    isInput: 1
+    isInput: 1,
+    repeat: 0
 },
 
 {
@@ -2603,7 +2615,8 @@ export const arrWords = [{
     `,
     arrInput: [],
     trueInput: [],
-    isInput: 1
+    isInput: 1,
+    repeat: 0
 },
 
 {
@@ -2618,7 +2631,8 @@ export const arrWords = [{
     `,
     arrInput: [],
     trueInput: [],
-    isInput: 1
+    isInput: 1,
+    repeat: 0
 },
 
 {
@@ -2633,7 +2647,8 @@ export const arrWords = [{
     `,
     arrInput: [],
     trueInput: [],
-    isInput: 1
+    isInput: 1,
+    repeat: 0
 },
 
 {
@@ -2648,7 +2663,8 @@ export const arrWords = [{
     `,
     arrInput: [],
     trueInput: [],
-    isInput: 1
+    isInput: 1,
+    repeat: 0
 },
 
 {
@@ -2663,7 +2679,8 @@ export const arrWords = [{
     `,
     arrInput: [],
     trueInput: [],
-    isInput: 1
+    isInput: 1,
+    repeat: 0
 },
 
 {
@@ -2678,7 +2695,8 @@ export const arrWords = [{
     `,
     arrInput: [],
     trueInput: [],
-    isInput: 1
+    isInput: 1,
+    repeat: 0
 },
 
 {
@@ -2691,9 +2709,8 @@ export const arrWords = [{
     audio: 
     `
     `,
-    arrInput: [],
-    trueInput: [],
-    isInput: 1
+    isInput: 1,
+    repeat: 0
 },
 
 {
@@ -2710,9 +2727,7 @@ export const arrWords = [{
     audio: 
     `
     `,
-    arrInput: [],
-    trueInput: [],
-    isInput: 1
+    isInput: 1,
 },
 
 {
@@ -2725,9 +2740,7 @@ export const arrWords = [{
     audio: 
     `
     `,
-    arrInput: [],
-    trueInput: [],
-    isInput: 1
+    isInput: 1,
 },
 
 {
@@ -2740,9 +2753,7 @@ export const arrWords = [{
     audio: 
     `
     `,
-    arrInput: [],
-    trueInput: [],
-    isInput: 1
+    isInput: 1,
 },
 
 {
@@ -2756,16 +2767,116 @@ export const arrWords = [{
     audio: 
     `
     `,
+    isInput: 1,
+},
+
+{
+    pic: '',
+    name: 'Преамбула',
+    desc: 
+    `
+        Это вводная или вступительная часть какого-либо важного акта, международного договора, закона или декларации. В преамбуле обычно излагаются цели, задачи, принципы и мотивы документа.
+    `,
+    audio: 
+    `
+    `,
     arrInput: [],
     trueInput: [],
-    isInput: 1
+    isInput: 1,
+},
+
+{
+    pic: '',
+    name: 'Храм-памятник Спаса Нерукотворного',
+    desc: 
+    `
+        Это православный храм в Казани, построенный в XIX веке в память о воинах, погибших при осаде и взятии Казани войском Ивана Грозного в 1552 году.
+    `,
+    audio: 
+    `
+        <audio controls
+            src="../audio/fact18.mp3">
+        </audio>
+    `,
+    arrInput: [],
+    trueInput: [],
+    isInput: randomInteger(1, 2),
 },
 
 
+{
+    pic: '',
+    name: 'Опричники',
+    desc: 
+    `
+        Это были приближенные Ивана IV, которые получили полномочия на управление опричной территорией. Они получили некоторые особые права и привилегии, включая право конфискации имущества и назначение на должности. Они были своего рода "черными дружинниками" Ивана IV, которые контролировали опричную территорию и действовали в интересах царя.
+        Создание опричнины было направлено на укрепление власти Ивана IV и борьбу с диссидентами, но в результате привело к политическому и экономическому упадку, так как опричники налагали тяжелые налоги и поборы на население опричной территории.
+        Они получили полномочия на управление опричной территорией от царя Ивана IV Грозного, и в их полномочия входило сбор налогов и поборов с жителей опричной земли.
+        опричники не сдавали опричную землю за налог, но использовали свои полномочия для незаконного отбора денег и имущества у населения опричной территории.
 
+    `,
+    audio: 
+    `
+        
+    `,
+    isInput: randomInteger(1, 2),
+},
 
+{
+    pic: '',
+    name: 'Диссиденты',
+    desc: 
+    `
+        Диссиденты - это люди, которые открыто высказывают свое недовольство или критику по отношению к действующей власти, политике или социальным условиям в своей стране.
+    `,
+    audio: 
+    `
+        
+    `,
+    isInput: randomInteger(1, 2),
+},
 
+{
+    pic: '',
+    name: 'Винторез',
+    desc: 
+    `
+        Название «Винторез» пошло из рабочей документации на винтовку, оттуда оно перекочевало в обиход.
+    `,
+    audio: 
+    `
+        
+    `,
+    isInput: randomInteger(1, 2),
+},
 
+{
+    pic: '',
+    name: 'Доплеровский радар',
+    desc: 
+    `
+        Доплеровский радар - это радиолокационная система, которая может измерять не только дальность до цели, но и ее скорость. Она использует эффект Доплера - изменение частоты сигнала, отраженного от цели, из-за ее движения относительно радара. Чем быстрее движется цель, тем больше сдвиг частоты. 
+    `,
+    audio: 
+    `
+        
+    `,
+    isInput: randomInteger(1, 2),
+},
+
+{
+    pic: '',
+    name: 'Про Корею',
+    desc: 
+    `
+        В Северной Корее граждане могут выбирать только две стандартные прически, которые разрешены правительством
+    `,
+    audio: 
+    `
+        
+    `,
+    isInput: randomInteger(1, 2),
+},
 
 
 

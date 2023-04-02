@@ -57,11 +57,11 @@ let btn = document.querySelector('#btn_start'),
 
 
 const posts = [];
-while (posts.length <= 22) {
+while (posts.length <= 25) {
     let a = randomInteger(0, arrWords.length - 1);
     posts.unshift(arrWords[a]);
     arrWords.splice([a], 1);
-    // console.log(words);
+    // console.log(arrWords);
 }
 
 const words = [];
@@ -181,13 +181,7 @@ function logger() {
         // y = 0;
         descWord.classList.remove('blur-sm');
 
-
-
-
-
-
-        
-
+    
         descWord.style.cursor = 'pointer';
         // mainWord.classList.add('blur-sm');
         if (audio.style.display == 'flex') audio.style.display = 'none';
@@ -201,6 +195,8 @@ function logger() {
 
 
         let i = randomInteger(0, posts.length - 1);
+
+        console.log(arrWords[i]);
         console.log(i);
 
         window.scrollTo(0,0);
