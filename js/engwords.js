@@ -5,33 +5,6 @@ export const englishWords = [
 
 
 {
-    name: 'Кирэк',
-    desc: ['Надо', 'Нужно'],
-    example: 
-    [
-       ''
-    ]
-},
-
-{
-    name: 'Китэргэ',
-    desc: ['Уходить', 'Отбывать'],
-    example: 
-    [
-       ''
-    ]
-},
-
-{
-    name: 'Кич Белэн',
-    desc: ['Вечером'],
-    example: 
-    [
-       ''
-    ]
-},
-
-{
     name: 'Кичэ',
     desc: ['Вчера'],
     example: 
@@ -71,42 +44,6 @@ export const englishWords = [
 {
     name: 'Көпшә',
     desc: ['Труба'],
-    example: 
-    [
-       ''
-    ]
-},
-
-{
-    name: 'Көтәргә',
-    desc: ['Ждать'],
-    example: 
-    [
-       ''
-    ]
-},
-
-{
-    name: 'Куркыныч',
-    desc: ['Страшный', 'Ужасный'],
-    example: 
-    [
-       ''
-    ]
-},
-
-{
-    name: 'Кунелле',
-    desc: ['Веселый'],
-    example: 
-    [
-       ''
-    ]
-},
-
-{
-    name: 'Кунелсез',
-    desc: ['Невеселый'],
     example: 
     [
        ''
@@ -156,7 +93,7 @@ export const englishWords = [
     name: 'Я пришёл',
     desc: [
         `
-            <audio controls
+            <audio controls autoplay
                 src="../audio/tatWord3.mp3">
             </audio>
         `
@@ -173,7 +110,7 @@ export const englishWords = [
     name: 'Я взял',
     desc: [
         `
-            <audio controls
+            <audio controls autoplay
                 src="../audio/tatWord2.mp3">
             </audio>
         `
@@ -188,8 +125,53 @@ export const englishWords = [
     name: 'Пожалуйста',
     desc: [
         `
-            <audio controls
+            <audio controls autoplay
                 src="../audio/tatWord1.mp3">
+            </audio>
+        `
+    ],
+    example: 
+    [
+       ''
+    ]
+},
+
+{
+    name: 'Я иду',
+    desc: [
+        `
+            <audio controls autoplay
+                src="../audio/tatWord4.mp3">
+            </audio>
+        `
+    ],
+    example: 
+    [
+       ''
+    ]
+},
+
+{
+    name: 'Я поработаю',
+    desc: [
+        `
+            <audio controls autoplay
+                src="../audio/tatWord5.mp3">
+            </audio>
+        `
+    ],
+    example: 
+    [
+       ''
+    ]
+},
+
+{
+    name: 'Я найду',
+    desc: [
+        `
+            <audio controls autoplay
+                src="../audio/tatWord6.mp3">
             </audio>
         `
     ],

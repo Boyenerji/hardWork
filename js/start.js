@@ -73,7 +73,7 @@ while (words.length <= 25) {
 
 
 const englishWordsArr = [];
-while (englishWordsArr.length <= 15) {
+while (englishWordsArr.length <= 13) {
     let a = randomInteger(0, englishWords.length - 1);
     englishWordsArr.unshift(englishWords[a]);
     englishWords.splice([a], 1);
@@ -108,16 +108,19 @@ function wordsFunc() {
         randomWords = randomInteger(1, 2);
         console.log('randomWords = ' + randomWords);
 
-        if (randomWords == 1) {
-            console.log('Блюрим тайтл');
-            mainWord.classList.add('blur');
-            mainWord.style.cursor = 'pointer';
-            // inputText.style.display = 'block';
-        } else {
-            console.log('Блюрим описание');
-            descWord.classList.add('blur-sm');
-            descWord.style.cursor = 'pointer';
+        if (select.value != 'English') {
+            if (randomWords == 1) {
+                console.log('Блюрим тайтл');
+                mainWord.classList.add('blur');
+                mainWord.style.cursor = 'pointer';
+                // inputText.style.display = 'block';
+            } else {
+                console.log('Блюрим описание');
+                descWord.classList.add('blur-sm');
+                descWord.style.cursor = 'pointer';
+            }
         }
+
         isMainTwo = true;
 
 
@@ -137,11 +140,13 @@ function wordsFunc() {
         // let i = randomInteger(0, words.length - 1);
 
         if (select.value == 'English') {
+            console.log('aga');
             console.log(englishWordsArr);
             console.log(englishWordsArr[i]);
             console.log(englishWordsArr[i].desc.length);
             let randEndWord = randomInteger(0, englishWordsArr[i].desc.length - 1 );
             mainWord.innerHTML = englishWordsArr[i].name;
+            // descWord.innerHTML = englishWordsArr[i].desc;
             descWord.innerHTML = englishWordsArr[i].desc[randEndWord];
         } else {
             mainWord.innerHTML = words[i].name;
@@ -377,16 +382,31 @@ btn.addEventListener('click', () => {
 mainTwo.addEventListener('click', (e) => {
     e.preventDefault();
 
-    console.log('aga');
-    console.log(isMainTwo);
-    if (isMainTwo == true) {
-        if (descWord.className.indexOf('blur-sm') !== -1) descWord.classList.remove('blur-sm');
-        if (mainWord.className.indexOf('blur') !== -1)  mainWord.classList.remove('blur');
-        if (example.className.indexOf('blur-sm') !== -1) example.classList.remove('blur-sm');
-        isMainTwo = false;
+    if (select.value != 'English') {
+        console.log('aga');
+        console.log(isMainTwo);
+        if (isMainTwo == true) {
+            if (descWord.className.indexOf('blur-sm') !== -1) descWord.classList.remove('blur-sm');
+            if (mainWord.className.indexOf('blur') !== -1)  mainWord.classList.remove('blur');
+            if (example.className.indexOf('blur-sm') !== -1) example.classList.remove('blur-sm');
+            isMainTwo = false;
+        } else {
+            wordsFunc();
+        }
     } else {
         wordsFunc();
     }
+
+    // console.log('aga');
+    // console.log(isMainTwo);
+    // if (isMainTwo == true) {
+    //     if (descWord.className.indexOf('blur-sm') !== -1) descWord.classList.remove('blur-sm');
+    //     if (mainWord.className.indexOf('blur') !== -1)  mainWord.classList.remove('blur');
+    //     if (example.className.indexOf('blur-sm') !== -1) example.classList.remove('blur-sm');
+    //     isMainTwo = false;
+    // } else {
+    //     wordsFunc();
+    // }
     
 });
 
