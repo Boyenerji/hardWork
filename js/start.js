@@ -276,7 +276,7 @@ function logger() {
                 console.log('1');
 
                 mainWord.innerHTML = posts[i].name;
-                descWord.innerHTML = '<p class="leading-relaxed">' + posts[i].desc + '</p>';
+                descWord.innerHTML = '<p class="leading-8">' + posts[i].desc + '</p>';
                 break;
 
             case 2:
@@ -285,7 +285,7 @@ function logger() {
                 audio.innerHTML = '';
                 audio.style.display = 'flex';
                 mainWord.innerHTML = posts[i].name;
-                descWord.innerHTML = '<p class="leading-relaxed">' + posts[i].audio + '</p>';
+                descWord.innerHTML = '<p class="leading-8">' + posts[i].audio + '</p>';
                 break;
 
             case 3:
@@ -434,10 +434,7 @@ btn_test2.addEventListener('click', () => {
 
 
 document.addEventListener('keydown', function(event) {
-    if (event.key == 'ArrowRight') {
-        ifBlur();
-    }
- 
+    if (event.key == 'ArrowRight') ifBlur();
 });
 
 
@@ -493,9 +490,9 @@ function DarkTheme() {
     if (date.getHours() > 16 || date.getHours() < 9) {
         console.log('yes');
         alert_info.style.color = 'rgb(209, 213, 219)';
-        body.classList.add('bg-slate-900');
+        body.classList.add('bg-neutral-950');
         hello_h1.style.color = '#fff';
-        main.classList.add('bg-slate-800');
+        main.style.backgroundColor = 'rgb(22,22,23,0.8)';
         mainTwo.classList.add('bg-slate-900');
         descWord.classList.add('text-white');
         select.style.backgroundColor = '#6c757d';
