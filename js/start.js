@@ -51,18 +51,9 @@ let btn = document.querySelector('#btn_start'),
     main_2 = document.querySelector('.main_2');
 
 
+arrWords.sort(() => Math.random() - 0.5);
+const posts = arrWords.slice(0, 25);
 
-
-
-
-
-const posts = [];
-while (posts.length <= 25) {
-    let a = randomInteger(0, arrWords.length - 1);
-    posts.unshift(arrWords[a]);
-    arrWords.splice([a], 1);
-    // console.log(arrWords);
-}
 
 const words = [];
 while (words.length <= 25) {
@@ -72,13 +63,8 @@ while (words.length <= 25) {
 }
 
 
-const englishWordsArr = [];
-while (englishWordsArr.length <= 13) {
-    let a = randomInteger(0, englishWords.length - 1);
-    englishWordsArr.unshift(englishWords[a]);
-    englishWords.splice([a], 1);
-}
-
+englishWords.sort(() => Math.random() - 0.5);
+const englishWordsArr = englishWords.slice(0, 25);
 
 
 console.dir(englishWordsArr);
@@ -183,20 +169,14 @@ function logger() {
         location.reload();
     } else {
         window.scrollTo(0,0);
-        // y = 0;
         descWord.classList.remove('blur-sm');
 
-    
         descWord.style.cursor = 'pointer';
-        // mainWord.classList.add('blur-sm');
         if (audio.style.display == 'flex') audio.style.display = 'none';
 
         main.classList.add('animate__animated', 'animate__backInDown', 'animate__faster');
 
         ((posts.length - 1) != 0) ? alert_info.innerHTML = posts.length - 1 : alert_info.remove();
-
-
-
 
 
         let i = randomInteger(0, posts.length - 1);
@@ -207,7 +187,6 @@ function logger() {
         window.scrollTo(0,0);
 
         idImg.style.display = 'none';
-        // console.log(posts[i].pic);
 
         idImg.src = `${posts[i].pic}`;
         
@@ -276,7 +255,7 @@ function logger() {
                 console.log('1');
 
                 mainWord.innerHTML = posts[i].name;
-                descWord.innerHTML = '<p class="leading-8">' + posts[i].desc + '</p>';
+                descWord.innerHTML = '<p class="leading-relaxed">' + posts[i].desc + '</p>';
                 break;
 
             case 2:
@@ -285,7 +264,7 @@ function logger() {
                 audio.innerHTML = '';
                 audio.style.display = 'flex';
                 mainWord.innerHTML = posts[i].name;
-                descWord.innerHTML = '<p class="leading-8">' + posts[i].audio + '</p>';
+                descWord.innerHTML = '<p class="leading-relaxed">' + posts[i].audio + '</p>';
                 break;
 
             case 3:
