@@ -213,6 +213,10 @@ select:hover {
     color: black;
     display: none;
     padding: 10px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1.2em;
+    background-color: #DCDCDC;
 }
 
 .showWords {
