@@ -21,10 +21,7 @@ let arrColors = [
 let randText = randomInteger(0, 4),
     randomWords,
     isMainTwo = false,
-    textArrayLogger = '',
-    myr = '',
-    a = 0,
-    y = 0,
+    test = 0,
     letArr = [];
 
 let btn = document.querySelector('#btn_start'),
@@ -52,7 +49,7 @@ let btn = document.querySelector('#btn_start'),
 
 
 arrWords.sort(() => Math.random() - 0.5);
-const posts = arrWords.slice(0, 25);
+// const posts = arrWords.slice(0, 25);
 
 
 const words = [];
@@ -68,9 +65,10 @@ const englishWordsArr = englishWords.slice(0, 25);
 
 
 console.dir(englishWordsArr);
-console.dir(posts);
+console.dir(arrWords);
 console.dir(words);
 
+arrWords[0].name = 'Пипец';
 
 function wordsFunc() {
 
@@ -165,9 +163,11 @@ function wordsFunc() {
 }
 
 function logger() {
-    if (posts.length == 1) {
+    if (test == 25) {
         location.reload();
     } else {
+        test++;
+        console.log(test);
         window.scrollTo(0,0);
         descWord.classList.remove('blur-sm');
 
@@ -176,22 +176,20 @@ function logger() {
 
         main.classList.add('animate__animated', 'animate__backInDown', 'animate__faster');
 
-        ((posts.length - 1) != 0) ? alert_info.innerHTML = posts.length - 1 : alert_info.remove();
+        alert_info.innerHTML = test;
 
 
-        let i = randomInteger(0, posts.length - 1);
+        let i = randomInteger(0, arrWords.length - 1);
 
         console.log(arrWords[i]);
-        console.log(i);
-
         window.scrollTo(0,0);
 
         idImg.style.display = 'none';
 
-        idImg.src = `${posts[i].pic}`;
+        idImg.src = `${arrWords[i].pic}`;
         
-        let mainWordLet = posts[i].name;
-        let textAlet = posts[i].textA;
+        let mainWordLet = arrWords[i].name;
+        let textAlet = arrWords[i].textA;
         mainWord2.innerHTML = '';
 
 
@@ -202,21 +200,21 @@ function logger() {
 
 
 
-        switch (posts[i].isInput) {
+        switch (arrWords[i].isInput) {
             case 0:
                 console.log('0');
 
                 mainWord.innerHTML = mainWordLet;
                 descWord.innerHTML = '';
 
-                posts[i].arrInput.sort(() => Math.random() - 0.5);
-                console.log(posts[i].arrInput.sort(() => Math.random() - 0.5));
+                arrWords[i].arrInput.sort(() => Math.random() - 0.5);
+                console.log(arrWords[i].arrInput.sort(() => Math.random() - 0.5));
 
-                posts[i].arrInput.forEach(element => {
+                arrWords[i].arrInput.forEach(element => {
                     descWord.innerHTML += `<button>${element}</button>`;
                 });
 
-                let letInput = posts[i].trueInput;
+                let letInput = arrWords[i].trueInput;
 
                 let popp = document.querySelectorAll('button');
 
@@ -254,8 +252,8 @@ function logger() {
             case 1:
                 console.log('1');
 
-                mainWord.innerHTML = posts[i].name;
-                descWord.innerHTML = '<p class="leading-relaxed">' + posts[i].desc + '</p>';
+                mainWord.innerHTML = arrWords[i].name;
+                descWord.innerHTML = '<p class="leading-relaxed">' + arrWords[i].desc + '</p>';
                 break;
 
             case 2:
@@ -263,14 +261,14 @@ function logger() {
 
                 audio.innerHTML = '';
                 audio.style.display = 'flex';
-                mainWord.innerHTML = posts[i].name;
-                descWord.innerHTML = '<p class="leading-relaxed">' + posts[i].audio + '</p>';
+                mainWord.innerHTML = arrWords[i].name;
+                descWord.innerHTML = '<p class="leading-relaxed">' + arrWords[i].audio + '</p>';
                 break;
 
             case 3:
                 console.log('3');
 
-                mainWord.innerHTML = posts[i].name;
+                mainWord.innerHTML = arrWords[i].textName;
                 descWord.innerHTML = '';
                 textA.style.display = 'block';
 
@@ -279,6 +277,13 @@ function logger() {
                     e.preventDefault();
                     console.log(textA.value);
                     console.log(textAlet);
+
+
+                    // if (textA.value.toLowerCase().trim() == textAlet.toLowerCase().trim()) {
+                    //     textA.style.display = 'none';
+                    //     console.log('Congrat');
+                    //     logger();
+                    // }
 
                     textAlet.forEach(element => {
                         if (textA.value.toLowerCase().trim() == element.toLowerCase().trim()) {
@@ -308,7 +313,7 @@ function logger() {
             idImg.style.display = 'block';
         };
 
-        posts.splice(i, 1);
+        arrWords.splice(i, 1);
         setTimeout(() => {
             main.classList.remove('animate__animated', 'animate__backInDown', 'animate__faster');
         }, 500);
@@ -459,6 +464,8 @@ function randomInteger(min, max) {
     let rand = min - 0.5 + Math.random() * (max - min + 1);
     return Math.round(rand);
 }
+
+
 
 
 
