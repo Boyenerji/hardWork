@@ -186,18 +186,22 @@ function logger() {
 
         idImg.style.display = 'none';
 
-        idImg.src = `${arrWords[i].pic}`;
+        console.log(arrWords[i].pic);
+        console.log(arrWords[i].pic.length);
+
+        if (arrWords[i].pic.length > 0) idImg.src = `${arrWords[i].pic}`;
+
+        // idImg.src = `${arrWords[i].pic}`;
         
         let mainWordLet = arrWords[i].name;
-        let textAlet = arrWords[i].textA;
+
+
+        // let textAlet = arrWords[i].textA;
+        // textAlet = textAlet[randomInteger(0, textAlet.length - 1)];
+        // console.log(textAlet);
+
+
         mainWord2.innerHTML = '';
-
-
-        if (textA.style.display == 'block') {
-            textA.value = '';
-            textA.style.display = 'none'
-        }
-
 
 
         switch (arrWords[i].isInput) {
@@ -268,7 +272,11 @@ function logger() {
             case 3:
                 console.log('3');
 
-                mainWord.innerHTML = arrWords[i].textName;
+                let textAlet = arrWords[i].textA;
+                textAlet = textAlet[randomInteger(0, textAlet.length - 1)];
+                console.log(textAlet);
+
+                mainWord.innerHTML = textAlet[0];
                 descWord.innerHTML = '';
                 textA.style.display = 'block';
 
@@ -278,28 +286,14 @@ function logger() {
                     console.log(textA.value);
                     console.log(textAlet);
 
-
-                    // if (textA.value.toLowerCase().trim() == textAlet.toLowerCase().trim()) {
-                    //     textA.style.display = 'none';
-                    //     console.log('Congrat');
-                    //     logger();
-                    // }
-
-                    textAlet.forEach(element => {
-                        if (textA.value.toLowerCase().trim() == element.toLowerCase().trim()) {
+                    textAlet.forEach(function(elem, index) {
+                        // console.log(elem + ' ' + index);
+                        if (elem.toLowerCase().trim() == textA.value.toLowerCase().trim()) {
                             textA.style.display = 'none';
-                            console.log('Congrat');
+                            textA.value = '';
                             logger();
                         }
                     });
-
-                    // if (textA.value.toLowerCase().trim() == textAlet.toLowerCase().trim()) {
-                    //     console.log('Congrat');
-                       
-                    //     // setTimeout(() => {
-                    //     //     wordsFunc();
-                    //     // }, 3000);
-                    // }
                 });
 
                 break;
