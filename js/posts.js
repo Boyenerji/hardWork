@@ -2957,7 +2957,7 @@ export const arrWords = [
     audio: ``,
     isInput: randomOneOrThree(),
     textName: 'Длина одного дюйма в миллиметрах?',
-    textA: '25,4',
+    textA: ['25,4', '25.4'],
 },
 
 {
