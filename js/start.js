@@ -277,6 +277,7 @@ function logger() {
                 console.log(textAlet);
 
                 mainWord.innerHTML = textAlet[0];
+                console.log(textAlet[0]);
                 descWord.innerHTML = '';
                 textA.style.display = 'block';
 
@@ -417,6 +418,10 @@ document.addEventListener('keydown', function(event) {
 
 
 function ifBlur() {
+    if (textA.style.display == 'block') {
+        textA.style.display = 'none';
+        textA.value = '';
+    }
     if (select.value == 'Слова') {
         if (descWord.className.indexOf('blur-sm') !== -1) descWord.classList.remove('blur-sm');
     } else {
