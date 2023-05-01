@@ -45,6 +45,7 @@ let btn = document.querySelector('#btn_start'),
     btn_test2 = document.querySelector('#btn_test2'),
     audio = document.querySelector('.audio'),
     echoWarning = document.querySelector('#echoWarning'),
+    notKnow = document.querySelector('#notKnow'),
     main_2 = document.querySelector('.main_2');
 
 
@@ -280,6 +281,7 @@ function logger() {
                 console.log(textAlet[0]);
                 descWord.innerHTML = '';
                 textA.style.display = 'block';
+                notKnow.style.display = 'block';
 
 
                 textA.addEventListener('input', function (e) {
@@ -287,14 +289,22 @@ function logger() {
                     console.log(textA.value);
                     console.log(textAlet);
 
+
+
                     textAlet.forEach(function(elem, index) {
-                        // console.log(elem + ' ' + index);
+                        // let testik = elem;
                         if (elem.toLowerCase().trim() == textA.value.toLowerCase().trim()) {
                             textA.style.display = 'none';
+                            notKnow.style.display = 'none';
                             textA.value = '';
                             logger();
                         }
                     });
+                });
+
+
+                notKnow.addEventListener('click', function (e) {
+                    textA.value = textAlet[1] + 'э';
                 });
 
                 break;
@@ -420,6 +430,7 @@ document.addEventListener('keydown', function(event) {
 function ifBlur() {
     if (textA.style.display == 'block') {
         textA.style.display = 'none';
+        notKnow.style.display = 'none';
         textA.value = '';
     }
     if (select.value == 'Слова') {

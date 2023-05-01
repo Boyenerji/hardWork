@@ -219,6 +219,13 @@ select:hover {
     background-color: #DCDCDC;
 }
 
+#notKnow {
+    display: none;
+    padding: 10px;
+    margin-top: 10px;
+    color: #fff;
+}
+
 .showWords {
     /* font-size: 1.9vh; */
     display: none;
