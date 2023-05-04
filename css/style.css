@@ -180,9 +180,9 @@ select:hover {
 }
 
 #btn_test {
-    /* margin-top: 20px; */
+    
     bottom: 10%;
-    right: 5%;
+    right: 4%;
     font-size: 1.1em;
     cursor: pointer;
     background: #1E90FF;
@@ -194,9 +194,12 @@ select:hover {
     opacity: 0.5;
 }
 
-#btn_test2 {
+
+  
+
+/* #btn_test2 {
     bottom: 10%;
-    left: 5%;
+    left: 4%;
     display: none;
     position: fixed;
     opacity: 0.5;
@@ -206,7 +209,7 @@ select:hover {
     border: none;
     border-radius: 7px;
     color: white;
-}
+} */
 
 
 .textA {

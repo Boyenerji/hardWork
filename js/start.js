@@ -354,7 +354,7 @@ btn.addEventListener('click', () => {
         body.style.justifyContent = 'flex-start';
         body.style.height = 'auto';
         btn_test.style.display = 'block';
-        btn_test2.style.display = 'block';
+        // btn_test2.style.display = 'block';
         logger();
     }
 
@@ -416,9 +416,9 @@ btn_test.addEventListener('click', () => {
     ifBlur();
 });
 
-btn_test2.addEventListener('click', () => {
-    ifBlur();
-});
+// btn_test2.addEventListener('click', () => {
+//     ifBlur();
+// });
 
 
 
