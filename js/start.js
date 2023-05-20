@@ -69,7 +69,6 @@ console.dir(englishWordsArr);
 console.dir(arrWords);
 console.dir(words);
 
-arrWords[0].name = 'Пипец';
 
 function wordsFunc() {
 
@@ -175,7 +174,7 @@ function logger() {
         descWord.style.cursor = 'pointer';
         if (audio.style.display == 'flex') audio.style.display = 'none';
 
-        main.classList.add('animate__animated', 'animate__backInDown', 'animate__faster');
+        main.classList.add('animate__animated', 'animate__fadeIn', 'animate__faster');
 
         alert_info.innerHTML = test;
 
@@ -320,7 +319,7 @@ function logger() {
 
         arrWords.splice(i, 1);
         setTimeout(() => {
-            main.classList.remove('animate__animated', 'animate__backInDown', 'animate__faster');
+            main.classList.remove('animate__animated', 'animate__fadeIn', 'animate__faster');
         }, 500);
 
     }
@@ -488,7 +487,7 @@ function DarkTheme() {
         alert_info.style.color = 'rgb(209, 213, 219)';
         body.classList.add('bg-neutral-950');
         hello_h1.style.color = '#fff';
-        main.style.backgroundColor = 'rgb(22,22,23,0.8)';
+        main.style.backgroundColor = '#16181c';
         mainTwo.classList.add('bg-slate-900');
         descWord.classList.add('text-white');
         select.style.backgroundColor = '#6c757d';
