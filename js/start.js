@@ -495,5 +495,6 @@ function DarkTheme() {
         mainTwo.classList.add('bg-slate-800');
         example.style.color = '#cbd5e1';
         mainWord2.style.color = '#fff';
+        notKnow.style.color = '#fff';
     }
 }
