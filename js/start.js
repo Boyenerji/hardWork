@@ -255,7 +255,7 @@ function logger() {
 
             case 1:
                 console.log('1');
-                if (descWord.style.height == 'auto') descWord.style.height = '220px';
+                if (descWord.style.height == 'auto') descWord.style.height = '250px';
                 mainWord.innerHTML = arrWords[i].name;
                 descWord.innerHTML = '<p class="leading-relaxed">' + arrWords[i].desc + '</p>';
                 break;
