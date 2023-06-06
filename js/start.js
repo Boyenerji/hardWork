@@ -166,6 +166,7 @@ function logger() {
     if (test == 25) {
         location.reload();
     } else {
+        if (descWord.style.height == '250px') descWord.style.height = 'auto';
         test++;
         console.log(test);
         window.scrollTo(0,0);
@@ -194,69 +195,102 @@ function logger() {
         // idImg.src = `${arrWords[i].pic}`;
         
         let mainWordLet = arrWords[i].name;
-
-
-        // let textAlet = arrWords[i].textA;
-        // textAlet = textAlet[randomInteger(0, textAlet.length - 1)];
-        // console.log(textAlet);
-
-
         mainWord2.innerHTML = '';
 
 
         switch (arrWords[i].isInput) {
             case 0:
+
                 console.log('0');
 
-                mainWord.innerHTML = mainWordLet;
+                console.log(arrWords[i].nameChoice)
+
+                let nameChoiceCount = randomInteger(0, arrWords[i].nameChoice.length - 1);
+                console.log(nameChoiceCount);
+                let nameChoice = arrWords[i].nameChoice[nameChoiceCount];
+                console.log(nameChoice);
+
+                // mainWord.innerHTML = textAlet[0];
+
+                mainWord.innerHTML = nameChoice;
                 descWord.innerHTML = '';
 
-                arrWords[i].arrInput.sort(() => Math.random() - 0.5);
-                console.log(arrWords[i].arrInput.sort(() => Math.random() - 0.5));
 
-                arrWords[i].arrInput.forEach(element => {
+                arrWords[i].choice[nameChoiceCount].sort(() => Math.random() - 0.5);
+                arrWords[i].choice[nameChoiceCount].forEach(element => {
                     descWord.innerHTML += `<button>${element}</button>`;
+                    console.log(element)
                 });
 
-                let letInput = arrWords[i].trueInput;
+                console.log(nameChoiceCount);
+                let letChoice = arrWords[i].trueChoice[nameChoiceCount];
+                console.log(letChoice);
 
                 let popp = document.querySelectorAll('button');
-
                 for (let j = 0; j < popp.length; j++) {
                     console.log(j);
                     console.log(popp[j]);
                     popp[j].addEventListener('click', function (e) {
                         console.dir(e.target.style.display);
                         console.log(e.target.innerText);
-
-
-                        if (e.target.innerText !== '>') {
-                            mainWord2.innerHTML += e.target.innerText + ' ';
+                        if (e.target.innerText == letChoice) {
+                            ifBlur();
+                        } else {
                             e.target.style.display = 'none';
                         }
-
-
-                        console.log(letInput);
-                        console.log(mainWord2.innerText);
-
-
-                        letInput.forEach(element => {
-                            if (element == mainWord2.innerText) {
-                                console.log('aga');
-                                mainWord2.innerHTML = '';
-                                ifBlur();
-                            }
-                        });
-
                     });
                 }
+
+                // mainWord.innerHTML = mainWordLet;
+                // descWord.innerHTML = '';
+
+                // arrWords[i].arrInput.sort(() => Math.random() - 0.5);
+                // console.log(arrWords[i].arrInput.sort(() => Math.random() - 0.5));
+
+                // arrWords[i].arrInput.forEach(element => {
+                //     descWord.innerHTML += `<button>${element}</button>`;
+                // });
+
+                // let letInput = arrWords[i].trueInput;
+
+                // let popp = document.querySelectorAll('button');
+
+                // for (let j = 0; j < popp.length; j++) {
+                //     console.log(j);
+                //     console.log(popp[j]);
+                //     popp[j].addEventListener('click', function (e) {
+                //         console.dir(e.target.style.display);
+                //         console.log(e.target.innerText);
+
+
+                //         if (e.target.innerText !== '>') {
+                //             mainWord2.innerHTML += e.target.innerText + ' ';
+                //             e.target.style.display = 'none';
+                //         }
+
+
+                //         console.log(letInput);
+                //         console.log(mainWord2.innerText);
+
+
+                //         letInput.forEach(element => {
+                //             if (element == mainWord2.innerText) {
+                //                 console.log('aga');
+                //                 mainWord2.innerHTML = '';
+                //                 ifBlur();
+                //             }
+                //         });
+
+                //     });
+                // }
 
                 break;
 
             case 1:
                 console.log('1');
-                if (descWord.style.height == 'auto') descWord.style.height = '250px';
                 mainWord.innerHTML = arrWords[i].name;
+                console.log('Длина контента: ' + arrWords[i].desc.length);
+                if (arrWords[i].desc.length > 170) descWord.style.height = '250px';
                 descWord.innerHTML = '<p class="leading-relaxed">' + arrWords[i].desc + '</p>';
                 break;
 
