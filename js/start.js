@@ -166,7 +166,7 @@ function logger() {
     if (test == 25) {
         location.reload();
     } else {
-        if (descWord.style.height == '250px') descWord.style.height = 'auto';
+        if (descWord.style.height == '300px') descWord.style.height = 'auto';
         test++;
         console.log(test);
         window.scrollTo(0,0);
