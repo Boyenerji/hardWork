@@ -166,7 +166,7 @@ function logger() {
     if (test == 25) {
         location.reload();
     } else {
-        if (descWord.style.height == '300px') descWord.style.height = 'auto';
+        if (descWord.style.height == '250px') descWord.style.height = 'auto';
         test++;
         console.log(test);
         window.scrollTo(0,0);
@@ -290,7 +290,7 @@ function logger() {
                 console.log('1');
                 mainWord.innerHTML = arrWords[i].name;
                 console.log('Длина контента: ' + arrWords[i].desc.length);
-                if (arrWords[i].desc.length > 170) descWord.style.height = '250px';
+                if (arrWords[i].desc.length > 300) descWord.style.height = '250px';
                 descWord.innerHTML = '<p class="leading-relaxed">' + arrWords[i].desc + '</p>';
                 break;
 
