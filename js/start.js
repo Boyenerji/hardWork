@@ -395,7 +395,7 @@ btn.addEventListener('click', () => {
 
     btn.remove();
     select.remove();
-    hello_h1.remove();
+    // hello_h1.remove();
 
     showWords.style.display = 'flex';
     window.scrollTo(0,0);
@@ -521,7 +521,7 @@ function DarkTheme() {
         console.log('yes');
         alert_info.style.color = 'rgb(209, 213, 219)';
         body.classList.add('bg-neutral-950');
-        hello_h1.style.color = '#fff';
+        // hello_h1.style.color = '#fff';
         main.style.backgroundColor = '#16181c';
         mainTwo.classList.add('bg-slate-900');
         descWord.classList.add('text-white');
