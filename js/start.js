@@ -163,7 +163,7 @@ function wordsFunc() {
 }
 
 function logger() {
-    if (test == 25) {
+    if (test == 20) {
         location.reload();
     } else {
         if (descWord.style.height == '250px') descWord.style.height = 'auto';
