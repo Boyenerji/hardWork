@@ -224,7 +224,7 @@ function logger() {
 
                 console.log(nameChoiceCount);
                 let letChoice = arrWords[i].trueChoice[nameChoiceCount];
-                console.log(letChoice);
+                // console.log(letChoice);
 
                 let popp = document.querySelectorAll('button');
                 for (let j = 0; j < popp.length; j++) {
@@ -233,7 +233,18 @@ function logger() {
                     popp[j].addEventListener('click', function (e) {
                         // console.dir(e.target.style.display);
                         // console.log(e.target.innerText);
-                        (e.target.innerText === letChoice) ? ifBlur() : e.target.style.display = 'none';
+
+                        // if (letChoice == e.target.innerText) {
+                        //     console.log('Равно');
+                        // } else {
+                        //     console.log('не равно')
+                        // }
+                        // console.log(letChoice)
+                        // console.log(typeof(letChoice))
+                        // console.log(e.target.innerText)
+                        // console.log(typeof(e.target.innerText))
+
+                        (e.target.innerText == letChoice) ? ifBlur() : e.target.style.display = 'none';
 
                         // if (e.target.innerText == letChoice) {
                         //     ifBlur();
