@@ -183,8 +183,7 @@ select:hover {
     color: white;
 }
 
-#btn_test {
-    
+#btn_test, #btn_test_audio {
     position: fixed; 
     bottom: 5%;
     left: 50%; 
@@ -200,6 +199,9 @@ select:hover {
     width: 30%;
 }
 
+#btn_test_audio {
+    bottom: 10%;
+}
 
 .textA {
     color: black;

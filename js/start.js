@@ -42,6 +42,7 @@ let btn = document.querySelector('#btn_start'),
     mainTwo = document.querySelector('.mainTwo'),
     // inputText = document.querySelector('#inputText'),
     btn_test = document.querySelector('#btn_test'),
+    btn_test_audio = document.querySelector('#btn_test_audio'),
     btn_test2 = document.querySelector('#btn_test2'),
     audio = document.querySelector('.audio'),
     echoWarning = document.querySelector('#echoWarning'),
@@ -258,6 +259,18 @@ function logger() {
 
             case 1:
                 console.log('1');
+                console.log('Audio: ' + arrWords[i].audio.length)
+                if (arrWords[i].audio.length > 0) {
+                    const lal = arrWords[i].audio;
+                    btn_test_audio.style.display = 'block';
+                    btn_test_audio.addEventListener('click', () => {
+                        const audioo = new Audio(lal);
+                        // console.log(lal);
+                        console.log(audioo);
+                        audioo.play();
+                        btn_test_audio.style.display = 'none';
+                    });
+                }
                 mainWord.innerHTML = arrWords[i].name;
                 console.log('Длина контента: ' + arrWords[i].desc.length);
                 if (arrWords[i].desc.length > 300) descWord.style.height = '250px';
@@ -419,6 +432,11 @@ example.addEventListener('click', () => {
 btn_test.addEventListener('click', () => {
     ifBlur();
 });
+
+// btn_test_audio.addEventListener('click', () => {
+    
+// });
+
 
 // btn_test2.addEventListener('click', () => {
 //     ifBlur();
